@@ -76,6 +76,7 @@ pluginDict =
     , ("ddgjs", ("plugins/mesh-plugin", "node mesh-plugin.js"))
     , ("alloy", ("plugins/alloy", "java -cp \"*:.\" AlloyPlugin"))
     , ("raytracing", ("TODO: path", "TODO: command"))
+    , ("graphLayout", ("plugins/graph-layout", "node graph-layout.js"))
     ]
 
 --------------------------------------------------------------------------------

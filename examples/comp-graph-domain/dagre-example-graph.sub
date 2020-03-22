@@ -1,0 +1,14 @@
+Node kspacey
+Node swilliams
+Node bpitt
+Node hford
+Node lwilson
+Node kbacon
+
+kspacey -> swilliams
+swilliams -> kbacon
+bpitt -> kbacon
+hford -> lwilson
+lwilson -> kbacon
+
+AutoLabel All

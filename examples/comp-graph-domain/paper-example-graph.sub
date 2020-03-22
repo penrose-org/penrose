@@ -9,23 +9,11 @@ Constraint contained
 Constraint equal
 
 Arg x1_text_position
-Arg x1_text_position_x
-Arg x1_text_position_y
-
 Arg x1_shape_end
-Arg x1_shape_end_x
-Arg x1_shape_end_y
-
 Arg x1_vector
 
 Arg x2_text_position
-Arg x2_text_position_x
-Arg x2_text_position_y
-
 Arg x2_shape_end
-Arg x2_shape_end_x
-Arg x2_shape_end_y
-
 Arg x2_vector
 
 objective -> plus
@@ -42,21 +30,20 @@ near1 -> x1_text_position
 near2 -> x2_shape_end
 near2 -> x2_text_position
 
-x1_text_position -> x1_text_position_x 
-x1_text_position -> x1_text_position_y
-
-x2_text_position -> x2_text_position_x 
-x2_text_position -> x2_text_position_y
-
-x1_shape_end -> x1_shape_end_x
-x1_shape_end -> x1_shape_end_y
-
-x2_shape_end -> x2_shape_end_x
-x2_shape_end -> x2_shape_end_y
-
 AutoLabel All
 
-Label objective $Objective$
-Label constraints $Constraints$
+Label objective $\text{Objective}$
+Label constraints $\text{Constraints}$
 Label plus $+$
 Label and $\&$
+Label equal $\text{equal}$
+Label contained $\text{contained}$
+Label near1 $\text{near1}$
+Label near2 $\text{near2}$
+
+Label x1_text_position $x_{1}\_text\_position$
+Label x1_shape_end $x_{1}\_shape\_end$
+Label x1_vector $x_{1}\_vector$
+Label x2_text_position $x_{2}\_text\_position$
+Label x2_shape_end $x_{2}\_shape\_end$
+Label x2_vector $x_{2}\_vector$

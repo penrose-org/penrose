@@ -1,0 +1,136 @@
+plugin "graphLayout" (400.0, 400.0)
+
+global {
+    global.padding = 10.0
+    global.edgeStroke = 2.0
+    global.nodeSize = 5.0
+    global.nodeColor = Colors.lightblue
+    global.arrowColor = Colors.black
+
+    -- Convert from "dagre space" to Penrose canvas space
+    -- TODO: deal with (invariant) font sizes
+    global.scaleFactor = 0.3
+    global.xShift = -200.0
+    global.yShift = -200.0
+}
+
+Colors {
+    Colors.black = rgba(0.0, 0.0, 0.0, 1.0)
+    Colors.darkgray = rgba(0.1, 0.1, 0.1, 1.0)
+    Colors.gray = rgba(0.8, 0.8, 0.8, 1.0)
+    Colors.red = rgba(1.0, 0.0, 0.0, 1.0)
+    Colors.pink = rgba(1.0, 0.4, 0.7, 1.0)
+    Colors.yellow = rgba(1.0, 1.0, 0.0, 1.0)
+    Colors.orange = rgba(1.0, 0.6, 0.0, 1.0)
+    Colors.lightorange = rgba(1.0, 0.6, 0.0, 0.25)
+    Colors.green = rgba(0.0, 1.0, 0.0, 1.0)
+    Colors.blue = rgba(0.0, 0.0, 1.0, 1.0)
+    Colors.sky = rgba(0.325, 0.718, 0.769, 1.0)
+    Colors.lightsky = rgba(0.325, 0.718, 0.769, 0.25)
+    Colors.lightblue = rgba(0.0, 0.0, 1.0, 0.25)
+    Colors.cyan = rgba(0.0, 1.0, 1.0, 1.0)
+    Colors.purple = rgba(0.5, 0.0, 0.5, 1.0)
+    Colors.white = rgba(1.0, 1.0, 1.0, 1.0)
+    Colors.none = rgba(0.0, 0.0, 0.0, 0.0)
+    Colors.bluegreen = rgba(0.44, 0.68, 0.60, 1.0)
+}
+
+Node n {
+       n.shape = Circle { 
+         x : graphLayout[n.name]["x"] * global.scaleFactor + global.xShift
+	 y : graphLayout[n.name]["y"] * global.scaleFactor + global.yShift
+         r : global.nodeSize
+	 color : global.nodeColor
+	 strokeWidth : 0.0
+       }
+
+       n.text = Text {
+	 x : n.shape.x + global.padding
+	 y : n.shape.y + global.padding
+	 string : n.label
+	 rotation : 0.0
+	 color : n.shape.color -- Why is this color wrong?
+       }
+}
+
+-- Ported from sty/tree.sty
+
+Node x; Node y {
+   -- Try to make sure no labels overlap
+   LOCAL.genRepelFn = encourage repel(x.shape, y.shape, 5.0)
+}
+
+-- TODO: factor out redundant code w/ lists
+Node p; Node c
+where to(p, c) {
+      LOCAL.shape = Arrow {
+      		  startX : p.shape.x
+      		  startY : p.shape.y
+      		  endX : c.shape.x
+      		  endY : c.shape.y
+		  color : global.arrowColor
+		  thickness : global.edgeStroke
+      }
+
+    -- Draw the arrow from y to x
+    LOCAL.centerFn = encourage centerArrow(LOCAL.shape, p.shape, c.shape)
+
+    -- Position y above x
+    LOCAL.aboveFn = encourage above(p.shape, c.shape)
+
+    -- Have sets 'fight' to be aligned with the superset's x-position
+    LOCAL.equalFn = encourage equal(p.shape.x, c.shape.x)
+}
+
+-- Node p; Node c1; Node c2
+-- where ParentOf2(p, c1, c2) {
+--       LOCAL.shape1 = Arrow {
+--       		  startX : p.shape.x
+--       		  startY : p.shape.y
+--       		  endX : c1.shape.x
+--       		  endY : c1.shape.y
+-- 		  color : global.arrowColor
+-- 		  thickness : global.edgeStroke
+
+--       }
+
+--       LOCAL.shape2 = Arrow {
+--       		  startX : p.shape.x
+--       		  startY : p.shape.y
+--       		  endX : c2.shape.x
+--       		  endY : c2.shape.y
+-- 		  color : global.arrowColor
+-- 		  thickness : global.edgeStroke
+
+--       }
+-- }
+
+-- Node p; Node c1; Node c2; Node c3
+-- where ParentOf3(p, c1, c2, c3) {
+--       LOCAL.shape1 = Arrow {
+--       		  startX : p.shape.x
+--       		  startY : p.shape.y
+--       		  endX : c1.shape.x
+--       		  endY : c1.shape.y
+-- 		  color : global.arrowColor
+-- 		  thickness : global.edgeStroke
+--       }
+
+--       LOCAL.shape2 = Arrow {
+--       		  startX : p.shape.x
+--       		  startY : p.shape.y
+--       		  endX : c2.shape.x
+--       		  endY : c2.shape.y
+-- 		  color : global.arrowColor
+-- 		  thickness : global.edgeStroke
+--       }
+
+--       LOCAL.shape3 = Arrow {
+--       		  startX : p.shape.x
+--       		  startY : p.shape.y
+--       		  endX : c3.shape.x
+--       		  endY : c3.shape.y
+-- 		  color : global.arrowColor
+-- 		  thickness : global.edgeStroke
+--       }
+-- }
