@@ -118,6 +118,9 @@ compDict =
     , ("atan2", constComp arctangent2)
     , ("cos", constComp cosine)
     , ("sin", constComp sine)
+    , ("arccos", constComp arccos)
+    , ("sqrt", constComp squareRoot)
+    , ("sqr", constComp square)
     , ("calcVectorsAngle", constComp calcVectorsAngle)
     , ("calcVectorsAngle", constComp calcVectorsAngle)
     , ("calcVectorsAngleWithOrigin", constComp calcVectorsAngleWithOrigin)
@@ -464,6 +467,10 @@ constrFuncDict = M.fromList $ map toPenalty flist
       , ("sameHeight", sameHeight)
       , ("nearHead", nearHead)
       , ("smallerThan", smallerThan)
+      , ("tangentTo", tangentTo)
+      , ("distinct", distinct)
+      , ("equalTo", equalTo)
+      , ("orthogonalCircles", orthogonalCircles)
       , ("minSize", minSize)
       , ("maxSize", maxSize)
       , ("outsideOf", outsideOf)
@@ -509,6 +516,7 @@ constrSignatures =
     , ("contains", [GPIType "Circle", GPIType "Rectangle"])
     , ("contains", [GPIType "Rectangle", GPIType "Rectangle"])
     , ("contains", [GPIType "Rectangle", GPIType "Circle"])
+    , ("tangentTo", [GPIType "Circle", GPIType "Circle"])
     , ("overlapping", [GPIType "Circle", GPIType "Circle"])
     , ("overlapping", [GPIType "Square", GPIType "Circle"])
     , ("overlapping", [GPIType "Circle", GPIType "Square"])
@@ -664,6 +672,15 @@ cosine [Val (FloatV d)] = Val (FloatV $ cos (d * pi / 180))
 
 sine :: ConstCompFn
 sine [Val (FloatV d)] = Val (FloatV $ sin (d * pi / 180))
+
+arccos :: ConstCompFn
+arccos [Val (FloatV x)] = Val (FloatV $ acos(x))
+
+squareRoot :: ConstCompFn
+squareRoot [Val (FloatV x)] = Val (FloatV $ sqrt x)
+
+square :: ConstCompFn
+square [Val (FloatV x)] = Val (FloatV $ x * x)
 
 calcVectorsAngle :: ConstCompFn
 calcVectorsAngle [Val (FloatV sx1), Val (FloatV sy1), Val (FloatV ex1), Val (FloatV ey1), Val (FloatV sx2), Val (FloatV sy2), Val (FloatV ex2), Val (FloatV ey2)] =
@@ -2047,6 +2064,24 @@ lessThanSq [Val (FloatV x), Val (FloatV y)] =
     then 0
     else (x - y) ^ 2
            -- in trace ("lessThan, x: " ++ show x ++ ", y: " ++ show y ++ ", res: " ++ show res) res
+
+tangentTo :: ConstrFn
+tangentTo [GPI o1@("Circle", _), GPI o2@("Circle", _)] =
+  (dist (getX o1, getY o1) (getX o2, getY o2)) ^ 2 - ((getNum o1 "r") ^ 2 + (getNum o2 "r") ^ 2)
+
+distinct :: ConstrFn
+distinct [GPI o1@("Circle", _), GPI o2@("Circle", _)] =
+  1/sqrt(dist (getX o1, getY o1) (getX o2, getY o2))
+
+equalTo :: ConstrFn
+equalTo [Val (FloatV x), Val (FloatV y)]
+  | x < y = x - y
+  | y > x = y - x
+  | otherwise = 0
+
+orthogonalCircles :: ConstrFn
+orthogonalCircles [GPI o1@("Circle", _), GPI o2@("Circle", _)] =
+  dist (getX o1, getY o1) (getX o2, getY o2) ^ 2 - ((getNum o1 "r") ^ 2 - (getNum o2 "r") ^ 2)
 
 contains :: ConstrFn
 contains [GPI o1@("Circle", _), GPI o2@("Circle", _)] =

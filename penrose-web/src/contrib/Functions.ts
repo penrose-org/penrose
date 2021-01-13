@@ -11,11 +11,17 @@ import {
   add,
   addN,
   max,
+  min,
   div,
   mul,
   cos,
   sin,
   neg,
+  sqrt,
+  squared,
+  arccos,
+  debug,
+  vdebug
 } from "engine/Autodiff";
 
 /**
@@ -143,24 +149,73 @@ export const compDict = {
   },
 
   /**
-   * Return the cosine of input `d` (in degrees).
+   * Return the square root of input `x`.
    */
-  cos: (d: VarAD): IFloatV<VarAD> => {
-    // Accepts degrees; converts to radians
+  sqrt: (x: VarAD): IFloatV<VarAD> => {
     return {
       tag: "FloatV",
-      contents: cos(div(mul(d, constOf(Math.PI)), constOf(180.0))),
+      contents: sqrt(x)
     };
   },
 
   /**
-   * Return the sine of input `d` (in degrees).
+   * Return the square of input `x`.
    */
-  sin: (d: VarAD): IFloatV<VarAD> => {
-    // Accepts degrees; converts to radians
+  square: (x: VarAD): IFloatV<VarAD> => {
     return {
       tag: "FloatV",
-      contents: sin(div(mul(d, constOf(Math.PI)), constOf(180.0))),
+      contents: squared(x)
+    };
+  },
+
+  /**
+   * Return the cosine of input `theta` (in radians). 
+   */
+  cos: (theta: VarAD): IFloatV<VarAD> => {
+    return {
+      tag: "FloatV",
+      contents: cos(theta),
+    };
+  },
+
+  /**
+   * Return the sine of input `theta` (in radians).
+   */
+  sin: (theta: VarAD): IFloatV<VarAD> => {
+    return {
+      tag: "FloatV",
+      contents: sin(theta),
+    };
+  },
+
+  /**
+   * Return the arccos of input `x` (in range [-1,1]).
+   * TODO: We should think about where/when/if to clamp acos and/or its derivative
+   */
+  arccos: (x: VarAD): IFloatV<VarAD> => {
+    return {
+      tag: "FloatV",
+      contents: arccos(x),
+    };
+  },
+
+  /**
+   * Return the Euclidean norm of `v`.
+   */
+  norm: (v: VarAD[]): IFloatV<VarAD> => {
+    return {
+      tag: "FloatV",
+      contents: ops.vnorm(v)
+    };
+  },
+
+  /**
+   * Return the squared Euclidean norm of `v`.
+   */
+  norm2: (v: VarAD[]): IFloatV<VarAD> => {
+    return {
+      tag: "FloatV",
+      contents: ops.vnormsq(v)
     };
   },
 
@@ -171,6 +226,24 @@ export const compDict = {
     return {
       tag: "FloatV",
       contents: ops.vdot(v, w),
+    };
+  },
+
+  /**
+   * Return the unsigned angle between vectors `u` and `v`.
+   */
+  angleBetween: (u: VarAD[], v: VarAD[]): IFloatV<VarAD> => {
+    return {
+      tag: "FloatV",
+      //contents: arccos(ops.vdot(vdebug(ops.vunit(u), "normalized u"), ops.vunit(v))),
+      //contents: arccos(ops.vdot(ops.vunit(u), ops.vunit(v))),
+      contents: arccos(
+         max( constOf(-1.),
+            min( constOf(1.),
+               ops.vdot(ops.vunit(u), ops.vunit(v))
+            )
+         )
+      ),
     };
   },
 
@@ -193,16 +266,6 @@ export const compDict = {
     return {
       tag: "FloatV",
       contents: ops.vdist(p1, p2),
-    };
-  },
-
-  /**
-   * Return the norm of vector `v`.
-   */
-  norm: (v: VarAD[]): IFloatV<VarAD> => {
-    return {
-      tag: "FloatV",
-      contents: ops.vnorm(v),
     };
   },
 

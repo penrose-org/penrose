@@ -1,9 +1,18 @@
 HyperbolicPlane H
-IdealPoint p, q
-Horocycle g, h
+IdealPoint pi, pj, pk
+--Horocycle hi, hj, hk
+Geodesic a
 
-p ∈ H
-q ∈ H
+pi ∈ H
+pj ∈ H
+pk ∈ H
 
-IsCenter( p, g )
-IsCenter( q, h )
+Geodesic gij := pi <-> pj
+Geodesic gjk := pj <-> pk
+Geodesic gki := pk <-> pi
+
+PerpendicularAt( a, gij, pk )
+
+-- IsCenter( pi, hi )
+-- IsCenter( pj, hj )
+-- IsCenter( pk, hk )

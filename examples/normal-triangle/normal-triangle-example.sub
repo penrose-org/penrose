@@ -1,0 +1,16 @@
+Vertex pi, pj, pk
+Triangle ijk := { pi, pj, pk }
+Edge ij := { pi, pj }
+EdgePoint a, b, c, d, e, f
+
+OnEdge( a, ij )
+OnEdge( b, ij )
+OnEdge( c, ij )
+OnEdge( d, ij )
+OnEdge( e, ij )
+OnEdge( f, ij )
+
+Label pi $i$
+Label pj $j$
+Label pk $k$
+

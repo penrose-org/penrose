@@ -30,8 +30,10 @@ where In( p, H ) {
    shape p.dotShape = Circle {
       r : Global.pointSize/2.0
       strokeWidth : 0.0
-      color : Colors.black
+      color : Colors.red
    }
+
+   layer p.dotShape above H.diskShape
 
    --ensure contains( H.diskShape, p.dotShape )
 }
@@ -85,4 +87,69 @@ where IsCenter( p, h ); In( p, H ) {
    delete h.tangentDisk
 }
 
+-- default "constructor"
+forall Geodesic g; HyperbolicPlane H
+{
+   g.shape = Circle{}
 
+   constraint g.diskConstraint = ensure orthogonalCircles( g.shape, H.diskShape )
+}
+
+forall Geodesic g; IdealPoint p; IdealPoint q; HyperbolicPlane H
+where g := MakeGeodesic( p, q )
+{
+   vec2 P = p.dotShape.center
+   vec2 Q = q.dotShape.center
+   scalar theta = angleBetween( P, Q )
+   scalar L = H.diskShape.r
+   scalar R = L/cos(theta/2.)
+   vec2 c = R*unit(P+Q)
+   scalar r = norm(c - P)
+
+   g.shape = Circle {
+      center: c
+      r: r
+   }
+
+   -- g.shape = Line {
+   --        start: p.dotShape.center
+   --          end: q.dotShape.center
+   --        color: Colors.black
+   --    thickness: 5.
+   -- }
+
+   delete g.diskConstraint
+
+   layer p.dotShape above g.shape
+   layer q.dotShape above g.shape
+}
+
+forall Geodesic g; Geodesic h; IdealPoint p; HyperbolicPlane H
+where PerpendicularAt( g, h, p ); In( p, H )
+{
+   vec2 P = p.dotShape.center
+   vec2 Cg = g.shape.center
+   vec2 Ch = h.shape.center
+   scalar Rg = g.shape.r
+
+   -- ensure that g passes through p
+   ensure equalTo( Rg, norm( Cg - P ))
+
+   -- also ensure that g and h are orthogonal
+   ensure orthogonalCircles( g.shape, h.shape )
+}
+
+IdealPoint `pi`
+{
+   override `pi`.angle = 0.0
+}
+
+IdealPoint `pj`
+{
+   override `pj`.angle = 2.0*3.1415926/3.0
+}
+
+IdealPoint `pk`
+{
+   override `pk`.angle = 4.0*3.1415926/3.0
+}

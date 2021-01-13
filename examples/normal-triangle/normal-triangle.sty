@@ -1,0 +1,110 @@
+Global {
+   Global.width = 800.0
+   Global.height = 600.0
+   Global.pointSize = Global.width/100.0
+   Global.thinStroke = Global.width/200.0
+   Global.planeSize = 0.9*Global.height
+   Global.labelSize = 32.0
+
+   -- Global.shape = Square {
+   --    x: 0.0
+   --    y: 0.0
+   --    side: Global.height
+   --    color: rgba( 0.2, 0.1, 0.8, 0.2 )
+   --    strokeWidth: 0.0
+   -- }
+
+   Global.shape = Rectangle {
+      x: 0.0
+      y: 0.0
+      w: Global.width
+      h: Global.height
+      color: rgba( 0.2, 0.1, 0.8, 0.2 )
+      strokeWidth: 0.0
+   }
+}
+
+Colors {
+   Colors.none = rgba(0.0, 0.0, 0.0, 0.0)
+   Colors.black = rgba( 0.0, 0.0, 0.0, 1.0 )
+   Colors.blue = rgba( 0.8, 0.7, 1.0, 0.2 )
+   Colors.green = rgba( 0.0, 0.8, 0.0, 1.0 )
+   Colors.darkBlue = rgba( 0.2, 0.3, 0.6, 0.5 )
+   Colors.red = rgba( 1.0, 0.0, 0.0, 0.5 )
+   Colors.none = rgba( 0.0, 0.0, 0.0, 0.0 )
+}
+
+forall Point p {
+
+   p.x = ?
+   p.y = ?
+
+   p.shape = Circle {
+      color: Colors.black
+      r: Global.pointSize
+      x: p.x
+      y: p.y
+   }
+
+   p.text = Text {
+      string: p.label
+      x: p.x + 0.9*Global.labelSize
+      y: p.y + 0.9*Global.labelSize
+      color: Colors.black
+      fontSize: Global.labelSize
+   }
+   
+   ensure contains( Global.shape, p.shape, 1.0 )
+}
+
+forall Triangle t; Vertex a; Vertex b; Vertex c
+where t := MakeTriangle( a, b, c ) {
+   t.s1 = Line {
+      startX: a.x
+      startY: a.y
+      endX: b.x
+      endY: b.y
+      color: Colors.black
+      thickness: Global.thinStroke
+   }
+   t.s2 = Line {
+      startX: b.x
+      startY: b.y
+      endX: c.x
+      endY: c.y
+      color: Colors.black
+      thickness: Global.thinStroke
+   }
+   t.s3 = Line {
+      startX: c.x
+      startY: c.y
+      endX: a.x
+      endY: a.y
+      color: Colors.black
+      thickness: Global.thinStroke
+   }
+   t.shape = Curve {
+      pathData: triangle( t.s1, t.s2, t.s3 )
+      fill: Colors.green
+   }
+}
+
+forall EdgePoint p; Edge ij; Vertex i; Vertex j
+where ij := MakeEdge( i, j ); OnEdge( p, ij )
+{
+   p.t = ?
+   override p.x = (1.0-p.t)*i.x + p.t*j.x
+   override p.y = (1.0-p.t)*i.y + p.t*j.y
+
+   override p.shape.color = Colors.black
+   override p.shape.r = Global.pointSize * 0.75
+
+   ensure inRange( p.t, 0.1, 0.9 )
+}
+
+forall EdgePoint p; EdgePoint q; Edge ij; Vertex i; Vertex j
+where ij := MakeEdge( i, j ); OnEdge( p, ij ); OnEdge( q, ij )
+{
+   encourage repel( p.shape, q.shape )
+}
+

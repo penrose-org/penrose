@@ -1,22 +1,81 @@
 Should whitespace be ignored in notation?
 
-When a constructor's arguments are not named, the error message is cryptic
-
 Should be possible to specify floating point numbers in any standard way (e.g., 0. instead of 0.0)
-
-Should be possible to specify colors in hex
-
-Should be possible to use notation in Style
-
-Make it clearer what the canvas size is, and make it possible to set the canvas size
 
 Maybe do automatic "upgrades" of integer to float in Style?
 
 Shouldn't be forced to put open brace ({) on same line as block name in Style
 
-Should allow local scoping, i.e., variables defined within a scope should be referencable within that scope without the scope name.  E.g., Global { width = 1.23; height = width/2.0; }
-(More generally: just think about scoping, and how we can perhaps have shorter references)
+Should be possible to specify colors in hex
+
+Should be possible to use notation in Style
 
 Substance should support Unicode characters
 
 Should be possible to use arbitrary Unicode characters in notation
+
+Need better syntax for vector operations in Style!
+
+Compiler should definitely complain if a Style program tries to override something that was not previously set.
+
+When a constructor's arguments are not named, the error message is cryptic
+
+Make it clearer what the canvas size is, and make it possible to set the canvas size
+
+Should allow local scoping, i.e., variables defined within a scope should be referencable within that scope without the scope name.  E.g., Global { width = 1.23; height = width/2.0; }
+(More generally: just think about scoping, and how we can perhaps have shorter references)
+
+Should a linter check whether values that are set explicitly also have constraints/objectives on them?
+E.g., if I say "x = 1.23" and also say "ensure (some predicate about x)" it feels like someone should tell me that.
+
+Should be possible to do something like:
+```
+local x = 1.23
+local u = ( x, x )
+```
+I.e., (i) declare a local variable with a syntax nicer than "LOCAL.", and (ii) refer to this local variable in the same scope without prepending a LOCAL. or local keyword to it.
+
+Can the compiler find nearby tokens?  (E.g., if I type straw_berry it suggests Strawberry?)
+
+Would be nice to be able to put bounds directly on any given variable, e.g., minSize( g.shape.r, m ) instead of minSize( g.shape )
+--> already exists as InRange; just need to port
+
+minSize should have a parameter (and/or be deprecated?)
+
+Typecheck functions called from Style (types and number of arguments) and throw an error if nothing matches.
+
+Add verbose comments explaining "obvious" system implementation details throughout Penrose
+
+Constraints are expressed in terms of inequalities, but equality constraints are super common.  The hack around this is currently to define some nonnegative function that's zero only at the equality.  E.g., to enforce the condition x == y, we'd have a function f(x,y) = |x-y|.  This is fine if you know what you're doing.  But might there be a more natural way to express equality constraints, so that they are automatically translated into equality constraints?  For instance, we could have `inequalityConstrDict`, which works like the current `constrDict`, and `equalityConstrDict`, where every function is passed through `abs()` when called.
+
+The compiler doesn't print a warning for something like this:
+```
+forall Geodesic g; IdealPoint p0; IdealPoint p1
+where PassesThrough( g, p, q ) {
+```
+(The problem here is that p and q are not named in the pattern match!)
+
+The compiler doesn't issue a clear warning if we define something in local scope, but use it for something that will need to persist.  E.g., the Style code
+
+LOCAL.r = ?
+x.shape = Circle {
+   radius: LOCAL.r
+}
+
+causes the frontend to crash, whereas
+
+x.r = ?
+x.shape = Circle {
+   radius: x.r
+}
+
+works fine.  But the compiler doesn't complain about the former.
+
+It's really weird that you have to specify a polygon like this:
+    pathData : triangle(p.shape.x, p.shape.y, q.shape.x, q.shape.y, r.shape.x, r.shape.y)
+Doesn't having a special function "triangle" defeat the purpose of having generic lists?
+
+What's the point of having constructors with named parameters if those parameters can't be accessed from the object itself?  E.g., to write a run for a triangle that gets constructed from three points, I have to name all three points again.  Don't see how this is any better/different from a predicate (just slightly different syntax).
+
+
+

@@ -14,6 +14,7 @@ const DEBUG_GRADIENT_UNIT_TESTS = false;
 // Consts
 const NUM_SAMPLES = 5; // Number of samples to evaluate gradient tests at
 export const EPS_DENOM = 10e-6; // Avoid divide-by-zero in denominator
+export const EPS_ARCTRIG = 10e-6; // Avoid out-of-bounds arguments in inverse trig functions XXX We have never tested whether this is actually *necessary*; just putting it there "to be safe".
 
 // Reverse-mode AD
 // Implementation adapted from https://rufflewind.com/2016-12-30/reverse-mode-automatic-differentiation and https://github.com/Rufflewind/revad/blob/eb3978b3ccdfa8189f3ff59d1ecee71f51c33fd7/revad.py
@@ -476,6 +477,44 @@ export const cos = (v: VarAD, isCompNode = true): VarAD => {
   return z;
 };
 
+export const arccos = (v: VarAD, isCompNode = true): VarAD => {
+  // Clamp argument to a valid range [-1,1]
+  const z = variableAD(Math.acos(Math.max(-1.0,Math.min(1.0,v.val))), "arccos");
+  z.isCompNode = isCompNode;
+
+  // The derivative of arccos(x) is -1/sqrt(1-x^2), which is valid
+  // for values x in the range [-1,1].  To avoid problems when x is
+  // slightly out of bounds due to floating point error, we add a
+  // little epsilon to the argument of the square root, to get
+  // -1/sqrt(1-x^2+eps)
+  if (isCompNode) {
+    const node = just(
+      neg(
+        inverse(
+          sqrt(
+            add(
+              sub(
+                gvarOf(1.0),
+                squared(v, false),
+              false),
+              gvarOf(EPS_ARCTRIG),
+            false),
+          false),
+        false),
+      false)
+    );
+    v.parents.push({ node: z, sensitivityNode: node });
+
+    z.children.push({ node: v, sensitivityNode: node });
+  } else {
+    v.parentsGrad.push({ node: z, sensitivityNode: none });
+
+    z.childrenGrad.push({ node: v, sensitivityNode: none });
+  }
+
+  return z;
+};
+
 /**
  * Return `-v`.
  */
@@ -707,6 +746,14 @@ export const debug = (v: VarAD, debugInfo = "no additional info"): VarAD => {
   v.debugInfo = debugInfo;
   return v;
 };
+
+export const vdebug = (v: VarAD[], debugInfo = "no additional info"): VarAD[] => {
+   for( let e of v ) {
+      e.debug = true;
+      e.debugInfo = debugInfo;
+   }
+   return v;
+}
 
 const opMap = {
   "+": {
@@ -1173,6 +1220,8 @@ const traverseGraph = (i: number, z: IVarAD, setting: string): any => {
       stmt = `const ${parName} = Math.sin(${childName});`;
     } else if (z.op === "cos") {
       stmt = `const ${parName} = Math.cos(${childName});`;
+    } else if (z.op === "arccos") {
+      stmt = `const ${parName} = Math.acos(${childName});`;
     } else if (z.op === "+ list") {
       // TODO: Get rid of unary +
       stmt = `const ${parName} = ${childName};`;

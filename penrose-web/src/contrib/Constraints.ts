@@ -155,6 +155,9 @@ export const objDict = {
   },
 };
 
+// constrDict is the dictionary of all constraints available in Style These are
+// called by the key of the dictionary (e.g., maxSize is called via the string
+// "maxSize" in Style)
 export const constrDict = {
 
   /** 
@@ -296,9 +299,20 @@ export const constrDict = {
   * Require that shape `s1` is smaller than `s2` with some offset `offset`.
   */
   smallerThan: ([t1, s1]: [string, any], [t2, s2]: [string, any]) => {
-    // s1 is smaller than s2
-    const offset = mul(varOf(0.4), s2.r.contents);
-    return sub(sub(s1.r.contents, s2.r.contents), offset);
+
+     if(t1 === "Circle" && t2 === "Circle") {
+        // s1 is smaller than s2
+        const offset = mul(varOf(0.4), s2.r.contents);
+        return sub(sub(s1.r.contents, s2.r.contents), offset);
+     } else throw new Error(`${[t1, t2]} not supported for smallerThan`);
+  },
+
+  lessThan: (x: VarAD, y: VarAD) => {
+     return squared(sub(x, y));
+  },
+
+  equalTo: (x: VarAD, y: VarAD) => {
+     return absVal(sub(x, y));
   },
 
   /** 
@@ -349,6 +363,23 @@ export const constrDict = {
       // Since we want equality
       return absVal(sub(d, sub(r1, r2)));
     } else throw new Error(`${[t1, t2]} not supported for tangentTo`);
+  },
+
+  orthogonalCircles: (
+    [t1, s1]: [string, any],
+    [t2, s2]: [string, any]
+  ) => {
+    if (t1 === "Circle" && t2 === "Circle") {
+       // Two circles of radii r1,r2 at a distance d will be
+       // orthogonal iff d^2 = r1^2 + r2^2.
+      const d2 = ops.vdistsq(fns.center(s1), fns.center(s2));
+      const r1 = s1.r.contents;
+      const r2 = s2.r.contents;
+      const r12 = squared(r1);
+      const r22 = squared(r2);
+      const e = sub(d2,add(r12,r22));
+      return absVal(e);
+    } else throw new Error(`${[t1, t2]} not supported for orthogonalCircles`);
   },
 
   /** 

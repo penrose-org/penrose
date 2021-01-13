@@ -1,0 +1,25 @@
+my {
+   my.black = rgba( 0.0, 0.0, 0.0, 1.0 )
+   my.blue = rgba( 0.4, 0.4, 1.0, 1.0 )
+   my.lineThickness = 2.0
+   my.arrowheadSize = 0.5
+}
+
+forall Vector v {
+   v.arrow = Arrow {
+      startX : 0.0
+      startY : 0.0
+      endX : ?
+      endY : ?
+      thickness: my.lineThickness
+      arrowheadSize: my.arrowheadSize
+      color: my.black
+   }
+}
+
+forall Vector c; Vector a; Vector b
+where c := addV(a,b) {
+   override c.arrow.color = my.blue
+   override c.arrow.endX = a.arrow.endX + b.arrow.endX
+}
+

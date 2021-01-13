@@ -1,0 +1,10 @@
+forall A a {
+   a.x = ?
+}
+
+forall A a1; A a2; B b
+--where b := make( a1, a2 ) {
+where AllGood( a, a2 ) {
+   ensure equalTo( a1.x, a2.x )
+}
+
