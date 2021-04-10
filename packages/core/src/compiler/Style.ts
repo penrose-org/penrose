@@ -1,4 +1,5 @@
 import { checkExpr, checkPredicate, checkVar } from "compiler/Substance";
+import { Map } from "immutable";
 import consola, { LogLevel } from "consola";
 import { constrDict, objDict } from "contrib/Constraints";
 // Dicts (runtime data)
@@ -17,8 +18,10 @@ import {
   insertExprs,
   insertGPI,
   isPath,
+  isCollection,
   isTagExpr,
   valueNumberToAutodiffConst,
+  dummyAccessPath,
 } from "engine/EngineUtils";
 import { alg, Graph } from "graphlib";
 import _ from "lodash";
@@ -51,6 +54,7 @@ import {
   Field,
   FieldDict,
   FieldExpr,
+  GPIExpr,
   GPIMap,
   GPIProps,
   IFGPI,
@@ -2204,7 +2208,20 @@ const findPropertyVarying = (
   return paths.concat(acc);
 };
 
+const findNestedPaths = (expr: Expr, p: Path): Path[] => {
+  if (isCollection(expr)) {
+    const elems: Expr[] = expr.contents;
+    const indices: Path[] = elems.map(
+      (e: Expr, i): IAccessPath => dummyAccessPath(p, i)
+    );
+    return indices;
+  } else {
+    return [];
+  }
+};
+
 // Look for nested varying variables, given the path to its parent var (e.g. `x.r` => (-1.2, ?)) => `x.r`[1] is varying
+// TODO: combine with `findNestedPaths`
 const findNestedVarying = (e: TagExpr<VarAD>, p: Path): Path[] => {
   if (e.tag === "OptEval") {
     const res = e.contents;
@@ -2382,6 +2399,64 @@ const findShapeProperties = (
   } else if (fexpr.tag === "FExpr") {
     return acc;
   } else throw Error("unknown tag");
+};
+
+// trace the origin of a path
+const tracePath = (tr: Translation, path: Path): Path[] => {
+  const tagExpr = findExprSafe(tr, path);
+  if (tagExpr.tag === "OptEval") {
+    const expr = tagExpr.contents;
+    // if the expression is a path, keep tracing
+    if (isPath(expr)) {
+      return tracePath(tr, expr);
+    } else if (isCollection(expr)) {
+      const accessPaths = findNestedPaths(tagExpr, path);
+      return _.flatten(accessPaths.map((p) => tracePath(tr, p)));
+    } else {
+      // if the expression is a computed, fix, or optimized value, return
+      return [path];
+    }
+  } else {
+    // in all other cases, the "origin" of a path is just itself
+    return [path];
+  }
+};
+
+const findPropOrigins = (
+  tr: Translation,
+  propPaths: Path[]
+): { [pathString: string]: Path[] } => {
+  let res = Map<string, Path[]>();
+  propPaths.forEach((path: Path) => {
+    // first find if this property is a collection
+    const tagExpr = findExprSafe(tr, path);
+    if (tagExpr.tag === "OptEval") {
+      const expr = tagExpr.contents;
+      // if it's a collection, trace origins of all members
+      if (isCollection(expr)) {
+        const accessPaths = findNestedPaths(tagExpr, path);
+        return accessPaths.forEach((p: Path) => {
+          const originPaths = tracePath(tr, p);
+          originPaths.forEach((origin: Path) => {
+            res = res.update(prettyPrintPath(origin), (ps) =>
+              ps ? [...ps, p] : [p]
+            );
+          });
+        });
+      } else {
+        const origins = tracePath(tr, path);
+        res = res.update(prettyPrintPath(path), (ps) =>
+          ps ? [...ps, ...origins] : origins
+        );
+      }
+    } else {
+      res = res.update(prettyPrintPath(path), (ps) =>
+        ps ? [...ps, path] : [path]
+      );
+    }
+    console.log(res);
+  });
+  return res.toObject();
 };
 
 // Find paths that are the properties of shapes
@@ -2806,11 +2881,18 @@ const genState = (trans: Translation): Result<State, StyleErrors> => {
   const pendingPaths = findPending(transInitAll);
   const shapeOrdering = computeShapeOrdering(transInitAll); // deal with layering
 
+  const propOrigins = findPropOrigins(
+    transInitAll,
+    shapeProperties.map((p) => mkPath(p))
+  );
+
   const initState = {
     shapes: initialGPIs, // These start out empty because they are initialized in the frontend via `evalShapes` in the Evaluator
     shapePaths,
     shapeProperties,
     shapeOrdering,
+
+    propOrigins,
 
     translation: transInitAll, // This is the result of the data processing
     originalTranslation: clone(trans),

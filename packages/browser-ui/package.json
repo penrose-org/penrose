@@ -33,8 +33,8 @@
     "/build"
   ],
   "scripts": {
-    "start-cra": "react-scripts --max_old_space_size=8192 start",
-    "watch-cra": "cross-env CI=true react-scripts --max_old_space_size=8192 start",
+    "start-slow": "react-scripts --max_old_space_size=8192 start",
+    "watch-slow": "cross-env CI=true react-scripts --max_old_space_size=8192 start",
     "watch": "node estrella.js -w",
     "start": "yarn watch",
     "build": "cross-env CI=false && react-scripts --max_old_space_size=8192 build",

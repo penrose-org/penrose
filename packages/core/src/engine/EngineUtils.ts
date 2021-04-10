@@ -11,7 +11,11 @@ import { LbfgsParams } from "types/state";
 import {
   AnnoFloat,
   Expr,
+  IAccessPath,
+  IList,
+  IMatrix,
   IPropertyPath,
+  ITuple,
   IVector,
   Path,
   PropertyDecl,
@@ -378,6 +382,17 @@ export const makeTranslationNumeric = (trans: Translation): ITrans<number> => {
 export const dummySourceLoc = (): SourceLoc => {
   return { line: -1, col: -1 };
 };
+
+export const dummyAccessPath = (parent: Path, index: number): IAccessPath =>
+  ({
+    nodeType: "dummyAccessPath",
+    children: [],
+    start: dummySourceLoc(),
+    end: dummySourceLoc(),
+    tag: "AccessPath",
+    path: parent,
+    indices: [dummyASTNode({ tag: "Fix", contents: index })],
+  } as IAccessPath);
 
 export const dummyASTNode = (o: any): ASTNode => {
   return {
@@ -987,6 +1002,12 @@ export const isPath = (expr: Expr): expr is Path => {
   return ["FieldPath", "PropertyPath", "AccessPath", "LocalVar"].includes(
     expr.tag
   );
+};
+
+export const isCollection = (
+  expr: Expr
+): expr is IVector | IMatrix | IList | ITuple => {
+  return ["Vector", "Matrix", "List", "Tuple"].includes(expr.tag);
 };
 
 export const exprToNumber = (e: Expr): number => {

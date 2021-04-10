@@ -1,6 +1,7 @@
 import { updateVaryingValues } from "engine/PropagateUpdate";
 import { Properties, Shape } from "types/shape";
 import { State } from "types/state";
+import { findDef, positionalProps } from "./ShapeDef";
 
 /**
  * Retrieve data from drag events and update varying state accordingly
@@ -11,7 +12,7 @@ export const dragUpdate = (
   dx: number,
   dy: number
 ): State => {
-  const updated: State = {
+  const dragged: State = {
     ...state,
     params: { ...state.params, optStatus: "NewIter" },
     shapes: state.shapes.map(({ shapeType, properties }: Shape) => {
@@ -21,33 +22,21 @@ export const dragUpdate = (
       return { shapeType, properties };
     }),
   };
-  // TODO: need to retrofit this implementation to the new State type
-  const updatedWithVaryingState = updateVaryingValues(updated);
+  const updatedWithVaryingState = updateVaryingValues(dragged);
   return updatedWithVaryingState;
 };
 
-// TODO: factor out position props in shapedef
 const dragShape = (shape: Shape, offset: [number, number]): Shape => {
   const { shapeType, properties } = shape;
-  switch (shapeType) {
-    case "Path":
-      console.log("Path drag unimplemented", shape); // Just to prevent crashing on accidental drag
-      return shape;
-    case "Line":
-      return {
-        ...shape,
-        properties: moveProperties(properties, ["start", "end"], offset),
-      };
-    case "Arrow":
-      return {
-        ...shape,
-        properties: moveProperties(properties, ["start", "end"], offset),
-      };
-    default:
-      return {
-        ...shape,
-        properties: moveProperties(properties, ["center"], offset),
-      };
+  const propsToMove = positionalProps(shapeType);
+  if (propsToMove) {
+    return {
+      ...shape,
+      properties: moveProperties(properties, propsToMove, offset),
+    };
+  } else {
+    console.log("Path drag unimplemented", shape); // Just to prevent crashing on accidental drag
+    return shape;
   }
 };
 
@@ -60,6 +49,7 @@ const moveProperties = (
   [dx, dy]: [number, number]
 ): Properties => {
   const moveProperty = (props: Properties, propertyID: string) => {
+    // TODO: deal with vectors, list of vectors, and perhaps curve data
     const [x, y] = props[propertyID].contents as [number, number];
     props[propertyID].contents = [x + dx, y + dy];
     return props;

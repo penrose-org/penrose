@@ -9,6 +9,7 @@
     "build": "lerna run build --stream",
     "clean": "lerna clean && lerna exec -- rimraf build",
     "start": "lerna run watch --stream --parallel --scope=@penrose/core --scope=@penrose/browser-ui",
+    "watch-slow": "lerna run watch-slow --stream --parallel --scope=@penrose/core --scope=@penrose/browser-ui",
     "test": "lerna run test --stream",
     "lerna": "lerna",
     "new-version": "lerna version --conventional-commits --create-release github",

@@ -10,6 +10,7 @@ import { Value } from "types/value";
 import { State, LabelCache } from "types/state";
 import { Path, IPropertyPath, IAccessPath } from "types/style";
 import { retrieveLabel } from "utils/CollectLabels";
+import { prettyPrintPath } from "utils/OtherUtils";
 
 /**
  * Find the value of a property in a list of fully evaluated shapes.
@@ -17,13 +18,12 @@ import { retrieveLabel } from "utils/CollectLabels";
  * @param shapes a list of shapes
  * @param path a path to a property value in one of the shapes
  */
-// the `any` is to accomodate `collectLabels` storing updated property values in a new property that's not in the type system
-const findShapeProperty = (shapes: any, path: Path): Value<number> | any => {
-  const getProperty = (path: IPropertyPath) => {
+const findShapeProperty = (shapes: Shape[], path: Path): number => {
+  const getProperty = (p: IPropertyPath): Value<number> => {
     const [subName, field, prop]: [string, string, string] = [
-      (path as IPropertyPath).name.contents.value,
-      path.field.value,
-      path.property.value,
+      p.name.contents.value,
+      p.field.value,
+      p.property.value,
     ];
 
     // HACK: this depends on the name encoding
@@ -44,25 +44,27 @@ const findShapeProperty = (shapes: any, path: Path): Value<number> | any => {
 
     return shape.properties[prop];
   };
+
   switch (path.tag) {
     case "FieldPath":
+    case "LocalVar":
+    case "InternalLocalVar":
       throw new Error("pending paths must be property paths");
-    case "PropertyPath": {
-      return getProperty(path);
-    }
+    case "PropertyPath":
+      return getProperty(path).contents as number;
     case "AccessPath": {
-      const [propertyPath, indices] = [
-        (path as IAccessPath).path,
-        path.indices,
-      ];
+      const [propertyPath, indices] = [path.path, path.indices];
       if (propertyPath.tag === "PropertyPath") {
         const property = getProperty(propertyPath);
         // walk the structure to access all indices
-        let res = property.contents;
+        // TODO: check correctness
+        let res = property as any;
         for (const i of indices) {
+          res = res.contents;
           res = res[exprToNumber(i)];
         }
-        return res;
+        // TODO:
+        return res as number;
       } else {
         throw new Error(
           `pending paths must be property paths but got ${propertyPath.tag}`
@@ -125,13 +127,12 @@ export const insertPending = (state: State): State => {
  */
 export const updateVaryingValues = (state: State): State => {
   const newVaryingValues = [...state.varyingValues];
-  state.varyingPaths.forEach((path: Path, index: number) => {
-    // NOTE: We only update property paths since no frontend interactions can change fields
-    // TODO: add a branch for `FieldPath` when this is no longer the case
-    if (path.tag === "PropertyPath") {
-      newVaryingValues[index] = findShapeProperty(state.shapes, path).contents;
-    } else if (path.tag === "AccessPath" && path.path.tag === "PropertyPath") {
-      newVaryingValues[index] = findShapeProperty(state.shapes, path);
+  state.varyingPaths.forEach((varyingPath: Path, index: number) => {
+    const originPaths = state.propOrigins[prettyPrintPath(varyingPath)];
+    if (originPaths) {
+      originPaths.forEach((path: Path) => {
+        newVaryingValues[index] = findShapeProperty(state.shapes, path);
+      });
     }
   });
   return {

@@ -11,23 +11,22 @@ import { ArgVal, Translation, Value } from "./value";
 export interface IState {
   varyingPaths: Path[];
   shapePaths: Path[];
-  shapeProperties: any; // TODO: types
-  uninitializedPaths: any; // TODO: types
+  uninitializedPaths: Path[];
+  pendingPaths: Path[];
   params: Params;
   objFns: Fn[];
   constrFns: Fn[];
   rng: prng;
-  selectorMatches: any; // TODO: types
-  policyParams: any; // TODO: types
-  oConfig: any; // TODO: types
-  pendingPaths: Path[];
   varyingValues: number[];
   translation: Translation;
-  originalTranslation: Translation;
+  originalTranslation: Translation; // TODO: this prop is not really use anywhere. Consider removal
+  propOrigins: { [pathString: string]: Path[] };
   shapeOrdering: string[];
   labelCache: LabelCache;
   shapes: Shape[];
   varyingMap: VaryMap;
+  policyParams: any; // TODO: types
+  oConfig: any; // TODO: types
 }
 export type State = IState;
 
