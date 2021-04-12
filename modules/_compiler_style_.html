@@ -77,6 +77,7 @@
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#label_field" class="tsd-kind-icon">LABEL_<wbr>FIELD</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#local_keyword" class="tsd-kind-icon">LOCAL_<wbr>KEYWORD</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#unknowntagerror" class="tsd-kind-icon">Unknown<wbr>Tag<wbr>Error</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#varying_init_fn_name" class="tsd-kind-icon">VARYING_<wbr>INIT_<wbr>FN_<wbr>NAME</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#clone" class="tsd-kind-icon">clone</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#log" class="tsd-kind-icon">log</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#optimizedvectorproperties" class="tsd-kind-icon">optimized<wbr>Vector<wbr>Properties</a></li>
@@ -171,6 +172,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#isstyerr" class="tsd-kind-icon">is<wbr>Sty<wbr>Err</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#issubtypearrow" class="tsd-kind-icon">is<wbr>Subtype<wbr>Arrow</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#isvarying" class="tsd-kind-icon">is<wbr>Varying</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#isvaryinginitpath" class="tsd-kind-icon">is<wbr>Varying<wbr>Init<wbr>Path</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported"><a href="_compiler_style_.html#justs" class="tsd-kind-icon">justs</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_compiler_style_.html#lookupgpiname" class="tsd-kind-icon">lookupGPIName</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_compiler_style_.html#lookupnumericpaths" class="tsd-kind-icon">lookup<wbr>Numeric<wbr>Paths</a></li>
@@ -257,7 +259,7 @@
 					<div class="tsd-signature tsd-kind-icon">ANON_<wbr>KEYWORD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"ANON"</span><span class="tsd-signature-symbol"> = &quot;ANON&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L118">packages/core/src/compiler/Style.ts:118</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L118">packages/core/src/compiler/Style.ts:118</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -267,7 +269,7 @@
 					<div class="tsd-signature tsd-kind-icon">LABEL_<wbr>FIELD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"label"</span><span class="tsd-signature-symbol"> = &quot;label&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L121">packages/core/src/compiler/Style.ts:121</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L121">packages/core/src/compiler/Style.ts:121</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -277,7 +279,7 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>KEYWORD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"$LOCAL"</span><span class="tsd-signature-symbol"> = &quot;$LOCAL&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L119">packages/core/src/compiler/Style.ts:119</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L119">packages/core/src/compiler/Style.ts:119</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -287,7 +289,17 @@
 					<div class="tsd-signature tsd-kind-icon">Unknown<wbr>Tag<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> = new Error(&quot;unknown tag&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L123">packages/core/src/compiler/Style.ts:123</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L123">packages/core/src/compiler/Style.ts:123</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+					<a name="varying_init_fn_name" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> VARYING_<wbr>INIT_<wbr>FN_<wbr>NAME</h3>
+					<div class="tsd-signature tsd-kind-icon">VARYING_<wbr>INIT_<wbr>FN_<wbr>NAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"VARYING_INIT"</span><span class="tsd-signature-symbol"> = &quot;VARYING_INIT&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L125">packages/core/src/compiler/Style.ts:125</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -297,7 +309,7 @@
 					<div class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">:</span> &lt;T&gt;<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> = rfdc({ proto: false, circles: false })</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L115">packages/core/src/compiler/Style.ts:115</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L115">packages/core/src/compiler/Style.ts:115</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -334,7 +346,7 @@
 					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Consola</span><span class="tsd-signature-symbol"> = consola.create({ level: LogLevel.Warn }).withScope(&quot;Style Compiler&quot;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L112">packages/core/src/compiler/Style.ts:112</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L112">packages/core/src/compiler/Style.ts:112</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -344,7 +356,7 @@
 					<div class="tsd-signature tsd-kind-icon">optimized<wbr>Vector<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&quot;start&quot;, &quot;end&quot;, &quot;center&quot;]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2087">packages/core/src/compiler/Style.ts:2087</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2117">packages/core/src/compiler/Style.ts:2117</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -354,7 +366,7 @@
 					<div class="tsd-signature tsd-kind-icon">unoptimized<wbr>Float<wbr>Properties<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&quot;rotation&quot;,&quot;strokeWidth&quot;,&quot;thickness&quot;,&quot;transform&quot;,&quot;transformation&quot;,&quot;opacity&quot;,&quot;finalW&quot;,&quot;finalH&quot;,&quot;arrowheadSize&quot;,]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2075">packages/core/src/compiler/Style.ts:2075</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2105">packages/core/src/compiler/Style.ts:2105</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -371,7 +383,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L180">packages/core/src/compiler/Style.ts:180</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L182">packages/core/src/compiler/Style.ts:182</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -403,7 +415,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L184">packages/core/src/compiler/Style.ts:184</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L186">packages/core/src/compiler/Style.ts:186</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -435,7 +447,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L315">packages/core/src/compiler/Style.ts:315</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L317">packages/core/src/compiler/Style.ts:317</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -461,7 +473,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L303">packages/core/src/compiler/Style.ts:303</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L305">packages/core/src/compiler/Style.ts:305</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -493,7 +505,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1638">packages/core/src/compiler/Style.ts:1638</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1664">packages/core/src/compiler/Style.ts:1664</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -525,7 +537,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1222">packages/core/src/compiler/Style.ts:1222</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1248">packages/core/src/compiler/Style.ts:1248</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -557,7 +569,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1010">packages/core/src/compiler/Style.ts:1010</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1036">packages/core/src/compiler/Style.ts:1036</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -583,7 +595,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L223">packages/core/src/compiler/Style.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L225">packages/core/src/compiler/Style.ts:225</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -606,7 +618,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1858">packages/core/src/compiler/Style.ts:1858</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1888">packages/core/src/compiler/Style.ts:1888</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -632,7 +644,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1776">packages/core/src/compiler/Style.ts:1776</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1805">packages/core/src/compiler/Style.ts:1805</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -658,7 +670,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1829">packages/core/src/compiler/Style.ts:1829</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1859">packages/core/src/compiler/Style.ts:1859</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -684,7 +696,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L325">packages/core/src/compiler/Style.ts:325</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L327">packages/core/src/compiler/Style.ts:327</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -713,7 +725,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L384">packages/core/src/compiler/Style.ts:384</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L386">packages/core/src/compiler/Style.ts:386</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -742,7 +754,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1759">packages/core/src/compiler/Style.ts:1759</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1785">packages/core/src/compiler/Style.ts:1785</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -768,7 +780,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1725">packages/core/src/compiler/Style.ts:1725</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1751">packages/core/src/compiler/Style.ts:1751</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -794,7 +806,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L514">packages/core/src/compiler/Style.ts:514</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L516">packages/core/src/compiler/Style.ts:516</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -820,7 +832,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1835">packages/core/src/compiler/Style.ts:1835</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1865">packages/core/src/compiler/Style.ts:1865</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -849,7 +861,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L397">packages/core/src/compiler/Style.ts:397</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L399">packages/core/src/compiler/Style.ts:399</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -875,7 +887,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L455">packages/core/src/compiler/Style.ts:455</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L457">packages/core/src/compiler/Style.ts:457</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -901,7 +913,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L549">packages/core/src/compiler/Style.ts:549</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L551">packages/core/src/compiler/Style.ts:551</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -927,7 +939,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2991">packages/core/src/compiler/Style.ts:2991</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L3074">packages/core/src/compiler/Style.ts:3074</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -950,7 +962,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1256">packages/core/src/compiler/Style.ts:1256</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1282">packages/core/src/compiler/Style.ts:1282</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -976,7 +988,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1710">packages/core/src/compiler/Style.ts:1710</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1736">packages/core/src/compiler/Style.ts:1736</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1002,7 +1014,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L3002">packages/core/src/compiler/Style.ts:3002</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L3085">packages/core/src/compiler/Style.ts:3085</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1031,7 +1043,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2745">packages/core/src/compiler/Style.ts:2745</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2802">packages/core/src/compiler/Style.ts:2802</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1054,7 +1066,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2470">packages/core/src/compiler/Style.ts:2470</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2498">packages/core/src/compiler/Style.ts:2498</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1077,7 +1089,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L597">packages/core/src/compiler/Style.ts:597</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L599">packages/core/src/compiler/Style.ts:599</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1106,7 +1118,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2089">packages/core/src/compiler/Style.ts:2089</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2119">packages/core/src/compiler/Style.ts:2119</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1129,7 +1141,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1574">packages/core/src/compiler/Style.ts:1574</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1600">packages/core/src/compiler/Style.ts:1600</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1161,7 +1173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1610">packages/core/src/compiler/Style.ts:1610</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1636">packages/core/src/compiler/Style.ts:1636</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1187,7 +1199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1502">packages/core/src/compiler/Style.ts:1502</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1528">packages/core/src/compiler/Style.ts:1528</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1222,7 +1234,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2898">packages/core/src/compiler/Style.ts:2898</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2980">packages/core/src/compiler/Style.ts:2980</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1248,7 +1260,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2865">packages/core/src/compiler/Style.ts:2865</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2947">packages/core/src/compiler/Style.ts:2947</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1274,7 +1286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1702">packages/core/src/compiler/Style.ts:1702</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1728">packages/core/src/compiler/Style.ts:1728</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>errors<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>warnings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></h4>
@@ -1299,7 +1311,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1061">packages/core/src/compiler/Style.ts:1061</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1087">packages/core/src/compiler/Style.ts:1087</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1322,7 +1334,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1144">packages/core/src/compiler/Style.ts:1144</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1170">packages/core/src/compiler/Style.ts:1170</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1351,7 +1363,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1107">packages/core/src/compiler/Style.ts:1107</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1133">packages/core/src/compiler/Style.ts:1133</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1380,7 +1392,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1233">packages/core/src/compiler/Style.ts:1233</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1259">packages/core/src/compiler/Style.ts:1259</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1415,7 +1427,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2440">packages/core/src/compiler/Style.ts:2440</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2468">packages/core/src/compiler/Style.ts:2468</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1438,7 +1450,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2430">packages/core/src/compiler/Style.ts:2430</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2458">packages/core/src/compiler/Style.ts:2458</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1470,7 +1482,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2393">packages/core/src/compiler/Style.ts:2393</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2421">packages/core/src/compiler/Style.ts:2421</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1502,7 +1514,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2506">packages/core/src/compiler/Style.ts:2506</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2534">packages/core/src/compiler/Style.ts:2534</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1534,7 +1546,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2319">packages/core/src/compiler/Style.ts:2319</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2347">packages/core/src/compiler/Style.ts:2347</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1566,7 +1578,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2268">packages/core/src/compiler/Style.ts:2268</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2296">packages/core/src/compiler/Style.ts:2296</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1598,7 +1610,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2351">packages/core/src/compiler/Style.ts:2351</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2379">packages/core/src/compiler/Style.ts:2379</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1630,7 +1642,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2688">packages/core/src/compiler/Style.ts:2688</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2745">packages/core/src/compiler/Style.ts:2745</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1662,7 +1674,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2705">packages/core/src/compiler/Style.ts:2705</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2762">packages/core/src/compiler/Style.ts:2762</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1685,7 +1697,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2718">packages/core/src/compiler/Style.ts:2718</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2775">packages/core/src/compiler/Style.ts:2775</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1711,7 +1723,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2208">packages/core/src/compiler/Style.ts:2208</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2236">packages/core/src/compiler/Style.ts:2236</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1737,7 +1749,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2907">packages/core/src/compiler/Style.ts:2907</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2989">packages/core/src/compiler/Style.ts:2989</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1760,7 +1772,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2962">packages/core/src/compiler/Style.ts:2962</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L3045">packages/core/src/compiler/Style.ts:3045</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1792,7 +1804,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2529">packages/core/src/compiler/Style.ts:2529</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2557">packages/core/src/compiler/Style.ts:2557</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1815,7 +1827,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2303">packages/core/src/compiler/Style.ts:2303</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2331">packages/core/src/compiler/Style.ts:2331</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1850,7 +1862,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2161">packages/core/src/compiler/Style.ts:2161</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2189">packages/core/src/compiler/Style.ts:2189</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1890,7 +1902,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2365">packages/core/src/compiler/Style.ts:2365</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2393">packages/core/src/compiler/Style.ts:2393</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1913,7 +1925,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2370">packages/core/src/compiler/Style.ts:2370</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2398">packages/core/src/compiler/Style.ts:2398</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1945,7 +1957,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2388">packages/core/src/compiler/Style.ts:2388</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2416">packages/core/src/compiler/Style.ts:2416</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1968,7 +1980,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1405">packages/core/src/compiler/Style.ts:1405</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1431">packages/core/src/compiler/Style.ts:1431</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2003,7 +2015,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1374">packages/core/src/compiler/Style.ts:1374</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1400">packages/core/src/compiler/Style.ts:1400</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2035,7 +2047,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2346">packages/core/src/compiler/Style.ts:2346</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2374">packages/core/src/compiler/Style.ts:2374</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2058,7 +2070,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2426">packages/core/src/compiler/Style.ts:2426</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2454">packages/core/src/compiler/Style.ts:2454</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2081,7 +2093,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2298">packages/core/src/compiler/Style.ts:2298</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2326">packages/core/src/compiler/Style.ts:2326</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2104,7 +2116,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1717">packages/core/src/compiler/Style.ts:1717</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1743">packages/core/src/compiler/Style.ts:1743</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2127,7 +2139,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2046">packages/core/src/compiler/Style.ts:2046</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2076">packages/core/src/compiler/Style.ts:2076</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2189,7 +2201,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L188">packages/core/src/compiler/Style.ts:188</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L190">packages/core/src/compiler/Style.ts:190</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2254,7 +2266,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2058">packages/core/src/compiler/Style.ts:2058</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2088">packages/core/src/compiler/Style.ts:2088</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2313,7 +2325,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L570">packages/core/src/compiler/Style.ts:570</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L572">packages/core/src/compiler/Style.ts:572</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2339,7 +2351,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2771">packages/core/src/compiler/Style.ts:2771</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2842">packages/core/src/compiler/Style.ts:2842</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2362,7 +2374,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2476">packages/core/src/compiler/Style.ts:2476</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2504">packages/core/src/compiler/Style.ts:2504</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2385,7 +2397,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L235">packages/core/src/compiler/Style.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L237">packages/core/src/compiler/Style.ts:237</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2411,7 +2423,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2552">packages/core/src/compiler/Style.ts:2552</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2581">packages/core/src/compiler/Style.ts:2581</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2437,7 +2449,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2583">packages/core/src/compiler/Style.ts:2583</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2630">packages/core/src/compiler/Style.ts:2630</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2466,7 +2478,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L288">packages/core/src/compiler/Style.ts:288</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L290">packages/core/src/compiler/Style.ts:290</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_types_stylesemantics_.html#selenv" class="tsd-signature-type">SelEnv</a></h4>
@@ -2483,7 +2495,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2641">packages/core/src/compiler/Style.ts:2641</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2698">packages/core/src/compiler/Style.ts:2698</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2509,7 +2521,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2682">packages/core/src/compiler/Style.ts:2682</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2739">packages/core/src/compiler/Style.ts:2739</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2535,7 +2547,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1483">packages/core/src/compiler/Style.ts:1483</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1509">packages/core/src/compiler/Style.ts:1509</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_types_value_.html#translation" class="tsd-signature-type">Translation</a></h4>
@@ -2552,7 +2564,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1973">packages/core/src/compiler/Style.ts:1973</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2003">packages/core/src/compiler/Style.ts:2003</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2578,7 +2590,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1954">packages/core/src/compiler/Style.ts:1954</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1984">packages/core/src/compiler/Style.ts:1984</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2601,7 +2613,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2535">packages/core/src/compiler/Style.ts:2535</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2563">packages/core/src/compiler/Style.ts:2563</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2624,7 +2636,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L162">packages/core/src/compiler/Style.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L164">packages/core/src/compiler/Style.ts:164</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2653,7 +2665,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2155">packages/core/src/compiler/Style.ts:2155</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2183">packages/core/src/compiler/Style.ts:2183</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2679,7 +2691,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L167">packages/core/src/compiler/Style.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L169">packages/core/src/compiler/Style.ts:169</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2708,7 +2720,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2904">packages/core/src/compiler/Style.ts:2904</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2986">packages/core/src/compiler/Style.ts:2986</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2731,7 +2743,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1088">packages/core/src/compiler/Style.ts:1088</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1114">packages/core/src/compiler/Style.ts:1114</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2760,7 +2772,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2151">packages/core/src/compiler/Style.ts:2151</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2179">packages/core/src/compiler/Style.ts:2179</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2770,6 +2782,32 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="isvaryinginitpath" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Varying<wbr>Init<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Varying<wbr>Init<wbr>Path<span class="tsd-signature-symbol">(</span>p<span class="tsd-signature-symbol">: </span><a href="_types_style_.html#path" class="tsd-signature-type">Path</a>, tr<span class="tsd-signature-symbol">: </span><a href="_types_value_.html#translation" class="tsd-signature-type">Translation</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="_types_style_.html#path" class="tsd-signature-type">Path</a><span class="tsd-signature-symbol">, </span><a href="_types_common_.html#maybeval" class="tsd-signature-type">MaybeVal</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2825">packages/core/src/compiler/Style.ts:2825</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>p: <a href="_types_style_.html#path" class="tsd-signature-type">Path</a></h5>
+								</li>
+								<li>
+									<h5>tr: <a href="_types_value_.html#translation" class="tsd-signature-type">Translation</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="_types_style_.html#path" class="tsd-signature-type">Path</a><span class="tsd-signature-symbol">, </span><a href="_types_common_.html#maybeval" class="tsd-signature-type">MaybeVal</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -2783,7 +2821,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L207">packages/core/src/compiler/Style.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L209">packages/core/src/compiler/Style.ts:209</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2812,7 +2850,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2709">packages/core/src/compiler/Style.ts:2709</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2766">packages/core/src/compiler/Style.ts:2766</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2838,7 +2876,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2502">packages/core/src/compiler/Style.ts:2502</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2530">packages/core/src/compiler/Style.ts:2530</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2864,7 +2902,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1941">packages/core/src/compiler/Style.ts:1941</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1971">packages/core/src/compiler/Style.ts:1971</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2911,7 +2949,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1297">packages/core/src/compiler/Style.ts:1297</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1323">packages/core/src/compiler/Style.ts:1323</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2937,7 +2975,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1340">packages/core/src/compiler/Style.ts:1340</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1366">packages/core/src/compiler/Style.ts:1366</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2969,7 +3007,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1320">packages/core/src/compiler/Style.ts:1320</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1346">packages/core/src/compiler/Style.ts:1346</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2998,7 +3036,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1359">packages/core/src/compiler/Style.ts:1359</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1385">packages/core/src/compiler/Style.ts:1385</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3030,7 +3068,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1263">packages/core/src/compiler/Style.ts:1263</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1289">packages/core/src/compiler/Style.ts:1289</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3056,7 +3094,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L506">packages/core/src/compiler/Style.ts:506</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L508">packages/core/src/compiler/Style.ts:508</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3082,7 +3120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L476">packages/core/src/compiler/Style.ts:476</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L478">packages/core/src/compiler/Style.ts:478</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3116,7 +3154,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L718">packages/core/src/compiler/Style.ts:718</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L720">packages/core/src/compiler/Style.ts:720</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3139,7 +3177,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2099">packages/core/src/compiler/Style.ts:2099</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2127">packages/core/src/compiler/Style.ts:2127</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3162,7 +3200,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2636">packages/core/src/compiler/Style.ts:2636</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2693">packages/core/src/compiler/Style.ts:2693</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3188,7 +3226,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1461">packages/core/src/compiler/Style.ts:1461</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1487">packages/core/src/compiler/Style.ts:1487</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3211,7 +3249,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1435">packages/core/src/compiler/Style.ts:1435</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1461">packages/core/src/compiler/Style.ts:1461</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3237,7 +3275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1471">packages/core/src/compiler/Style.ts:1471</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1497">packages/core/src/compiler/Style.ts:1497</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3260,7 +3298,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L155">packages/core/src/compiler/Style.ts:155</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L157">packages/core/src/compiler/Style.ts:157</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -3289,7 +3327,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L143">packages/core/src/compiler/Style.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L145">packages/core/src/compiler/Style.ts:145</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3312,7 +3350,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1706">packages/core/src/compiler/Style.ts:1706</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1732">packages/core/src/compiler/Style.ts:1732</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3335,7 +3373,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2849">packages/core/src/compiler/Style.ts:2849</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2931">packages/core/src/compiler/Style.ts:2931</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3358,7 +3396,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2463">packages/core/src/compiler/Style.ts:2463</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2491">packages/core/src/compiler/Style.ts:2491</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -3390,7 +3428,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L226">packages/core/src/compiler/Style.ts:226</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L228">packages/core/src/compiler/Style.ts:228</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3413,7 +3451,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2144">packages/core/src/compiler/Style.ts:2144</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2172">packages/core/src/compiler/Style.ts:2172</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3436,7 +3474,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L243">packages/core/src/compiler/Style.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L245">packages/core/src/compiler/Style.ts:245</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3459,7 +3497,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L276">packages/core/src/compiler/Style.ts:276</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L278">packages/core/src/compiler/Style.ts:278</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3482,7 +3520,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L257">packages/core/src/compiler/Style.ts:257</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L259">packages/core/src/compiler/Style.ts:259</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3505,7 +3543,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L265">packages/core/src/compiler/Style.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L267">packages/core/src/compiler/Style.ts:267</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3528,7 +3566,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L270">packages/core/src/compiler/Style.ts:270</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L272">packages/core/src/compiler/Style.ts:272</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3551,7 +3589,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2255">packages/core/src/compiler/Style.ts:2255</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2283">packages/core/src/compiler/Style.ts:2283</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3577,7 +3615,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2245">packages/core/src/compiler/Style.ts:2245</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2273">packages/core/src/compiler/Style.ts:2273</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3603,7 +3641,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1171">packages/core/src/compiler/Style.ts:1171</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1197">packages/core/src/compiler/Style.ts:1197</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3635,7 +3673,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1210">packages/core/src/compiler/Style.ts:1210</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1236">packages/core/src/compiler/Style.ts:1236</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3667,7 +3705,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L218">packages/core/src/compiler/Style.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L220">packages/core/src/compiler/Style.ts:220</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3690,7 +3728,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1039">packages/core/src/compiler/Style.ts:1039</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1065">packages/core/src/compiler/Style.ts:1065</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3716,7 +3754,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1019">packages/core/src/compiler/Style.ts:1019</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1045">packages/core/src/compiler/Style.ts:1045</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3742,7 +3780,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1006">packages/core/src/compiler/Style.ts:1006</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1032">packages/core/src/compiler/Style.ts:1032</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3768,7 +3806,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L613">packages/core/src/compiler/Style.ts:613</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L615">packages/core/src/compiler/Style.ts:615</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3797,7 +3835,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L932">packages/core/src/compiler/Style.ts:932</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L958">packages/core/src/compiler/Style.ts:958</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3826,7 +3864,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L803">packages/core/src/compiler/Style.ts:803</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L805">packages/core/src/compiler/Style.ts:805</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3855,7 +3893,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L644">packages/core/src/compiler/Style.ts:644</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L646">packages/core/src/compiler/Style.ts:646</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3881,7 +3919,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L792">packages/core/src/compiler/Style.ts:792</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L794">packages/core/src/compiler/Style.ts:794</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3910,7 +3948,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L906">packages/core/src/compiler/Style.ts:906</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L932">packages/core/src/compiler/Style.ts:932</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3939,7 +3977,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L727">packages/core/src/compiler/Style.ts:727</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L729">packages/core/src/compiler/Style.ts:729</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3968,7 +4006,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L664">packages/core/src/compiler/Style.ts:664</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L666">packages/core/src/compiler/Style.ts:666</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -3994,7 +4032,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L682">packages/core/src/compiler/Style.ts:682</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L684">packages/core/src/compiler/Style.ts:684</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4020,7 +4058,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L704">packages/core/src/compiler/Style.ts:704</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L706">packages/core/src/compiler/Style.ts:706</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4046,7 +4084,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2444">packages/core/src/compiler/Style.ts:2444</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2472">packages/core/src/compiler/Style.ts:2472</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4072,7 +4110,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2452">packages/core/src/compiler/Style.ts:2452</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2480">packages/core/src/compiler/Style.ts:2480</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4095,7 +4133,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L172">packages/core/src/compiler/Style.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L174">packages/core/src/compiler/Style.ts:174</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4124,7 +4162,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L176">packages/core/src/compiler/Style.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L178">packages/core/src/compiler/Style.ts:178</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -4153,7 +4191,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L220">packages/core/src/compiler/Style.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L222">packages/core/src/compiler/Style.ts:222</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4176,7 +4214,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L954">packages/core/src/compiler/Style.ts:954</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L980">packages/core/src/compiler/Style.ts:980</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4202,7 +4240,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L993">packages/core/src/compiler/Style.ts:993</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1019">packages/core/src/compiler/Style.ts:1019</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4225,7 +4263,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L984">packages/core/src/compiler/Style.ts:984</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1010">packages/core/src/compiler/Style.ts:1010</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4248,7 +4286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L465">packages/core/src/compiler/Style.ts:465</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L467">packages/core/src/compiler/Style.ts:467</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4271,7 +4309,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1072">packages/core/src/compiler/Style.ts:1072</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1098">packages/core/src/compiler/Style.ts:1098</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4294,7 +4332,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2726">packages/core/src/compiler/Style.ts:2726</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2783">packages/core/src/compiler/Style.ts:2783</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4320,7 +4358,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1676">packages/core/src/compiler/Style.ts:1676</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1702">packages/core/src/compiler/Style.ts:1702</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4352,7 +4390,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1656">packages/core/src/compiler/Style.ts:1656</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1682">packages/core/src/compiler/Style.ts:1682</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4378,7 +4416,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1884">packages/core/src/compiler/Style.ts:1884</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1914">packages/core/src/compiler/Style.ts:1914</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4416,7 +4454,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L2009">packages/core/src/compiler/Style.ts:2009</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L2039">packages/core/src/compiler/Style.ts:2039</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4454,7 +4492,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1688">packages/core/src/compiler/Style.ts:1688</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1714">packages/core/src/compiler/Style.ts:1714</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4483,7 +4521,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1276">packages/core/src/compiler/Style.ts:1276</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1302">packages/core/src/compiler/Style.ts:1302</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4512,7 +4550,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L583">packages/core/src/compiler/Style.ts:583</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L585">packages/core/src/compiler/Style.ts:585</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4535,7 +4573,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L1002">packages/core/src/compiler/Style.ts:1002</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L1028">packages/core/src/compiler/Style.ts:1028</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4560,7 +4598,7 @@
 					<div class="tsd-signature tsd-kind-icon">FN_<wbr>DICT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L126">packages/core/src/compiler/Style.ts:126</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L128">packages/core/src/compiler/Style.ts:128</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -4569,7 +4607,7 @@
 						<div class="tsd-signature tsd-kind-icon">Comp<wbr>App<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>abs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>average<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>average2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>cos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>derivative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>derivativePreconditioned<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>dot<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>get<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>hsva<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>intersectingSideSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>len<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>lineLength<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>max<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>midpointOffset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>min<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>mul<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>norm<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>normalize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>normsq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>orientedSquare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>pathFromPoints<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>rgba<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>rot90<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>sampleColor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>setOpacity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>sin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>sqrt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>triangle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>unit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>unitMark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>unitMark2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>vdist<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>vdistsq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = compDict</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L127">packages/core/src/compiler/Style.ts:127</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L129">packages/core/src/compiler/Style.ts:129</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -4584,7 +4622,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L502">packages/core/src/contrib/Functions.ts:502</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L511">packages/core/src/contrib/Functions.ts:511</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4611,7 +4649,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L399">packages/core/src/contrib/Functions.ts:399</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L408">packages/core/src/contrib/Functions.ts:408</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4638,7 +4676,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L389">packages/core/src/contrib/Functions.ts:389</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L398">packages/core/src/contrib/Functions.ts:398</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4668,7 +4706,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L162">packages/core/src/contrib/Functions.ts:162</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L162">packages/core/src/contrib/Functions.ts:162</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4695,7 +4733,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L50">packages/core/src/contrib/Functions.ts:50</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L50">packages/core/src/contrib/Functions.ts:50</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4726,7 +4764,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L85">packages/core/src/contrib/Functions.ts:85</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L85">packages/core/src/contrib/Functions.ts:85</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4757,7 +4795,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L184">packages/core/src/contrib/Functions.ts:184</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L184">packages/core/src/contrib/Functions.ts:184</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4787,7 +4825,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L124">packages/core/src/contrib/Functions.ts:124</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L124">packages/core/src/contrib/Functions.ts:124</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4817,7 +4855,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L149">packages/core/src/contrib/Functions.ts:149</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L149">packages/core/src/contrib/Functions.ts:149</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4853,13 +4891,18 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L337">packages/core/src/contrib/Functions.ts:337</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L339">packages/core/src/contrib/Functions.ts:339</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
 												<div class="lead">
-													<p>Figure out which side of the rectangle <code>[t1, s1]</code> the <code>start-&gt;end</code> line is hitting, assuming that <code>start</code> is located at the rect&#39;s center and <code>end</code> is located outside the rectangle, and return the size of the relevant side. Also assuming axis-aligned rectangle. This is used for arrow placement in box-and-arrow diagrams.</p>
+													<p>Figure out which side of the rectangle <code>[t1, s1]</code> the <code>start-&gt;end</code> line is hitting, assuming that <code>start</code> is located at the rect&#39;s center and <code>end</code> is located outside the rectangle, and return the size of the OTHER side. Also assuming axis-aligned rectangle. This is used for arrow placement in box-and-arrow diagrams.</p>
 												</div>
+												<dl class="tsd-comment-tags">
+													<dt>deprecated</dt>
+													<dd><p>Don&#39;t use this function, it does not fully work</p>
+													</dd>
+												</dl>
 											</div>
 											<h4 class="tsd-parameters-title">Parameters</h4>
 											<ul class="tsd-parameters">
@@ -4886,7 +4929,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L205">packages/core/src/contrib/Functions.ts:205</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L205">packages/core/src/contrib/Functions.ts:205</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4913,7 +4956,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L194">packages/core/src/contrib/Functions.ts:194</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L194">packages/core/src/contrib/Functions.ts:194</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4940,7 +4983,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L488">packages/core/src/contrib/Functions.ts:488</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L497">packages/core/src/contrib/Functions.ts:497</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -4970,7 +5013,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L282">packages/core/src/contrib/Functions.ts:282</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L282">packages/core/src/contrib/Functions.ts:282</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5003,7 +5046,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L495">packages/core/src/contrib/Functions.ts:495</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L504">packages/core/src/contrib/Functions.ts:504</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5033,7 +5076,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L462">packages/core/src/contrib/Functions.ts:462</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L471">packages/core/src/contrib/Functions.ts:471</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5063,7 +5106,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L509">packages/core/src/contrib/Functions.ts:509</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L518">packages/core/src/contrib/Functions.ts:518</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5090,7 +5133,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L216">packages/core/src/contrib/Functions.ts:216</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L216">packages/core/src/contrib/Functions.ts:216</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5117,7 +5160,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L516">packages/core/src/contrib/Functions.ts:516</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L525">packages/core/src/contrib/Functions.ts:525</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5144,7 +5187,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L307">packages/core/src/contrib/Functions.ts:307</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L307">packages/core/src/contrib/Functions.ts:307</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5181,7 +5224,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L226">packages/core/src/contrib/Functions.ts:226</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L226">packages/core/src/contrib/Functions.ts:226</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5211,7 +5254,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L136">packages/core/src/contrib/Functions.ts:136</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L136">packages/core/src/contrib/Functions.ts:136</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5247,7 +5290,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L539">packages/core/src/contrib/Functions.ts:539</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L548">packages/core/src/contrib/Functions.ts:548</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5282,7 +5325,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L420">packages/core/src/contrib/Functions.ts:420</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L429">packages/core/src/contrib/Functions.ts:429</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5312,7 +5355,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L448">packages/core/src/contrib/Functions.ts:448</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L457">packages/core/src/contrib/Functions.ts:457</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5342,7 +5385,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L173">packages/core/src/contrib/Functions.ts:173</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L173">packages/core/src/contrib/Functions.ts:173</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5369,7 +5412,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L481">packages/core/src/contrib/Functions.ts:481</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L490">packages/core/src/contrib/Functions.ts:490</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5396,7 +5439,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L364">packages/core/src/contrib/Functions.ts:364</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L373">packages/core/src/contrib/Functions.ts:373</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5429,7 +5472,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L410">packages/core/src/contrib/Functions.ts:410</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L419">packages/core/src/contrib/Functions.ts:419</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5456,7 +5499,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L236">packages/core/src/contrib/Functions.ts:236</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L236">packages/core/src/contrib/Functions.ts:236</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5495,7 +5538,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L260">packages/core/src/contrib/Functions.ts:260</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L260">packages/core/src/contrib/Functions.ts:260</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5531,7 +5574,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L523">packages/core/src/contrib/Functions.ts:523</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L532">packages/core/src/contrib/Functions.ts:532</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5561,7 +5604,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Functions.ts#L530">packages/core/src/contrib/Functions.ts:530</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Functions.ts#L539">packages/core/src/contrib/Functions.ts:539</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5588,10 +5631,10 @@
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 						<a name="fn_dict.constrfn" class="tsd-anchor"></a>
 						<h3>Constr<wbr>Fn</h3>
-						<div class="tsd-signature tsd-kind-icon">Constr<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>atDist<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>contains<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>disjoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>disjointScalar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>equal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>inRange<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>lessThan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>lessThanSq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>maxSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>minSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>notCrossing<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>outsideOf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>overlapping<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>perpendicular<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>rightwards<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>smallerThan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>tangentTo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = constrDict</span></div>
+						<div class="tsd-signature tsd-kind-icon">Constr<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>atDist<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>contains<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>contains1D<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>containsRectLineAA<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>disjoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>disjointIntervals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>disjointRectLineAAHoriz<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>disjointRectLineAAVert<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>disjointScalar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>equal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>inRange<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>lessThan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>lessThanSq<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>maxSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>minSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>notCrossing<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>outsideOf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>overlapping<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>perpendicular<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>rightwards<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>smallerThan<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>tangentTo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = constrDict</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L129">packages/core/src/compiler/Style.ts:129</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L131">packages/core/src/compiler/Style.ts:131</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -5606,7 +5649,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L490">packages/core/src/contrib/Constraints.ts:490</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L607">packages/core/src/contrib/Constraints.ts:607</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5639,7 +5682,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L282">packages/core/src/contrib/Constraints.ts:282</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L292">packages/core/src/contrib/Constraints.ts:292</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5664,6 +5707,66 @@
 									</ul>
 								</li>
 								<li class="tsd-parameter">
+									<h5>contains1D<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon">contains1D<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a><span class="tsd-signature-symbol">]</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L284">packages/core/src/contrib/Constraints.ts:284</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Require that an interval <code>[l1, r1]</code> contains another interval <code>[l2, r2]</code>. If not possible, returns 0.</p>
+												</div>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a><span class="tsd-signature-symbol">, </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>contains<wbr>Rect<wbr>LineAA<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon">contains<wbr>Rect<wbr>LineAA<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L392">packages/core/src/contrib/Constraints.ts:392</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Make an AABB rectangle contain an AABB (vertical or horizontal) line. (Special case of rect-rect disjoint). AA = axis-aligned</p>
+												</div>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
 									<h5>disjoint<span class="tsd-signature-symbol">: </span>function</h5>
 									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported">
 										<li class="tsd-signature tsd-kind-icon">disjoint<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span>, offset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></li>
@@ -5672,7 +5775,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L374">packages/core/src/contrib/Constraints.ts:374</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L474">packages/core/src/contrib/Constraints.ts:474</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5689,7 +5792,97 @@
 													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
 												</li>
 												<li>
-													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> offset: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 5</span></h5>
+													<h5><span class="tsd-flag ts-flagDefault value">Default value</span> offset: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>disjoint<wbr>Intervals<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon">disjoint<wbr>Intervals<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L379">packages/core/src/contrib/Constraints.ts:379</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Make two intervals disjoint. They must be 1D intervals (line-like shapes) sharing a y-coordinate.</p>
+												</div>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>disjoint<wbr>Rect<wbr>LineAAHoriz<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon">disjoint<wbr>Rect<wbr>LineAAHoriz<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L445">packages/core/src/contrib/Constraints.ts:445</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Make an AABB rectangle disjoint from a horizontal line. (Special case of rect-rect disjoint) TODO: Test this</p>
+												</div>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></h4>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>disjoint<wbr>Rect<wbr>LineAAVert<span class="tsd-signature-symbol">: </span>function</h5>
+									<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon">disjoint<wbr>Rect<wbr>LineAAVert<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<aside class="tsd-sources">
+												<ul>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L415">packages/core/src/contrib/Constraints.ts:415</a></li>
+												</ul>
+											</aside>
+											<div class="tsd-comment tsd-typography">
+												<div class="lead">
+													<p>Make an AABB rectangle disjoint from a vertical line. (Special case of rect-rect disjoint)</p>
+												</div>
+											</div>
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
+												</li>
+												<li>
+													<h5>__namedParameters: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span></h5>
 												</li>
 											</ul>
 											<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></h4>
@@ -5705,7 +5898,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L362">packages/core/src/contrib/Constraints.ts:362</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L365">packages/core/src/contrib/Constraints.ts:365</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5738,7 +5931,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L551">packages/core/src/contrib/Constraints.ts:551</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L668">packages/core/src/contrib/Constraints.ts:668</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5768,7 +5961,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L544">packages/core/src/contrib/Constraints.ts:544</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L661">packages/core/src/contrib/Constraints.ts:661</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5801,7 +5994,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L558">packages/core/src/contrib/Constraints.ts:558</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L675">packages/core/src/contrib/Constraints.ts:675</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5834,7 +6027,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L565">packages/core/src/contrib/Constraints.ts:565</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L682">packages/core/src/contrib/Constraints.ts:682</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5864,7 +6057,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L243">packages/core/src/contrib/Constraints.ts:243</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L245">packages/core/src/contrib/Constraints.ts:245</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5891,7 +6084,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L259">packages/core/src/contrib/Constraints.ts:259</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L261">packages/core/src/contrib/Constraints.ts:261</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5918,7 +6111,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L404">packages/core/src/contrib/Constraints.ts:404</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L521">packages/core/src/contrib/Constraints.ts:521</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5951,7 +6144,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L443">packages/core/src/contrib/Constraints.ts:443</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L560">packages/core/src/contrib/Constraints.ts:560</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -5984,7 +6177,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L458">packages/core/src/contrib/Constraints.ts:458</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L575">packages/core/src/contrib/Constraints.ts:575</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6017,7 +6210,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L534">packages/core/src/contrib/Constraints.ts:534</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L651">packages/core/src/contrib/Constraints.ts:651</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6050,7 +6243,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L230">packages/core/src/contrib/Constraints.ts:230</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L232">packages/core/src/contrib/Constraints.ts:232</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6077,7 +6270,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L434">packages/core/src/contrib/Constraints.ts:434</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L551">packages/core/src/contrib/Constraints.ts:551</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6107,7 +6300,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L477">packages/core/src/contrib/Constraints.ts:477</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L594">packages/core/src/contrib/Constraints.ts:594</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6137,7 +6330,7 @@
 						<div class="tsd-signature tsd-kind-icon">Obj<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>above<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>below<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>centerArrow<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>centerLabel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>centerLabelAbove<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>equal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>near<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>nearPt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>nearScalar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>repel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>repelScalar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>sameCenter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = objDict</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L128">packages/core/src/compiler/Style.ts:128</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L130">packages/core/src/compiler/Style.ts:130</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -6152,7 +6345,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L56">packages/core/src/contrib/Constraints.ts:56</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L58">packages/core/src/contrib/Constraints.ts:58</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6185,7 +6378,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L132">packages/core/src/contrib/Constraints.ts:132</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L134">packages/core/src/contrib/Constraints.ts:134</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6218,7 +6411,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L112">packages/core/src/contrib/Constraints.ts:112</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L114">packages/core/src/contrib/Constraints.ts:114</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6251,7 +6444,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L176">packages/core/src/contrib/Constraints.ts:176</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L178">packages/core/src/contrib/Constraints.ts:178</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6284,7 +6477,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L145">packages/core/src/contrib/Constraints.ts:145</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L147">packages/core/src/contrib/Constraints.ts:147</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-parameters-title">Parameters</h4>
@@ -6312,7 +6505,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L51">packages/core/src/contrib/Constraints.ts:51</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L53">packages/core/src/contrib/Constraints.ts:53</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6342,7 +6535,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L204">packages/core/src/contrib/Constraints.ts:204</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L206">packages/core/src/contrib/Constraints.ts:206</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6375,7 +6568,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L213">packages/core/src/contrib/Constraints.ts:213</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L215">packages/core/src/contrib/Constraints.ts:215</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6408,7 +6601,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L221">packages/core/src/contrib/Constraints.ts:221</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L223">packages/core/src/contrib/Constraints.ts:223</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6438,7 +6631,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L75">packages/core/src/contrib/Constraints.ts:75</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L77">packages/core/src/contrib/Constraints.ts:77</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6471,7 +6664,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L104">packages/core/src/contrib/Constraints.ts:104</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L106">packages/core/src/contrib/Constraints.ts:106</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6501,7 +6694,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/contrib/Constraints.ts#L69">packages/core/src/contrib/Constraints.ts:69</a></li>
+													<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/contrib/Constraints.ts#L71">packages/core/src/contrib/Constraints.ts:71</a></li>
 												</ul>
 											</aside>
 											<div class="tsd-comment tsd-typography">
@@ -6532,7 +6725,7 @@
 					<div class="tsd-signature tsd-kind-icon">FN_<wbr>ERR_<wbr>TYPE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L132">packages/core/src/compiler/Style.ts:132</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L134">packages/core/src/compiler/Style.ts:134</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -6541,7 +6734,7 @@
 						<div class="tsd-signature tsd-kind-icon">Comp<wbr>App<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"InvalidFunctionNameError"</span><span class="tsd-signature-symbol"> = &quot;InvalidFunctionNameError&quot; as const</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L133">packages/core/src/compiler/Style.ts:133</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L135">packages/core/src/compiler/Style.ts:135</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -6551,7 +6744,7 @@
 						<div class="tsd-signature tsd-kind-icon">Constr<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"InvalidConstraintNameError"</span><span class="tsd-signature-symbol"> = &quot;InvalidConstraintNameError&quot; as const</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L135">packages/core/src/compiler/Style.ts:135</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L137">packages/core/src/compiler/Style.ts:137</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -6561,7 +6754,7 @@
 						<div class="tsd-signature tsd-kind-icon">Obj<wbr>Fn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"InvalidObjectiveNameError"</span><span class="tsd-signature-symbol"> = &quot;InvalidObjectiveNameError&quot; as const</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/50bd5598/packages/core/src/compiler/Style.ts#L134">packages/core/src/compiler/Style.ts:134</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/f8489709/packages/core/src/compiler/Style.ts#L136">packages/core/src/compiler/Style.ts:136</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -6592,6 +6785,9 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_compiler_style_.html#unknowntagerror" class="tsd-kind-icon">Unknown<wbr>Tag<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_compiler_style_.html#varying_init_fn_name" class="tsd-kind-icon">VARYING_<wbr>INIT_<wbr>FN_<wbr>NAME</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_compiler_style_.html#clone" class="tsd-kind-icon">clone</a>
@@ -6859,6 +7055,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_compiler_style_.html#isvarying" class="tsd-kind-icon">is<wbr>Varying</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_compiler_style_.html#isvaryinginitpath" class="tsd-kind-icon">is<wbr>Varying<wbr>Init<wbr>Path</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
 						<a href="_compiler_style_.html#justs" class="tsd-kind-icon">justs</a>
