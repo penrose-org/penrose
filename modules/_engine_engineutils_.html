@@ -93,6 +93,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_engine_engineutils_.html#insertexpr" class="tsd-kind-icon">insert<wbr>Expr</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_engine_engineutils_.html#insertexprs" class="tsd-kind-icon">insert<wbr>Exprs</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_engine_engineutils_.html#insertgpi" class="tsd-kind-icon">insertGPI</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_engine_engineutils_.html#isconcrete" class="tsd-kind-icon">is<wbr>Concrete</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_engine_engineutils_.html#ispath" class="tsd-kind-icon">is<wbr>Path</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_engine_engineutils_.html#istagexpr" class="tsd-kind-icon">is<wbr>Tag<wbr>Expr</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_engine_engineutils_.html#maketranslationdifferentiable" class="tsd-kind-icon">make<wbr>Translation<wbr>Differentiable</a></li>
@@ -148,7 +149,7 @@
 					<div class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">:</span> &lt;T&gt;<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> = rfdc({ proto: false, circles: false })</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L42">packages/core/src/engine/EngineUtils.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L49">packages/core/src/engine/EngineUtils.ts:49</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -185,7 +186,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Lbfgs<wbr>Mem<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">17</span><span class="tsd-signature-symbol"> = 17</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1027">packages/core/src/engine/EngineUtils.ts:1027</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1032">packages/core/src/engine/EngineUtils.ts:1032</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -195,7 +196,7 @@
 					<div class="tsd-signature tsd-kind-icon">init<wbr>Constraint<wbr>Weight<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0.01</span><span class="tsd-signature-symbol"> = 0.01</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1025">packages/core/src/engine/EngineUtils.ts:1025</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1030">packages/core/src/engine/EngineUtils.ts:1030</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -212,7 +213,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1013">packages/core/src/engine/EngineUtils.ts:1013</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1018">packages/core/src/engine/EngineUtils.ts:1018</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -238,7 +239,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L464">packages/core/src/engine/EngineUtils.ts:464</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L471">packages/core/src/engine/EngineUtils.ts:471</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_types_style_.html#expr" class="tsd-signature-type">Expr</a></h4>
@@ -249,13 +250,13 @@
 					<a name="dummyastnode" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> dummyASTNode</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">dummyASTNode<span class="tsd-signature-symbol">(</span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ast_.astnode.html" class="tsd-signature-type">ASTNode</a></li>
+						<li class="tsd-signature tsd-kind-icon">dummyASTNode<span class="tsd-signature-symbol">(</span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, nodeType<span class="tsd-signature-symbol">: </span><a href="_types_ast_.html#nodetype" class="tsd-signature-type">NodeType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ast_.syntheticnode.html" class="tsd-signature-type">SyntheticNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L382">packages/core/src/engine/EngineUtils.ts:382</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L389">packages/core/src/engine/EngineUtils.ts:389</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -263,8 +264,11 @@
 								<li>
 									<h5>o: <span class="tsd-signature-type">any</span></h5>
 								</li>
+								<li>
+									<h5>nodeType: <a href="_types_ast_.html#nodetype" class="tsd-signature-type">NodeType</a></h5>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ast_.astnode.html" class="tsd-signature-type">ASTNode</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ast_.syntheticnode.html" class="tsd-signature-type">SyntheticNode</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -272,19 +276,22 @@
 					<a name="dummyidentifier" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> dummy<wbr>Identifier</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">dummy<wbr>Identifier<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ast_.identifier.html" class="tsd-signature-type">Identifier</a></li>
+						<li class="tsd-signature tsd-kind-icon">dummy<wbr>Identifier<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, nodeType<span class="tsd-signature-symbol">: </span><a href="_types_ast_.html#nodetype" class="tsd-signature-type">NodeType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ast_.identifier.html" class="tsd-signature-type">Identifier</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L393">packages/core/src/engine/EngineUtils.ts:393</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L402">packages/core/src/engine/EngineUtils.ts:402</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>nodeType: <a href="_types_ast_.html#nodetype" class="tsd-signature-type">NodeType</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ast_.identifier.html" class="tsd-signature-type">Identifier</a></h4>
@@ -301,7 +308,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L378">packages/core/src/engine/EngineUtils.ts:378</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L385">packages/core/src/engine/EngineUtils.ts:385</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ast_.sourceloc.html" class="tsd-signature-type">SourceLoc</a></h4>
@@ -318,7 +325,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L994">packages/core/src/engine/EngineUtils.ts:994</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1001">packages/core/src/engine/EngineUtils.ts:1001</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -341,7 +348,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L882">packages/core/src/engine/EngineUtils.ts:882</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L889">packages/core/src/engine/EngineUtils.ts:889</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -384,7 +391,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L861">packages/core/src/engine/EngineUtils.ts:861</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L868">packages/core/src/engine/EngineUtils.ts:868</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -410,7 +417,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L406">packages/core/src/engine/EngineUtils.ts:406</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L415">packages/core/src/engine/EngineUtils.ts:415</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -433,7 +440,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L485">packages/core/src/engine/EngineUtils.ts:485</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L492">packages/core/src/engine/EngineUtils.ts:492</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -468,7 +475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L836">packages/core/src/engine/EngineUtils.ts:836</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L843">packages/core/src/engine/EngineUtils.ts:843</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -503,7 +510,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L443">packages/core/src/engine/EngineUtils.ts:443</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L450">packages/core/src/engine/EngineUtils.ts:450</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -533,6 +540,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="isconcrete" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Concrete</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Concrete<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="_types_ast_.html#astnode" class="tsd-signature-type">ASTNode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">ConcreteNode</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L396">packages/core/src/engine/EngineUtils.ts:396</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <a href="_types_ast_.html#astnode" class="tsd-signature-type">ASTNode</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">node</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">ConcreteNode</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="ispath" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Path</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -542,7 +572,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L988">packages/core/src/engine/EngineUtils.ts:988</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L995">packages/core/src/engine/EngineUtils.ts:995</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -565,7 +595,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L856">packages/core/src/engine/EngineUtils.ts:856</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L863">packages/core/src/engine/EngineUtils.ts:863</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -588,7 +618,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L368">packages/core/src/engine/EngineUtils.ts:368</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L375">packages/core/src/engine/EngineUtils.ts:375</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -611,7 +641,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L372">packages/core/src/engine/EngineUtils.ts:372</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L379">packages/core/src/engine/EngineUtils.ts:379</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -634,7 +664,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L234">packages/core/src/engine/EngineUtils.ts:234</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L241">packages/core/src/engine/EngineUtils.ts:241</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -687,7 +717,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L216">packages/core/src/engine/EngineUtils.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L223">packages/core/src/engine/EngineUtils.ts:223</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -740,7 +770,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L181">packages/core/src/engine/EngineUtils.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L188">packages/core/src/engine/EngineUtils.ts:188</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -793,7 +823,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L94">packages/core/src/engine/EngineUtils.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L101">packages/core/src/engine/EngineUtils.ts:101</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -846,7 +876,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L333">packages/core/src/engine/EngineUtils.ts:333</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L340">packages/core/src/engine/EngineUtils.ts:340</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -899,7 +929,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L150">packages/core/src/engine/EngineUtils.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L157">packages/core/src/engine/EngineUtils.ts:157</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -952,7 +982,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L136">packages/core/src/engine/EngineUtils.ts:136</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L143">packages/core/src/engine/EngineUtils.ts:143</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1005,7 +1035,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L115">packages/core/src/engine/EngineUtils.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L122">packages/core/src/engine/EngineUtils.ts:122</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1058,7 +1088,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L143">packages/core/src/engine/EngineUtils.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L150">packages/core/src/engine/EngineUtils.ts:150</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1111,7 +1141,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L241">packages/core/src/engine/EngineUtils.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L248">packages/core/src/engine/EngineUtils.ts:248</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1164,7 +1194,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L209">packages/core/src/engine/EngineUtils.ts:209</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L216">packages/core/src/engine/EngineUtils.ts:216</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1217,7 +1247,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L166">packages/core/src/engine/EngineUtils.ts:166</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L173">packages/core/src/engine/EngineUtils.ts:173</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1270,7 +1300,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L101">packages/core/src/engine/EngineUtils.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L108">packages/core/src/engine/EngineUtils.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1323,7 +1353,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L108">packages/core/src/engine/EngineUtils.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L115">packages/core/src/engine/EngineUtils.ts:115</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1376,7 +1406,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L202">packages/core/src/engine/EngineUtils.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L209">packages/core/src/engine/EngineUtils.ts:209</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1429,7 +1459,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L313">packages/core/src/engine/EngineUtils.ts:313</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L320">packages/core/src/engine/EngineUtils.ts:320</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1482,7 +1512,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L342">packages/core/src/engine/EngineUtils.ts:342</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L349">packages/core/src/engine/EngineUtils.ts:349</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1535,7 +1565,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L129">packages/core/src/engine/EngineUtils.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L136">packages/core/src/engine/EngineUtils.ts:136</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1588,7 +1618,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L70">packages/core/src/engine/EngineUtils.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L77">packages/core/src/engine/EngineUtils.ts:77</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1641,7 +1671,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L88">packages/core/src/engine/EngineUtils.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L95">packages/core/src/engine/EngineUtils.ts:95</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1694,7 +1724,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L80">packages/core/src/engine/EngineUtils.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L87">packages/core/src/engine/EngineUtils.ts:87</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1747,7 +1777,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L84">packages/core/src/engine/EngineUtils.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L91">packages/core/src/engine/EngineUtils.ts:91</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1800,7 +1830,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L252">packages/core/src/engine/EngineUtils.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L259">packages/core/src/engine/EngineUtils.ts:259</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1853,7 +1883,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L122">packages/core/src/engine/EngineUtils.ts:122</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L129">packages/core/src/engine/EngineUtils.ts:129</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1906,7 +1936,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L421">packages/core/src/engine/EngineUtils.ts:421</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L428">packages/core/src/engine/EngineUtils.ts:428</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1934,7 +1964,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1001">packages/core/src/engine/EngineUtils.ts:1001</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1008">packages/core/src/engine/EngineUtils.ts:1008</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1957,7 +1987,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L55">packages/core/src/engine/EngineUtils.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L62">packages/core/src/engine/EngineUtils.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1986,7 +2016,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L307">packages/core/src/engine/EngineUtils.ts:307</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L314">packages/core/src/engine/EngineUtils.ts:314</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2009,7 +2039,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L298">packages/core/src/engine/EngineUtils.ts:298</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L305">packages/core/src/engine/EngineUtils.ts:305</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2032,7 +2062,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L301">packages/core/src/engine/EngineUtils.ts:301</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L308">packages/core/src/engine/EngineUtils.ts:308</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2055,7 +2085,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L304">packages/core/src/engine/EngineUtils.ts:304</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L311">packages/core/src/engine/EngineUtils.ts:311</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2078,7 +2108,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L47">packages/core/src/engine/EngineUtils.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L54">packages/core/src/engine/EngineUtils.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2100,7 +2130,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Lbfgs<wbr>Params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1029">packages/core/src/engine/EngineUtils.ts:1029</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1034">packages/core/src/engine/EngineUtils.ts:1034</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -2109,7 +2139,7 @@
 						<div class="tsd-signature tsd-kind-icon">mem<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = defaultLbfgsMemSize</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1035">packages/core/src/engine/EngineUtils.ts:1035</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1040">packages/core/src/engine/EngineUtils.ts:1040</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2119,7 +2149,7 @@
 						<div class="tsd-signature tsd-kind-icon">num<wbr>Unconstr<wbr>Steps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1034">packages/core/src/engine/EngineUtils.ts:1034</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1039">packages/core/src/engine/EngineUtils.ts:1039</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2129,7 +2159,7 @@
 						<div class="tsd-signature tsd-kind-icon">s_<wbr>list<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1032">packages/core/src/engine/EngineUtils.ts:1032</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1037">packages/core/src/engine/EngineUtils.ts:1037</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2139,7 +2169,7 @@
 						<div class="tsd-signature tsd-kind-icon">y_<wbr>list<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1033">packages/core/src/engine/EngineUtils.ts:1033</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1038">packages/core/src/engine/EngineUtils.ts:1038</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2149,7 +2179,7 @@
 						<div class="tsd-signature tsd-kind-icon">last<wbr>Grad<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1031">packages/core/src/engine/EngineUtils.ts:1031</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1036">packages/core/src/engine/EngineUtils.ts:1036</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -2158,7 +2188,7 @@
 							<div class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Nothing"</span><span class="tsd-signature-symbol"> = &quot;Nothing&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1031">packages/core/src/engine/EngineUtils.ts:1031</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1036">packages/core/src/engine/EngineUtils.ts:1036</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -2169,7 +2199,7 @@
 						<div class="tsd-signature tsd-kind-icon">last<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1030">packages/core/src/engine/EngineUtils.ts:1030</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1035">packages/core/src/engine/EngineUtils.ts:1035</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -2178,7 +2208,7 @@
 							<div class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Nothing"</span><span class="tsd-signature-symbol"> = &quot;Nothing&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/b62f9e1f/packages/core/src/engine/EngineUtils.ts#L1030">packages/core/src/engine/EngineUtils.ts:1030</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/engine/EngineUtils.ts#L1035">packages/core/src/engine/EngineUtils.ts:1035</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -2243,6 +2273,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_engine_engineutils_.html#insertgpi" class="tsd-kind-icon">insertGPI</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_engine_engineutils_.html#isconcrete" class="tsd-kind-icon">is<wbr>Concrete</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_engine_engineutils_.html#ispath" class="tsd-kind-icon">is<wbr>Path</a>

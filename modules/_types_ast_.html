@@ -73,13 +73,64 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_ast_.astnode.html" class="tsd-kind-icon">ASTNode</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_ast_.concretenode.html" class="tsd-kind-icon">Concrete<wbr>Node</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_ast_.istringlit.html" class="tsd-kind-icon">IString<wbr>Lit</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_ast_.identifier.html" class="tsd-kind-icon">Identifier</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_ast_.sourceloc.html" class="tsd-kind-icon">Source<wbr>Loc</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_types_ast_.syntheticnode.html" class="tsd-kind-icon">Synthetic<wbr>Node</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_ast_.html#astnode" class="tsd-kind-icon">ASTNode</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_ast_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported"><a href="_types_ast_.html#optional" class="tsd-kind-icon">Optional</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="astnode" class="tsd-anchor"></a>
+					<h3>ASTNode</h3>
+					<div class="tsd-signature tsd-kind-icon">ASTNode<span class="tsd-signature-symbol">:</span> <a href="_types_ast_.html#optional" class="tsd-signature-type">Optional</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_types_ast_.concretenode.html" class="tsd-signature-type">ConcreteNode</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"start"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"end"</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/types/ast.ts#L9">packages/core/src/types/ast.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="nodetype" class="tsd-anchor"></a>
+					<h3>Node<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">Node<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Substance"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Style"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Domain"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"SyntheticSubstance"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"SyntheticStyle"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/types/ast.ts#L11">packages/core/src/types/ast.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
+					<a name="optional" class="tsd-anchor"></a>
+					<h3>Optional</h3>
+					<div class="tsd-signature tsd-kind-icon">Optional&lt;T, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Omit</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/09062eee/packages/core/src/types/ast.ts#L7">packages/core/src/types/ast.ts:7</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>T</h4>
+						</li>
+						<li>
+							<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -97,7 +148,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_types_ast_.astnode.html" class="tsd-kind-icon">ASTNode</a>
+						<a href="../interfaces/_types_ast_.concretenode.html" class="tsd-kind-icon">Concrete<wbr>Node</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_types_ast_.istringlit.html" class="tsd-kind-icon">IString<wbr>Lit</a>
@@ -107,6 +158,18 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_types_ast_.sourceloc.html" class="tsd-kind-icon">Source<wbr>Loc</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_types_ast_.syntheticnode.html" class="tsd-kind-icon">Synthetic<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_ast_.html#astnode" class="tsd-kind-icon">ASTNode</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_ast_.html#nodetype" class="tsd-kind-icon">Node<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_types_ast_.html#optional" class="tsd-kind-icon">Optional</a>
 					</li>
 				</ul>
 			</nav>
