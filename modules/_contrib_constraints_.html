@@ -75,13 +75,16 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contrib_constraints_.html#aredisjointboxes" class="tsd-kind-icon">are<wbr>Disjoint<wbr>Boxes</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contrib_constraints_.html#bbox" class="tsd-kind-icon">bbox</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contrib_constraints_.html#bboxsegs" class="tsd-kind-icon">bbox<wbr>Segs</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contrib_constraints_.html#centerarrow2" class="tsd-kind-icon">center<wbr>Arrow2</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contrib_constraints_.html#clamp" class="tsd-kind-icon">clamp</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contrib_constraints_.html#closestpt_ptseg" class="tsd-kind-icon">closest<wbr>Pt_<wbr><wbr>PtSeg</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contrib_constraints_.html#dsqbp" class="tsd-kind-icon">dsqBP</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contrib_constraints_.html#equalhard" class="tsd-kind-icon">equal<wbr>Hard</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contrib_constraints_.html#inrange" class="tsd-kind-icon">in<wbr>Range</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contrib_constraints_.html#intersectionsegseg" class="tsd-kind-icon">intersection<wbr>Seg<wbr>Seg</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contrib_constraints_.html#intersects" class="tsd-kind-icon">intersects</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contrib_constraints_.html#intersectssegseg" class="tsd-kind-icon">intersects<wbr>Seg<wbr>Seg</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contrib_constraints_.html#islinelike" class="tsd-kind-icon">is<wbr>Linelike</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_contrib_constraints_.html#isrectlike" class="tsd-kind-icon">is<wbr>Rectlike</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_contrib_constraints_.html#lerp" class="tsd-kind-icon">lerp</a></li>
@@ -117,7 +120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L976">packages/core/src/contrib/Constraints.ts:976</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L1045">packages/core/src/contrib/Constraints.ts:1045</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -148,12 +151,46 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L940">packages/core/src/contrib/Constraints.ts:940</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L976">packages/core/src/contrib/Constraints.ts:976</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Return the bounding box of an axis-aligned box-like shape given by <code>center</code>, width <code>w</code>, height <code>h</code> as an object with <code>minX, maxX, minY, maxY</code>.</p>
+									<p>Return the bounding box (as 4 points) of an axis-aligned box-like shape given by <code>center</code>, width <code>w</code>, height <code>h</code> as an object with <code>minX, maxX, minY, maxY</code>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>center: <a href="_types_ad_.html#vecad" class="tsd-signature-type">VecAD</a></h5>
+								</li>
+								<li>
+									<h5>w: <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a></h5>
+								</li>
+								<li>
+									<h5>h: <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="bboxsegs" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> bbox<wbr>Segs</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">bbox<wbr>Segs<span class="tsd-signature-symbol">(</span>center<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#vecad" class="tsd-signature-type">VecAD</a>, w<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a>, h<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L1002">packages/core/src/contrib/Constraints.ts:1002</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return the bounding box (as 4 segments) of an axis-aligned box-like shape given by <code>center</code>, width <code>w</code>, height <code>h</code> as an object with <code>top, bot, left, right</code>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -182,7 +219,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L771">packages/core/src/contrib/Constraints.ts:771</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L771">packages/core/src/contrib/Constraints.ts:771</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -219,7 +256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L878">packages/core/src/contrib/Constraints.ts:878</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L878">packages/core/src/contrib/Constraints.ts:878</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -250,7 +287,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L858">packages/core/src/contrib/Constraints.ts:858</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L858">packages/core/src/contrib/Constraints.ts:858</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -281,7 +318,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L819">packages/core/src/contrib/Constraints.ts:819</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L819">packages/core/src/contrib/Constraints.ts:819</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -314,7 +351,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L730">packages/core/src/contrib/Constraints.ts:730</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L730">packages/core/src/contrib/Constraints.ts:730</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -345,7 +382,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L966">packages/core/src/contrib/Constraints.ts:966</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L1035">packages/core/src/contrib/Constraints.ts:1035</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -369,17 +406,48 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="intersects" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> intersects</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">intersects<span class="tsd-signature-symbol">(</span>l1_p1<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span>, l1_p2<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span>, l2_p1<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span>, l2_p2<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="intersectionsegseg" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> intersection<wbr>Seg<wbr>Seg</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">intersection<wbr>Seg<wbr>Seg<span class="tsd-signature-symbol">(</span>s1<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span>, s2<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L887">packages/core/src/contrib/Constraints.ts:887</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L935">packages/core/src/contrib/Constraints.ts:935</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>returns the intersection point between line segments, <code>s1</code> from <code>(a,b)</code> -&gt; <code>(c,d)</code> and <code>s2</code> from <code>(p,q)</code> -&gt; <code>(r,s)</code>. NOTE: Expects the line segments to intersect. You should use <code>intersect</code> to check if they do intersect.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>s1: <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>s2: <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="intersects" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> intersects</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">intersects<span class="tsd-signature-symbol">(</span>l1_p1<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span>, l1_p2<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span>, l2_p1<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span>, l2_p2<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L896">packages/core/src/contrib/Constraints.ts:896</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -402,7 +470,38 @@
 									<h5>l2_p2: <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_ad_.ivarad.html" class="tsd-signature-type">IVarAD</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="intersectssegseg" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> intersects<wbr>Seg<wbr>Seg</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">intersects<wbr>Seg<wbr>Seg<span class="tsd-signature-symbol">(</span>s1<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span>, s2<span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L887">packages/core/src/contrib/Constraints.ts:887</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>returns true iff the line from <code>(a,b)</code> -&gt; <code>(c,d)</code> intersects with <code>(p,q)</code> -&gt; <code>(r,s)</code></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>s1: <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>s2: <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_types_ad_.html#varad" class="tsd-signature-type">VarAD</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -416,7 +515,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L46">packages/core/src/contrib/Constraints.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L46">packages/core/src/contrib/Constraints.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -444,7 +543,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L37">packages/core/src/contrib/Constraints.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L37">packages/core/src/contrib/Constraints.ts:37</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -472,7 +571,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L828">packages/core/src/contrib/Constraints.ts:828</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L828">packages/core/src/contrib/Constraints.ts:828</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -506,7 +605,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L836">packages/core/src/contrib/Constraints.ts:836</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L836">packages/core/src/contrib/Constraints.ts:836</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -540,7 +639,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L756">packages/core/src/contrib/Constraints.ts:756</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L756">packages/core/src/contrib/Constraints.ts:756</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -580,7 +679,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L741">packages/core/src/contrib/Constraints.ts:741</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L741">packages/core/src/contrib/Constraints.ts:741</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -620,7 +719,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L924">packages/core/src/contrib/Constraints.ts:924</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L960">packages/core/src/contrib/Constraints.ts:960</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -651,7 +750,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L808">packages/core/src/contrib/Constraints.ts:808</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L808">packages/core/src/contrib/Constraints.ts:808</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -682,7 +781,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L800">packages/core/src/contrib/Constraints.ts:800</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L800">packages/core/src/contrib/Constraints.ts:800</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -716,7 +815,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L843">packages/core/src/contrib/Constraints.ts:843</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L843">packages/core/src/contrib/Constraints.ts:843</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -744,7 +843,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L721">packages/core/src/contrib/Constraints.ts:721</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L721">packages/core/src/contrib/Constraints.ts:721</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -774,7 +873,7 @@
 					<div class="tsd-signature tsd-kind-icon">constr<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L229">packages/core/src/contrib/Constraints.ts:229</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L229">packages/core/src/contrib/Constraints.ts:229</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -787,7 +886,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L608">packages/core/src/contrib/Constraints.ts:608</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L608">packages/core/src/contrib/Constraints.ts:608</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -821,7 +920,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L691">packages/core/src/contrib/Constraints.ts:691</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L691">packages/core/src/contrib/Constraints.ts:691</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -855,7 +954,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L293">packages/core/src/contrib/Constraints.ts:293</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L293">packages/core/src/contrib/Constraints.ts:293</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -889,7 +988,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L285">packages/core/src/contrib/Constraints.ts:285</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L285">packages/core/src/contrib/Constraints.ts:285</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -920,7 +1019,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L393">packages/core/src/contrib/Constraints.ts:393</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L393">packages/core/src/contrib/Constraints.ts:393</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -951,7 +1050,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L475">packages/core/src/contrib/Constraints.ts:475</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L475">packages/core/src/contrib/Constraints.ts:475</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -985,7 +1084,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L380">packages/core/src/contrib/Constraints.ts:380</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L380">packages/core/src/contrib/Constraints.ts:380</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1016,7 +1115,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L446">packages/core/src/contrib/Constraints.ts:446</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L446">packages/core/src/contrib/Constraints.ts:446</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1047,7 +1146,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L416">packages/core/src/contrib/Constraints.ts:416</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L416">packages/core/src/contrib/Constraints.ts:416</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1078,7 +1177,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L366">packages/core/src/contrib/Constraints.ts:366</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L366">packages/core/src/contrib/Constraints.ts:366</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1112,7 +1211,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L669">packages/core/src/contrib/Constraints.ts:669</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L669">packages/core/src/contrib/Constraints.ts:669</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1143,7 +1242,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L662">packages/core/src/contrib/Constraints.ts:662</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L662">packages/core/src/contrib/Constraints.ts:662</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1177,7 +1276,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L676">packages/core/src/contrib/Constraints.ts:676</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L676">packages/core/src/contrib/Constraints.ts:676</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1211,7 +1310,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L683">packages/core/src/contrib/Constraints.ts:683</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L683">packages/core/src/contrib/Constraints.ts:683</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1242,7 +1341,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L246">packages/core/src/contrib/Constraints.ts:246</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L246">packages/core/src/contrib/Constraints.ts:246</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1270,7 +1369,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L262">packages/core/src/contrib/Constraints.ts:262</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L262">packages/core/src/contrib/Constraints.ts:262</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1298,7 +1397,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L522">packages/core/src/contrib/Constraints.ts:522</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L522">packages/core/src/contrib/Constraints.ts:522</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1332,7 +1431,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L561">packages/core/src/contrib/Constraints.ts:561</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L561">packages/core/src/contrib/Constraints.ts:561</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1366,7 +1465,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L576">packages/core/src/contrib/Constraints.ts:576</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L576">packages/core/src/contrib/Constraints.ts:576</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1400,7 +1499,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L652">packages/core/src/contrib/Constraints.ts:652</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L652">packages/core/src/contrib/Constraints.ts:652</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1434,7 +1533,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L233">packages/core/src/contrib/Constraints.ts:233</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L233">packages/core/src/contrib/Constraints.ts:233</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1462,7 +1561,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L552">packages/core/src/contrib/Constraints.ts:552</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L552">packages/core/src/contrib/Constraints.ts:552</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1493,7 +1592,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L595">packages/core/src/contrib/Constraints.ts:595</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L595">packages/core/src/contrib/Constraints.ts:595</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1521,7 +1620,7 @@
 					<div class="tsd-signature tsd-kind-icon">obj<wbr>Dict<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L50">packages/core/src/contrib/Constraints.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L50">packages/core/src/contrib/Constraints.ts:50</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -1534,7 +1633,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L59">packages/core/src/contrib/Constraints.ts:59</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L59">packages/core/src/contrib/Constraints.ts:59</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1568,7 +1667,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L135">packages/core/src/contrib/Constraints.ts:135</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L135">packages/core/src/contrib/Constraints.ts:135</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1602,7 +1701,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L115">packages/core/src/contrib/Constraints.ts:115</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L115">packages/core/src/contrib/Constraints.ts:115</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1636,7 +1735,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L179">packages/core/src/contrib/Constraints.ts:179</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L179">packages/core/src/contrib/Constraints.ts:179</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1670,7 +1769,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L148">packages/core/src/contrib/Constraints.ts:148</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L148">packages/core/src/contrib/Constraints.ts:148</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1699,7 +1798,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L54">packages/core/src/contrib/Constraints.ts:54</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L54">packages/core/src/contrib/Constraints.ts:54</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1730,7 +1829,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L207">packages/core/src/contrib/Constraints.ts:207</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L207">packages/core/src/contrib/Constraints.ts:207</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1764,7 +1863,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L216">packages/core/src/contrib/Constraints.ts:216</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L216">packages/core/src/contrib/Constraints.ts:216</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1798,7 +1897,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L224">packages/core/src/contrib/Constraints.ts:224</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L224">packages/core/src/contrib/Constraints.ts:224</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1829,7 +1928,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L78">packages/core/src/contrib/Constraints.ts:78</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L78">packages/core/src/contrib/Constraints.ts:78</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1863,7 +1962,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L107">packages/core/src/contrib/Constraints.ts:107</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L107">packages/core/src/contrib/Constraints.ts:107</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1894,7 +1993,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/penrose/penrose/blob/1808ab0d/packages/core/src/contrib/Constraints.ts#L72">packages/core/src/contrib/Constraints.ts:72</a></li>
+										<li>Defined in <a href="https://github.com/penrose/penrose/blob/6e3d5a24/packages/core/src/contrib/Constraints.ts#L72">packages/core/src/contrib/Constraints.ts:72</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1937,6 +2036,9 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_contrib_constraints_.html#bbox" class="tsd-kind-icon">bbox</a>
 					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_contrib_constraints_.html#bboxsegs" class="tsd-kind-icon">bbox<wbr>Segs</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_contrib_constraints_.html#centerarrow2" class="tsd-kind-icon">center<wbr>Arrow2</a>
 					</li>
@@ -1955,8 +2057,14 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_contrib_constraints_.html#inrange" class="tsd-kind-icon">in<wbr>Range</a>
 					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_contrib_constraints_.html#intersectionsegseg" class="tsd-kind-icon">intersection<wbr>Seg<wbr>Seg</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 						<a href="_contrib_constraints_.html#intersects" class="tsd-kind-icon">intersects</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_contrib_constraints_.html#intersectssegseg" class="tsd-kind-icon">intersects<wbr>Seg<wbr>Seg</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_contrib_constraints_.html#islinelike" class="tsd-kind-icon">is<wbr>Linelike</a>
