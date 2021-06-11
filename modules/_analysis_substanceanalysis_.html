@@ -91,15 +91,18 @@
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#applyfunction" class="tsd-kind-icon">apply<wbr>Function</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#applypredicate" class="tsd-kind-icon">apply<wbr>Predicate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#applytypedecl" class="tsd-kind-icon">apply<wbr>Type<wbr>Decl</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#argmatches" class="tsd-kind-icon">arg<wbr>Matches</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#changetype" class="tsd-kind-icon">change<wbr>Type</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#domaintosubtype" class="tsd-kind-icon">domain<wbr>ToSub<wbr>Type</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#findmatches" class="tsd-kind-icon">find<wbr>Matches</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#finddecl" class="tsd-kind-icon">find<wbr>Decl</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#getsignature" class="tsd-kind-icon">get<wbr>Signature</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#matchingsignatures" class="tsd-kind-icon">matching<wbr>Signatures</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#matchdecls" class="tsd-kind-icon">match<wbr>Decls</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#matchsignatures" class="tsd-kind-icon">match<wbr>Signatures</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#nullarytypecons" class="tsd-kind-icon">nullary<wbr>Type<wbr>Cons</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#printstmts" class="tsd-kind-icon">print<wbr>Stmts</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#removestmt" class="tsd-kind-icon">remove<wbr>Stmt</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#replacestmt" class="tsd-kind-icon">replace<wbr>Stmt</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#replacestmtname" class="tsd-kind-icon">replace<wbr>Stmt<wbr>Name</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#signatureargsequal" class="tsd-kind-icon">signature<wbr>Args<wbr>Equal</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#signatureequals" class="tsd-kind-icon">signature<wbr>Equals</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_analysis_substanceanalysis_.html#swap" class="tsd-kind-icon">swap</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_analysis_substanceanalysis_.html#swapargs" class="tsd-kind-icon">swap<wbr>Args</a></li>
@@ -122,7 +125,7 @@
 					<div class="tsd-signature tsd-kind-icon">Arg<wbr>Stmt<wbr>Decl<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_types_domain_.predicatedecl.html" class="tsd-signature-type">PredicateDecl</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_domain_.functiondecl.html" class="tsd-signature-type">FunctionDecl</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_domain_.constructordecl.html" class="tsd-signature-type">ConstructorDecl</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L34">packages/core/src/analysis/SubstanceAnalysis.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L32">packages/core/src/analysis/SubstanceAnalysis.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -139,7 +142,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L43">packages/core/src/analysis/SubstanceAnalysis.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L41">packages/core/src/analysis/SubstanceAnalysis.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -181,7 +184,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L315">packages/core/src/analysis/SubstanceAnalysis.ts:315</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L356">packages/core/src/analysis/SubstanceAnalysis.ts:356</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -207,7 +210,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L267">packages/core/src/analysis/SubstanceAnalysis.ts:267</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L308">packages/core/src/analysis/SubstanceAnalysis.ts:308</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -233,7 +236,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L281">packages/core/src/analysis/SubstanceAnalysis.ts:281</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L322">packages/core/src/analysis/SubstanceAnalysis.ts:322</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -259,7 +262,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L295">packages/core/src/analysis/SubstanceAnalysis.ts:295</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L336">packages/core/src/analysis/SubstanceAnalysis.ts:336</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -285,7 +288,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L310">packages/core/src/analysis/SubstanceAnalysis.ts:310</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L351">packages/core/src/analysis/SubstanceAnalysis.ts:351</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -299,6 +302,91 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="argmatches" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> arg<wbr>Matches</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">arg<wbr>Matches<span class="tsd-signature-symbol">(</span>stmt<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.bind.html" class="tsd-signature-type">Bind</a>, env<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L94">packages/core/src/analysis/SubstanceAnalysis.ts:94</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Find all declarations that take the same number and type of args as
+									original statement</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>stmt: <a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.bind.html" class="tsd-signature-type">Bind</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>a Substance statement</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>env: <a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Env of the program</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>a new Substance statement</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="changetype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> change<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">change<wbr>Type<span class="tsd-signature-symbol">(</span>stmt<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.bind.html" class="tsd-signature-type">Bind</a>, pick<span class="tsd-signature-symbol">: </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.bind.html" class="tsd-signature-type">Bind</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L69">packages/core/src/analysis/SubstanceAnalysis.ts:69</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Replace a Substance statement with another statement that takes the same arguments.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>stmt: <a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.bind.html" class="tsd-signature-type">Bind</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>a Substance statement</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>pick: <a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>ArgStmtDecl chosen to replace stmt</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.bind.html" class="tsd-signature-type">Bind</a></h4>
+							<p>a new Substance statement</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="domaintosubtype" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> domain<wbr>ToSub<wbr>Type</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -308,7 +396,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L246">packages/core/src/analysis/SubstanceAnalysis.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L287">packages/core/src/analysis/SubstanceAnalysis.ts:287</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -322,22 +410,23 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="findmatches" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> find<wbr>Matches</h3>
+					<a name="finddecl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> find<wbr>Decl</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Matches<span class="tsd-signature-symbol">(</span>stmtName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, opts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Decl<span class="tsd-signature-symbol">(</span>stmtName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, env<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L142">packages/core/src/analysis/SubstanceAnalysis.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L194">packages/core/src/analysis/SubstanceAnalysis.ts:194</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Find all signatures that match a reference statement. NOTE: returns an empty list if
-									no matches are found; does not include the reference statement in list of matches.</p>
+									<p>Find a given statement&#39;s declaration from Domain.
+										NOTE: match will be undefined if the statement could not
+									be found in list of predicates, functions, or constructors</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -351,16 +440,16 @@
 									</div>
 								</li>
 								<li>
-									<h5>opts: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>env: <a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>all possible declaration options</p>
+											<p>Env for current program</p>
 										</div>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">[]</span></h4>
-							<p>Array of any statements that have the same signature as input statement</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span></h4>
+							<p>Array of length 2, with entries corresponding to: [matching decl, list where decl was found]</p>
 						</li>
 					</ul>
 				</section>
@@ -374,7 +463,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L201">packages/core/src/analysis/SubstanceAnalysis.ts:201</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L232">packages/core/src/analysis/SubstanceAnalysis.ts:232</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -399,16 +488,83 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="matchingsignatures" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> matching<wbr>Signatures</h3>
+					<a name="matchdecls" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> match<wbr>Decls</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">matching<wbr>Signatures<span class="tsd-signature-symbol">(</span>stmt<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a>, env<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">match<wbr>Decls<span class="tsd-signature-symbol">(</span>stmt<span class="tsd-signature-symbol">: </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a>, opts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">&gt;</span>, matchFunc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L167">packages/core/src/analysis/SubstanceAnalysis.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L171">packages/core/src/analysis/SubstanceAnalysis.ts:171</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Find all signatures that match a reference statement. NOTE: returns an empty list if
+									no matches are found; does not include the reference statement in list of matches.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>stmt: <a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a></h5>
+								</li>
+								<li>
+									<h5>opts: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>all possible declaration options</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>matchFunc: <span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>function that determines condition for a match</p>
+										</div>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a></h5>
+														</li>
+														<li>
+															<h5>b: <a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">[]</span></h4>
+							<p>Array of any statements that have the same signature as input statement</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="matchsignatures" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> match<wbr>Signatures</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">match<wbr>Signatures<span class="tsd-signature-symbol">(</span>stmt<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a>, env<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L215">packages/core/src/analysis/SubstanceAnalysis.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -435,7 +591,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_analysis_substanceanalysis_.html#argstmtdecl" class="tsd-signature-type">ArgStmtDecl</a><span class="tsd-signature-symbol">[]</span></h4>
 							<p>an Array of all other statements that match the stmt signature</p>
 						</li>
 					</ul>
@@ -450,7 +606,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L323">packages/core/src/analysis/SubstanceAnalysis.ts:323</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L364">packages/core/src/analysis/SubstanceAnalysis.ts:364</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -473,7 +629,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L235">packages/core/src/analysis/SubstanceAnalysis.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L276">packages/core/src/analysis/SubstanceAnalysis.ts:276</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -496,7 +652,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L91">packages/core/src/analysis/SubstanceAnalysis.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L119">packages/core/src/analysis/SubstanceAnalysis.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -539,7 +695,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L112">packages/core/src/analysis/SubstanceAnalysis.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L140">packages/core/src/analysis/SubstanceAnalysis.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -581,40 +737,44 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="replacestmtname" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> replace<wbr>Stmt<wbr>Name</h3>
+					<a name="signatureargsequal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> signature<wbr>Args<wbr>Equal</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">replace<wbr>Stmt<wbr>Name<span class="tsd-signature-symbol">(</span>stmt<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a>, env<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a></li>
+						<li class="tsd-signature tsd-kind-icon">signature<wbr>Args<wbr>Equal<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L71">packages/core/src/analysis/SubstanceAnalysis.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L269">packages/core/src/analysis/SubstanceAnalysis.ts:269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Replace a Substance statement with another substance statement with the same signature.
-									NOTE: When no suitable replacement exists, returns original program without errors.</p>
+									<p>Check if the types of 2 signatures&#39; arguments are equal</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>stmt: <a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a></h5>
+									<h5>a: <a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>a Substance statement</p>
+											<p>a Signature</p>
 										</div>
 									</div>
 								</li>
 								<li>
-									<h5>env: <a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a></h5>
+									<h5>b: <a href="../interfaces/_analysis_substanceanalysis_.signature.html" class="tsd-signature-type">Signature</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>a Signature</p>
+										</div>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_substance_.applyconstructor.html" class="tsd-signature-type">ApplyConstructor</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applypredicate.html" class="tsd-signature-type">ApplyPredicate</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.applyfunction.html" class="tsd-signature-type">ApplyFunction</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_types_substance_.func.html" class="tsd-signature-type">Func</a></h4>
-							<p>a new Substance statement</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if signatures take the same number and type of args</p>
 						</li>
 					</ul>
 				</section>
@@ -628,7 +788,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L227">packages/core/src/analysis/SubstanceAnalysis.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L258">packages/core/src/analysis/SubstanceAnalysis.ts:258</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -670,7 +830,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L123">packages/core/src/analysis/SubstanceAnalysis.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L151">packages/core/src/analysis/SubstanceAnalysis.ts:151</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -699,7 +859,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L55">packages/core/src/analysis/SubstanceAnalysis.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L53">packages/core/src/analysis/SubstanceAnalysis.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -735,7 +895,7 @@
 					<div class="tsd-signature tsd-kind-icon">auto<wbr>Label<wbr>Stmt<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L329">packages/core/src/analysis/SubstanceAnalysis.ts:329</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L370">packages/core/src/analysis/SubstanceAnalysis.ts:370</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -744,7 +904,7 @@
 						<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L337">packages/core/src/analysis/SubstanceAnalysis.ts:337</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L378">packages/core/src/analysis/SubstanceAnalysis.ts:378</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -754,7 +914,7 @@
 						<div class="tsd-signature tsd-kind-icon">node<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"SyntheticSubstance"</span><span class="tsd-signature-symbol"> = &quot;SyntheticSubstance&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L336">packages/core/src/analysis/SubstanceAnalysis.ts:336</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L377">packages/core/src/analysis/SubstanceAnalysis.ts:377</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -764,7 +924,7 @@
 						<div class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"AutoLabel"</span><span class="tsd-signature-symbol"> = &quot;AutoLabel&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L330">packages/core/src/analysis/SubstanceAnalysis.ts:330</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L371">packages/core/src/analysis/SubstanceAnalysis.ts:371</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -774,7 +934,7 @@
 						<div class="tsd-signature tsd-kind-icon">option<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L331">packages/core/src/analysis/SubstanceAnalysis.ts:331</a></li>
+								<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L372">packages/core/src/analysis/SubstanceAnalysis.ts:372</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -783,7 +943,7 @@
 							<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L334">packages/core/src/analysis/SubstanceAnalysis.ts:334</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L375">packages/core/src/analysis/SubstanceAnalysis.ts:375</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -793,7 +953,7 @@
 							<div class="tsd-signature tsd-kind-icon">node<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"SyntheticSubstance"</span><span class="tsd-signature-symbol"> = &quot;SyntheticSubstance&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L333">packages/core/src/analysis/SubstanceAnalysis.ts:333</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L374">packages/core/src/analysis/SubstanceAnalysis.ts:374</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -803,7 +963,7 @@
 							<div class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"DefaultLabels"</span><span class="tsd-signature-symbol"> = &quot;DefaultLabels&quot;</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/dbf71064/packages/core/src/analysis/SubstanceAnalysis.ts#L332">packages/core/src/analysis/SubstanceAnalysis.ts:332</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/81ea4cd0/packages/core/src/analysis/SubstanceAnalysis.ts#L373">packages/core/src/analysis/SubstanceAnalysis.ts:373</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -849,16 +1009,25 @@
 						<a href="_analysis_substanceanalysis_.html#applytypedecl" class="tsd-kind-icon">apply<wbr>Type<wbr>Decl</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_analysis_substanceanalysis_.html#argmatches" class="tsd-kind-icon">arg<wbr>Matches</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_analysis_substanceanalysis_.html#changetype" class="tsd-kind-icon">change<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_analysis_substanceanalysis_.html#domaintosubtype" class="tsd-kind-icon">domain<wbr>ToSub<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_analysis_substanceanalysis_.html#findmatches" class="tsd-kind-icon">find<wbr>Matches</a>
+						<a href="_analysis_substanceanalysis_.html#finddecl" class="tsd-kind-icon">find<wbr>Decl</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_analysis_substanceanalysis_.html#getsignature" class="tsd-kind-icon">get<wbr>Signature</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_analysis_substanceanalysis_.html#matchingsignatures" class="tsd-kind-icon">matching<wbr>Signatures</a>
+						<a href="_analysis_substanceanalysis_.html#matchdecls" class="tsd-kind-icon">match<wbr>Decls</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_analysis_substanceanalysis_.html#matchsignatures" class="tsd-kind-icon">match<wbr>Signatures</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_analysis_substanceanalysis_.html#nullarytypecons" class="tsd-kind-icon">nullary<wbr>Type<wbr>Cons</a>
@@ -873,7 +1042,7 @@
 						<a href="_analysis_substanceanalysis_.html#replacestmt" class="tsd-kind-icon">replace<wbr>Stmt</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_analysis_substanceanalysis_.html#replacestmtname" class="tsd-kind-icon">replace<wbr>Stmt<wbr>Name</a>
+						<a href="_analysis_substanceanalysis_.html#signatureargsequal" class="tsd-kind-icon">signature<wbr>Args<wbr>Equal</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_analysis_substanceanalysis_.html#signatureequals" class="tsd-kind-icon">signature<wbr>Equals</a>
