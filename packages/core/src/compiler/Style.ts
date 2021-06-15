@@ -2898,6 +2898,7 @@ const genState = (trans: Translation): Result<State, StyleErrors> => {
       lbfgsInfo: defaultLbfgsParams,
       UOround: -1,
       EPround: -1,
+        times: []
     } as unknown) as Params,
 
     labelCache: [],
