@@ -90,8 +90,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_synthesis_synthesizer_.synthesizer.html#choice" class="tsd-kind-icon">choice</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_synthesis_synthesizer_.synthesizer.html#cxt" class="tsd-kind-icon">cxt</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_synthesis_synthesizer_.synthesizer.html#env" class="tsd-kind-icon">env</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_synthesis_synthesizer_.synthesizer.html#random" class="tsd-kind-icon">random</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_synthesis_synthesizer_.synthesizer.html#setting" class="tsd-kind-icon">setting</a></li>
 							</ul>
 						</section>
@@ -127,13 +129,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Synthesizer<span class="tsd-signature-symbol">(</span>env<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a>, setting<span class="tsd-signature-symbol">: </span><a href="../interfaces/_synthesis_synthesizer_.synthesizersetting.html" class="tsd-signature-type">SynthesizerSetting</a>, subRes<span class="tsd-signature-symbol">?: </span><a href="../modules/_types_substance_.html#subres" class="tsd-signature-type">SubRes</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_synthesis_synthesizer_.synthesizer.html" class="tsd-signature-type">Synthesizer</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Synthesizer<span class="tsd-signature-symbol">(</span>env<span class="tsd-signature-symbol">: </span><a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a>, setting<span class="tsd-signature-symbol">: </span><a href="../interfaces/_synthesis_synthesizer_.synthesizersetting.html" class="tsd-signature-type">SynthesizerSetting</a>, subRes<span class="tsd-signature-symbol">?: </span><a href="../modules/_types_substance_.html#subres" class="tsd-signature-type">SubRes</a>, seed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_synthesis_synthesizer_.synthesizer.html" class="tsd-signature-type">Synthesizer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L351">packages/core/src/synthesis/Synthesizer.ts:351</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L354">packages/core/src/synthesis/Synthesizer.ts:354</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -147,6 +149,9 @@
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> subRes: <a href="../modules/_types_substance_.html#subres" class="tsd-signature-type">SubRes</a></h5>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> seed: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;synthesizerSeed&quot;</span></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_synthesis_synthesizer_.synthesizer.html" class="tsd-signature-type">Synthesizer</a></h4>
 						</li>
@@ -155,13 +160,50 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="choice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> choice</h3>
+					<div class="tsd-signature tsd-kind-icon">choice<span class="tsd-signature-symbol">:</span> &lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">T</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L353">packages/core/src/synthesis/Synthesizer.ts:353</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-has-type-parameter">
+									<li class="tsd-signature tsd-kind-icon">&lt;T&gt;<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-type-parameters-title">Type parameters</h4>
+										<ul class="tsd-type-parameters">
+											<li>
+												<h4>T</h4>
+											</li>
+										</ul>
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>array: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="cxt" class="tsd-anchor"></a>
 					<h3>cxt</h3>
 					<div class="tsd-signature tsd-kind-icon">cxt<span class="tsd-signature-symbol">:</span> <a href="_synthesis_synthesizer_.synthesiscontext.html" class="tsd-signature-type">SynthesisContext</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L350">packages/core/src/synthesis/Synthesizer.ts:350</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L351">packages/core/src/synthesis/Synthesizer.ts:351</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -171,7 +213,17 @@
 					<div class="tsd-signature tsd-kind-icon">env<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_types_domain_.env.html" class="tsd-signature-type">Env</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L349">packages/core/src/synthesis/Synthesizer.ts:349</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L350">packages/core/src/synthesis/Synthesizer.ts:350</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="random" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> random</h3>
+					<div class="tsd-signature tsd-kind-icon">random<span class="tsd-signature-symbol">:</span> <a href="../modules/_synthesis_synthesizer_.html#randomfunction" class="tsd-signature-type">RandomFunction</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L354">packages/core/src/synthesis/Synthesizer.ts:354</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -181,7 +233,7 @@
 					<div class="tsd-signature tsd-kind-icon">setting<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_synthesis_synthesizer_.synthesizersetting.html" class="tsd-signature-type">SynthesizerSetting</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L351">packages/core/src/synthesis/Synthesizer.ts:351</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L352">packages/core/src/synthesis/Synthesizer.ts:352</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -198,7 +250,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L508">packages/core/src/synthesis/Synthesizer.ts:508</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L519">packages/core/src/synthesis/Synthesizer.ts:519</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -215,7 +267,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L552">packages/core/src/synthesis/Synthesizer.ts:552</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L563">packages/core/src/synthesis/Synthesizer.ts:563</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -251,7 +303,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L525">packages/core/src/synthesis/Synthesizer.ts:525</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L536">packages/core/src/synthesis/Synthesizer.ts:536</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -268,7 +320,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L402">packages/core/src/synthesis/Synthesizer.ts:402</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L413">packages/core/src/synthesis/Synthesizer.ts:413</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -291,7 +343,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L594">packages/core/src/synthesis/Synthesizer.ts:594</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L605">packages/core/src/synthesis/Synthesizer.ts:605</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -317,7 +369,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L690">packages/core/src/synthesis/Synthesizer.ts:690</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L705">packages/core/src/synthesis/Synthesizer.ts:705</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -346,7 +398,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L682">packages/core/src/synthesis/Synthesizer.ts:682</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L697">packages/core/src/synthesis/Synthesizer.ts:697</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -369,7 +421,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L666">packages/core/src/synthesis/Synthesizer.ts:666</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L681">packages/core/src/synthesis/Synthesizer.ts:681</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -392,7 +444,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L652">packages/core/src/synthesis/Synthesizer.ts:652</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L665">packages/core/src/synthesis/Synthesizer.ts:665</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -415,7 +467,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L731">packages/core/src/synthesis/Synthesizer.ts:731</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L747">packages/core/src/synthesis/Synthesizer.ts:747</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -444,7 +496,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L726">packages/core/src/synthesis/Synthesizer.ts:726</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L742">packages/core/src/synthesis/Synthesizer.ts:742</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -467,7 +519,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L642">packages/core/src/synthesis/Synthesizer.ts:642</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L653">packages/core/src/synthesis/Synthesizer.ts:653</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -490,7 +542,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L370">packages/core/src/synthesis/Synthesizer.ts:370</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L381">packages/core/src/synthesis/Synthesizer.ts:381</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_synthesis_synthesizer_.synthesizedsubstance.html" class="tsd-signature-type">SynthesizedSubstance</a></h4>
@@ -507,7 +559,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L364">packages/core/src/synthesis/Synthesizer.ts:364</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L375">packages/core/src/synthesis/Synthesizer.ts:375</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -541,7 +593,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L619">packages/core/src/synthesis/Synthesizer.ts:619</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L630">packages/core/src/synthesis/Synthesizer.ts:630</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -564,7 +616,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L744">packages/core/src/synthesis/Synthesizer.ts:744</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L760">packages/core/src/synthesis/Synthesizer.ts:760</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_types_substance_.subprog.html" class="tsd-signature-type">SubProg</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -581,7 +633,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L393">packages/core/src/synthesis/Synthesizer.ts:393</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L404">packages/core/src/synthesis/Synthesizer.ts:404</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -598,7 +650,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/cce01603/packages/core/src/synthesis/Synthesizer.ts#L477">packages/core/src/synthesis/Synthesizer.ts:477</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/ac39c255/packages/core/src/synthesis/Synthesizer.ts#L488">packages/core/src/synthesis/Synthesizer.ts:488</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -640,11 +692,17 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="_synthesis_synthesizer_.synthesizer.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_synthesis_synthesizer_.synthesizer.html#choice" class="tsd-kind-icon">choice</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_synthesis_synthesizer_.synthesizer.html#cxt" class="tsd-kind-icon">cxt</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_synthesis_synthesizer_.synthesizer.html#env" class="tsd-kind-icon">env</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_synthesis_synthesizer_.synthesizer.html#random" class="tsd-kind-icon">random</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_synthesis_synthesizer_.synthesizer.html#setting" class="tsd-kind-icon">setting</a>
@@ -755,6 +813,9 @@
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../modules/_synthesis_synthesizer_.html#mutation" class="tsd-kind-icon">Mutation</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../modules/_synthesis_synthesizer_.html#randomfunction" class="tsd-kind-icon">Random<wbr>Function</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../modules/_synthesis_synthesizer_.html#decltypes-1" class="tsd-kind-icon">decl<wbr>Types</a>
 					</li>
@@ -790,6 +851,9 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 			</ul>
 		</div>
 	</div>
