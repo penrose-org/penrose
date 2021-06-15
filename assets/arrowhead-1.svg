@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 14">
+  <defs>
+    <style>.cls-1,.cls-2{fill:none;}.cls-2{stroke:#000;}</style>
+    <symbol id="Arrow_1" data-name="Arrow 1" viewBox="0 0 30 14">
+      <rect class="cls-1" width="30" height="14"/>
+      <polyline class="cls-2" points="1 7 22.47 7 23.01 7"/>
+      <path d="M29,7a30.22,30.22,0,0,0-8.55,4.76L22.22,7,20.5,2.25A30.2,30.2,0,0,0,29,7Z"/>
+    </symbol>
+  </defs>
+  <title>Asset 1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <use width="30" height="14" xlink:href="#Arrow_1"/>
+    </g>
+  </g>
+</svg>
