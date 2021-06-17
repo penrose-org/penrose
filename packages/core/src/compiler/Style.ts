@@ -27,8 +27,7 @@ import styleGrammar from "parser/StyleParser";
 import {
   canvasXRange,
   findDef,
-  PropType,
-  Sampler,
+  IProp,
   ShapeDef,
   shapedefs,
 } from "renderer/ShapeDef";
@@ -1762,7 +1761,7 @@ const checkGPIInfo = (selEnv: SelEnv, expr: GPIDecl): StyleResults => {
     (e) => e[0]
   );
 
-  for (let gp of givenProperties) {
+  for (const gp of givenProperties) {
     // Check multiple properties, as each one is not fatal if wrong
     if (!expectedProperties.includes(gp.value)) {
       errors.push({
@@ -2000,7 +1999,7 @@ const insertLabels = (trans: Translation, labels: LabelMap): Translation => {
     name: string,
     fieldDict: FieldDict
   ): [string, FieldDict] => {
-    let labelRes = labels.get(name);
+    const labelRes = labels.get(name);
 
     if (!labelRes) {
       // We skip here, to avoid putting spurious labels in for namespaces in the translation.
@@ -2256,11 +2255,11 @@ const findNestedVarying = (e: TagExpr<VarAD>, p: Path): Path[] => {
 // Given 'propType' and 'shapeType', return all props of that ValueType
 // COMBAK: Model "FloatT", "FloatV", etc as types for ValueType
 const propertiesOf = (propType: string, shapeType: ShapeTypeStr): PropID[] => {
-  const shapeInfo: [string, [PropType, Sampler]][] = Object.entries(
+  const shapeInfo: [string, IProp][] = Object.entries(
     findDef(shapeType).properties
   );
   return shapeInfo
-    .filter(([pName, [pType, s]]) => pType === propType)
+    .filter(([pName, props]) => propType === props.propType)
     .map((e) => e[0]);
 };
 
@@ -2269,11 +2268,11 @@ const propertiesNotOf = (
   propType: string,
   shapeType: ShapeTypeStr
 ): PropID[] => {
-  const shapeInfo: [string, [PropType, Sampler]][] = Object.entries(
+  const shapeInfo: [string, IProp][] = Object.entries(
     findDef(shapeType).properties
   );
   return shapeInfo
-    .filter(([pName, [pType, s]]) => pType !== propType)
+    .filter(([pName, props]) => propType !== props.propType)
     .map((e) => e[0]);
 };
 
@@ -2615,7 +2614,7 @@ const initFieldsAndAccessPaths = (
 const initProperty = (
   shapeType: ShapeTypeStr,
   properties: GPIProps<VarAD>,
-  [propName, [propType, propSampler]]: [string, [PropType, Sampler]]
+  [propName, { propType, sampler: propSampler }]: [string, IProp]
 ): GPIProps<VarAD> => {
   const propVal: Value<number> = propSampler();
   const propValAD: Value<VarAD> = valueNumberToAutodiffConst(propVal);
@@ -2690,14 +2689,12 @@ const initShape = (
   if (res.tag === "FGPI") {
     const [stype, props] = res.contents as [string, GPIProps<VarAD>];
     const def: ShapeDef = findDef(stype);
-    const gpiTemplate: [string, [PropType, Sampler]][] = Object.entries(
-      def.properties
-    );
+    const gpiTemplate: [string, IProp][] = Object.entries(def.properties);
 
     const instantiatedGPIProps: GPIProps<VarAD> = gpiTemplate.reduce(
       (
         newGPI: GPIProps<VarAD>,
-        propTemplate: [string, [PropType, Sampler]]
+        propTemplate: [string, IProp]
       ): GPIProps<VarAD> => initProperty(stype, newGPI, propTemplate),
       clone(props)
     ); // NOTE: `initProperty` mutates its input, so the `props` from the translation is cloned here, so the one in the translation itself isn't mutated

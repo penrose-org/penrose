@@ -74,7 +74,7 @@ const sampleProperty = (
 ): Value<number> => {
   const propModels: IPropModel = shapeDef.properties;
   const sampler = propModels[property];
-  if (sampler) return sampler[1]();
+  if (sampler) return sampler.sampler();
   else {
     throw new Error(
       `${property} is not a valid property to be sampled for shape ${shapeDef.shapeType}.`

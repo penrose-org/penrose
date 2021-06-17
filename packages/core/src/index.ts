@@ -15,6 +15,7 @@ import RenderStatic, {
   RenderShape,
 } from "renderer/Renderer";
 import { resampleBest } from "renderer/Resample";
+import { shapedefs } from "renderer/ShapeDef";
 import { Synthesizer, SynthesizerSetting } from "synthesis/Synthesizer";
 import { Env } from "types/domain";
 import { PenroseError } from "types/errors";
@@ -282,6 +283,7 @@ export {
   Synthesizer,
   RenderInteractive,
   ShapeTypes,
+  shapedefs,
   bBoxDims,
   prettySubstance,
   toHex,

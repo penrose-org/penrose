@@ -739,13 +739,11 @@ export const insertExpr = (
             return addWarn(trans, {
               tag: "InvalidGPIPropertyError",
               givenProperty: prop,
-              expectedProperties: Object.entries(shapeDef.properties).map(
-                (e) => e[0]
-              ),
+              expectedProperties: Object.keys(shapeDef.properties),
             });
           }
 
-          if (shapeDef.properties[prop.value][0] !== "VectorV") {
+          if (shapeDef.properties[prop.value].propType !== "VectorV") {
             throw Error(
               "internal error: Cannot insert expression into an uninitialized non-vector. this feature is currently not supported."
             );
