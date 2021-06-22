@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ITuple | @penrose/core</title>
+	<title>IArc | @penrose/core</title>
 	<meta name="description" content="Documentation for @penrose/core">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,29 +56,32 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_types_style_.html">&quot;types/style&quot;</a>
+					<a href="../modules/_types_value_.html">&quot;types/value&quot;</a>
 				</li>
 				<li>
-					<a href="_types_style_.ituple.html">ITuple</a>
+					<a href="_types_value_.iarc.html">IArc</a>
 				</li>
 			</ul>
-			<h1>Interface ITuple</h1>
+			<h1>Interface IArc&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="../modules/_types_ast_.html#optional" class="tsd-signature-type">Optional</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_ast_.concretenode.html" class="tsd-signature-type">ConcreteNode</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"start"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"end"</span><span class="tsd-signature-symbol">&gt;</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">ITuple</span>
-							</li>
-						</ul>
+						<span class="target">IArc</span>
 					</li>
 				</ul>
 			</section>
@@ -89,8 +92,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_style_.ituple.html#contents" class="tsd-kind-icon">contents</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_style_.ituple.html#tag" class="tsd-kind-icon">tag</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_value_.iarc.html#contents" class="tsd-kind-icon">contents</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_types_value_.iarc.html#tag" class="tsd-kind-icon">tag</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,20 +104,20 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="contents" class="tsd-anchor"></a>
 					<h3>contents</h3>
-					<div class="tsd-signature tsd-kind-icon">contents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="../modules/_types_style_.html#expr" class="tsd-signature-type">Expr</a><span class="tsd-signature-symbol">, </span><a href="../modules/_types_style_.html#expr" class="tsd-signature-type">Expr</a><span class="tsd-signature-symbol">]</span></div>
+					<div class="tsd-signature tsd-kind-icon">contents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/b3190ddb/packages/core/src/types/style.ts#L286">packages/core/src/types/style.ts:286</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/b3190ddb/packages/core/src/types/value.ts#L293">packages/core/src/types/value.ts:293</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="tag" class="tsd-anchor"></a>
 					<h3>tag</h3>
-					<div class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Tuple"</span></div>
+					<div class="tsd-signature tsd-kind-icon">tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"Arc"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/b3190ddb/packages/core/src/types/style.ts#L285">packages/core/src/types/style.ts:285</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/b3190ddb/packages/core/src/types/value.ts#L292">packages/core/src/types/value.ts:292</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -127,7 +130,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_types_style_.html">&quot;types/style&quot;</a>
+						<a href="../modules/_types_value_.html">&quot;types/value&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -135,14 +138,14 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_types_style_.ituple.html" class="tsd-kind-icon">ITuple</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_types_value_.iarc.html" class="tsd-kind-icon">IArc</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_style_.ituple.html#contents" class="tsd-kind-icon">contents</a>
+								<a href="_types_value_.iarc.html#contents" class="tsd-kind-icon">contents</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_types_style_.ituple.html#tag" class="tsd-kind-icon">tag</a>
+								<a href="_types_value_.iarc.html#tag" class="tsd-kind-icon">tag</a>
 							</li>
 						</ul>
 					</li>
