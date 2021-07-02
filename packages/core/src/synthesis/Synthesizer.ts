@@ -5,23 +5,32 @@ import {
   applyFunction,
   applyPredicate,
   applyTypeDecl,
-  argMatches,
+  ArgExpr,
   ArgStmtDecl,
   autoLabelStmt,
   domainToSubType,
   matchSignatures,
   nullaryTypeCons,
   replaceStmt,
-  swapArgs,
 } from "analysis/SubstanceAnalysis";
 import { prettyStmt, prettySubstance } from "compiler/Substance";
 import consola, { LogLevel } from "consola";
 import { dummyIdentifier } from "engine/EngineUtils";
 import { Map } from "immutable";
-import { cloneDeep, range, times, without } from "lodash";
+import { cloneDeep, compact, range, times, without } from "lodash";
 import { createChoice } from "pandemonium/choice";
 import { createRandom } from "pandemonium/random";
 import seedrandom from "seedrandom";
+import {
+  checkReplaceExprName,
+  checkSwapExprArgs,
+  checkSwapStmtArgs,
+  executeMutation,
+  IMutation,
+  Mutation,
+  showOp,
+  showOps,
+} from "synthesis/Mutation";
 import { Identifier } from "types/ast";
 import {
   Arg,
@@ -47,6 +56,7 @@ import {
   SubStmt,
   TypeConsApp,
 } from "types/substance";
+import { checkReplaceStmtName } from "./Mutation";
 
 type RandomFunction = (min: number, max: number) => number;
 
@@ -60,7 +70,7 @@ type All = "*";
 type ArgOption = "existing" | "generated" | "mixed";
 type ArgReuse = "distinct" | "repeated";
 type MatchSetting = string[] | All;
-interface DeclTypes {
+export interface DeclTypes {
   type: MatchSetting;
   predicate: MatchSetting;
   constructor: MatchSetting;
@@ -84,42 +94,6 @@ export interface SynthesizerSetting {
 
 //#region Synthesis context
 
-type Mutation = Add | Delete | Modify;
-type Modify = Swap | Replace | ReplaceName | TypeChange;
-
-interface Add {
-  tag: "Add";
-  stmt: SubStmt;
-}
-interface Delete {
-  tag: "Delete";
-  stmt: SubStmt;
-}
-
-interface Replace {
-  tag: "Replace";
-  old: SubStmt;
-  new: SubStmt;
-  mutationType: string;
-}
-
-interface Swap {
-  tag: "Swap";
-  stmt: SubStmt;
-  elem1: number;
-  elem2: number;
-}
-
-interface ReplaceName {
-  tag: "ReplaceName";
-  stmt: SubStmt;
-}
-
-interface TypeChange {
-  tag: "TypeChange";
-  stmt: SubStmt;
-}
-
 interface Candidates {
   types: Map<string, TypeDecl>;
   functions: Map<string, FunctionDecl>;
@@ -127,9 +101,9 @@ interface Candidates {
   constructors: Map<string, ConstructorDecl>;
 }
 
-interface SynthesizedSubstance {
+export interface SynthesizedSubstance {
   prog: SubProg;
-  ops: string;
+  ops: Mutation[];
 }
 
 class SynthesisContext {
@@ -159,6 +133,8 @@ class SynthesisContext {
     this.prog = {
       tag: "SubProg",
       statements: [],
+      nodeType: "SyntheticSubstance",
+      children: [], // TODO: add statements as children
     };
     this.ops = [];
     this.argCxt = [];
@@ -174,6 +150,7 @@ class SynthesisContext {
         const type = env.vars.get(id.value);
         this.addID(type!.name.value, id); // TODO: enforce the existence of var types
       });
+      log.debug(`Loaded template:\n${prettySubstance(this.prog)}`);
     }
   };
 
@@ -218,18 +195,23 @@ class SynthesisContext {
     this.numStmts++;
   };
 
+  updateProg = (prog: SubProg) => {
+    this.prog = prog;
+  };
+
   replaceStmt = (
     originalStmt: SubStmt,
     newStmt: SubStmt,
     mutationType: string
   ): void => {
     this.prog = replaceStmt(this.prog, originalStmt, newStmt);
-    this.ops.push({
-      tag: "Replace",
-      old: originalStmt,
-      new: newStmt,
-      mutationType,
-    });
+    // COMBAK: fix this
+    // this.ops.push({
+    //   tag: "Replace",
+    //   old: originalStmt,
+    //   new: newStmt,
+    //   mutationType,
+    // });
   };
 
   removeStmt = (stmt: SubStmt) => {
@@ -246,19 +228,9 @@ class SynthesisContext {
     // COMBAK: increment counter?
   };
 
-  showOps = (): string => {
-    return this.ops.map((op) => this.showOp(op)).join("\n");
-  };
+  getOps = (): Mutation[] => this.ops;
 
-  showOp = (op: Mutation) => {
-    if (op.tag === "Replace") {
-      return `${op.tag} ${prettyStmt(op.old)} by ${prettyStmt(op.new)} via ${
-        op.mutationType
-      }`;
-    } else {
-      return `${op.tag} ${prettyStmt(op.stmt)}`;
-    }
-  };
+  showOps = (): string => showOps(this.ops);
 
   addArg = (id: Identifier): void => {
     this.argCxt.push(id);
@@ -276,6 +248,8 @@ class SynthesisContext {
     this.prog = {
       tag: "SubProg",
       statements: [],
+      nodeType: "SyntheticSubstance",
+      children: [],
     };
     this.argCxt = [];
     this.loadTemplate();
@@ -392,98 +366,147 @@ export class Synthesizer {
     // add autolabel statement
     this.cxt.autoLabel();
     // DEBUG: report results
-    console.log(prettySubstance(this.cxt.prog));
+    log.info(prettySubstance(this.cxt.prog));
     log.info("Operations:\n", this.cxt.showOps());
-    console.log("----------");
+    log.info("----------");
     return {
       prog: this.cxt.prog,
-      ops: this.cxt.showOps(),
+      ops: this.cxt.getOps(),
     };
   };
 
+  findMutations = (stmt: SubStmt): Mutation[] => {
+    log.debug(`Finding mutations for ${prettyStmt(stmt)}`);
+    const ops: (Mutation | undefined)[] = [
+      checkSwapStmtArgs(stmt, (p: ApplyPredicate) => {
+        const indices = range(0, p.args.length);
+        const elem1 = this.choice(indices);
+        const elem2 = this.choice(without(indices, elem1));
+        return [elem1, elem2];
+      }),
+      checkSwapExprArgs(stmt, (f: ArgExpr) => {
+        const indices = range(0, f.args.length);
+        const elem1 = this.choice(indices);
+        const elem2 = this.choice(without(indices, elem1));
+        return [elem1, elem2];
+      }),
+      checkReplaceStmtName(stmt, (p: ApplyPredicate) => {
+        const matchingNames: string[] = matchSignatures(p, this.env).map(
+          (decl) => decl.name.value
+        );
+        const options = without(matchingNames, p.name.value);
+        const pick = this.choice(options);
+        // TODO: check length of options
+        return pick;
+      }),
+      checkReplaceExprName(stmt, (e: ArgExpr) => {
+        const matchingNames: string[] = matchSignatures(e, this.env).map(
+          (decl) => decl.name.value
+        );
+        const options = without(matchingNames, e.name.value);
+        const pick = this.choice(options);
+        // TODO: check length of options
+        return pick;
+      }),
+    ];
+    return compact(ops);
+  };
+
   mutateProgram = (): void => {
-    const ops = ["add", "delete", "edit"];
+    // const ops = ["add", "delete", "edit"];
+    const ops = ["edit"];
     const op = this.choice(ops);
     if (op === "add") this.addStmt();
     else if (op === "delete") this.deleteStmt();
-    else if (op === "edit")
-      this.editStmt(this.choice(["Swap", "ReplaceName", "TypeChange"]));
+    else if (op === "edit") {
+      this.cxt.findCandidates(this.env, this.setting.edit);
+      this.editStmt();
+    }
   };
 
-  editStmt = (op: Modify["tag"]): void => {
-    this.cxt.findCandidates(this.env, this.setting.edit);
+  editStmt = (): void => {
+    log.debug(`Picking a statement to edit...`);
     const chosenType = this.choice(this.cxt.candidateTypes());
     const candidates = [...this.cxt.getCandidates(chosenType).keys()];
     const chosenName = this.choice(candidates);
+    log.debug(
+      `Chosen name is ${chosenName}, candidates ${candidates}, chosen type ${chosenType}`
+    );
     const stmt = this.findStmt(chosenType, chosenName);
-    if (stmt && (stmt.tag === "ApplyPredicate" || stmt.tag === "Bind")) {
+    if (stmt !== undefined) {
       log.debug(`Editing statement: ${prettyStmt(stmt)}`);
-      switch (op) {
-        case "Swap": {
-          const s = (stmt.tag === "Bind" ? stmt.expr : stmt) as ApplyPredicate;
-          const indices = range(0, s.args.length);
-          const idx1 = this.choice(indices);
-          const idx2 = this.choice(without(indices, idx1));
-          const newStmt = swapArgs(s, [idx1, idx2]);
-          if (stmt.tag === "ApplyPredicate") {
-            this.cxt.replaceStmt(stmt, newStmt as ApplyPredicate, op); // TODO: improve types to avoid casting
-          } else {
-            this.cxt.replaceStmt(
-              stmt,
-              {
-                ...stmt,
-                expr: newStmt,
-              } as Bind,
-              op
-            ); // TODO: improve types to avoid casting
-          }
-          break;
-        }
-        case "ReplaceName": {
-          const s = (stmt.tag === "Bind" ? stmt.expr : stmt) as ApplyPredicate;
-          const options = matchSignatures(s, this.env);
-          const pick = options.length > 0 ? this.choice(options) : s;
-          if (stmt.tag === "ApplyPredicate" && pick.name !== s.name) {
-            this.cxt.replaceStmt(
-              stmt,
-              {
-                ...stmt,
-                name: pick.name,
-              } as ApplyPredicate,
-              op
-            );
-          } else if (stmt.tag === "Bind" && pick.name !== s.name) {
-            if (pick.name !== s.name) {
-              this.cxt.replaceStmt(
-                stmt,
-                {
-                  ...stmt,
-                  expr: {
-                    ...stmt.expr,
-                    name: pick.name,
-                  },
-                } as Bind,
-                op
-              ); // TODO: improve types to avoid casting
-            }
-          }
-          break;
-        }
-        case "TypeChange": {
-          const options = argMatches(stmt, this.env);
-          if (options.length > 0) {
-            const pick = this.choice(options);
-            this.typeChange(stmt, pick);
-          }
-          break;
-        }
-      }
+      // find all available mutations for the given statement
+      const mutations = this.findMutations(stmt);
+      // if there's any valid mutation, pick one to execute
+      if (mutations.length > 0) {
+        const mutation: Mutation = this.choice(mutations);
+        log.debug(`Picked mutation: ${showOp(mutation)}`);
+        const newProg: SubProg = executeMutation(this.cxt.prog, mutation);
+        this.cxt.ops.push(mutation);
+        this.cxt.updateProg(newProg);
+      } else this.editStmt(); // if there's no good option, repeat
     } else {
       log.debug(
-        `Failed to find a statement when editing. Candidates are: ${candidates}. Chosen name to find is ${chosenName} of ${chosenType}`
+        `Couldn't find a statement to edit. Repeating the edit action...`
       );
+      this.editStmt(); // if there's no good option, repeat
     }
   };
+
+  // editStmt = (op: Update["tag"]): void => {
+  //   this.cxt.findCandidates(this.env, this.setting.edit);
+  //   const chosenType = this.choice(this.cxt.candidateTypes());
+  //   const candidates = [...this.cxt.getCandidates(chosenType).keys()];
+  //   const chosenName = this.choice(candidates);
+  //   const stmt = this.findStmt(chosenType, chosenName);
+  //   if (stmt && (stmt.tag === "ApplyPredicate" || stmt.tag === "Bind")) {
+  //     log.debug(`Editing statement: ${prettyStmt(stmt)}`);
+  //     switch (op) {
+  //       case "ReplaceName": {
+  //         const s = (stmt.tag === "Bind" ? stmt.expr : stmt) as ApplyPredicate;
+  //         const options = matchSignatures(s, this.env);
+  //         const pick = options.length > 0 ? this.choice(options) : s;
+  //         if (stmt.tag === "ApplyPredicate" && pick.name !== s.name) {
+  //           this.cxt.replaceStmt(
+  //             stmt,
+  //             {
+  //               ...stmt,
+  //               name: pick.name,
+  //             } as ApplyPredicate,
+  //             op
+  //           );
+  //         } else if (stmt.tag === "Bind" && pick.name !== s.name) {
+  //           if (pick.name !== s.name) {
+  //             this.cxt.replaceStmt(
+  //               stmt,
+  //               {
+  //                 ...stmt,
+  //                 expr: {
+  //                   ...stmt.expr,
+  //                   name: pick.name,
+  //                 },
+  //               } as Bind,
+  //               op
+  //             ); // TODO: improve types to avoid casting
+  //           }
+  //         }
+  //         break;
+  //       }
+  //       case "TypeChange": {
+  //         const options = argMatches(stmt, this.env);
+  //         if (options.length > 0) {
+  //           const pick = this.choice(options);
+  //           this.typeChange(stmt, pick);
+  //         }
+  //         break;
+  //       }
+  //     }
+  //   } else {
+  //     log.debug(
+  //       `Failed to find a statement when editing. Candidates are: ${candidates}. Chosen name to find is ${chosenName} of ${chosenType}`
+  //     );
+  //   }
+  // };
 
   typeChange = (oldStmt: ApplyPredicate | Bind, pick: ArgStmtDecl): void => {
     let newStmt = oldStmt;
@@ -507,12 +530,13 @@ export class Synthesizer {
       // otherwise we can simple delete
       this.cxt.removeStmt(oldStmt);
     }
-    this.cxt.ops.push({
-      tag: "Replace",
-      old: oldStmt,
-      new: newStmt,
-      mutationType: "TypeChange",
-    });
+    // COMBAK: fix
+    // this.cxt.ops.push({
+    //   tag: "Replace",
+    //   stmt: oldStmt,
+    //   newStmt: newStmt,
+    //   mutationType: "TypeChange",
+    // });
   };
 
   // NOTE: every synthesizer that 'addStmt' calls is expected to append its result to the AST, instead of just returning it. This is because certain lower-level functions are allowed to append new statements (e.g. 'generateArg'). Otherwise, we could write this module as a combinator.
@@ -530,7 +554,8 @@ export class Synthesizer {
     } else if (chosenType === "ConstructorDecl") {
       stmt = this.generateConstructor();
     }
-    if (stmt) this.cxt.ops.push({ tag: "Add", stmt });
+    // COMBAK: fix
+    // if (stmt) this.cxt.ops.push({ tag: "Add", stmt });
   };
 
   deleteStmt = (): void => {
@@ -544,11 +569,13 @@ export class Synthesizer {
       if (stmt.tag === "Bind" || stmt.tag === "Decl") {
         // if statement returns value, delete all refs to value
         this.cascadingDelete(stmt).forEach((s) => {
-          this.cxt.ops.push({ tag: "Delete", stmt: s });
+          // COMBAK: fix
+          // this.cxt.ops.push({ tag: "Delete", stmt: s });
         });
       } else {
         this.cxt.removeStmt(stmt);
-        this.cxt.ops.push({ tag: "Delete", stmt });
+        // COMBAK: fix
+        // this.cxt.ops.push({ tag: "Delete", stmt });
       }
     }
   };
@@ -624,6 +651,7 @@ export class Synthesizer {
       log.debug(
         `Warning: cannot find a ${stmtType} statement with name ${name}.`
       );
+      return undefined;
     }
   };
 

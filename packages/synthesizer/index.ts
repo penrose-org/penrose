@@ -5,6 +5,7 @@ import {
   compileSubstance,
   prettySubstance,
   showError,
+  showOps,
   Synthesizer,
   SubProg,
   SynthesizerSetting,
@@ -31,7 +32,7 @@ Options:
   --synth-setting=SET  A JSON file containing parameters for the synthesizer
 `;
 
-const defaultSetting: SynthesizerSetting = {
+export const defaultSetting: SynthesizerSetting = {
   mutationCount: [1, 4],
   argOption: "existing",
   argReuse: "distinct",
@@ -93,7 +94,7 @@ const writePrograms = (
     const metaPath = join(prefix, metaName);
     const { prog, ops } = progs[i];
     writeFileSync(subPath, prettySubstance(prog));
-    writeFileSync(metaPath, JSON.stringify({ ops }));
+    writeFileSync(metaPath, JSON.stringify({ ops: showOps(ops) }));
     substances[subID] = { name: subID, URI: fileName };
     trios.push({
       substance: subID,
@@ -168,7 +169,7 @@ const writePrograms = (
     const template: SubProg | undefined = synth.getTemplate();
 
     if (template) {
-      progs = [{ prog: template }, ...progs];
+      progs = [{ prog: template, ops: [] }, ...progs];
     }
 
     // write progs

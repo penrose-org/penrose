@@ -54,7 +54,7 @@ export default [
       sourcemap: true,
     },
     onwarn,
-    watch: false, // no need to rebuild during watch - targeting node only
+    watch: true, // no need to rebuild during watch - targeting node only
     plugins,
     cache: pkg.module, // for incremental builds
   },

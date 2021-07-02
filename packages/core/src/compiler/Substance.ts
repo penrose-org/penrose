@@ -592,6 +592,27 @@ export const prettyStmt = (stmt: SubStmt): string => {
   }
 };
 
+export const prettySubNode = (
+  node: SubExpr | SubStmt | TypeConsApp
+): string => {
+  switch (node.tag) {
+    case "TypeConstructor":
+      return prettyType(node);
+    case "Bind":
+    case "Decl":
+    case "ApplyPredicate":
+    case "AutoLabel":
+    case "NoLabel":
+    case "LabelDecl":
+    case "ApplyPredicate":
+    case "EqualExprs":
+    case "EqualPredicates":
+      return prettyStmt(node);
+    default:
+      return prettyExpr(node);
+  }
+};
+
 const prettyPredicate = (pred: ApplyPredicate): string => {
   const { name, args } = pred;
   const argStr = args.map((a) => prettyPredArg(a)).join(", ");

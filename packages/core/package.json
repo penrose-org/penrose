@@ -40,6 +40,7 @@
     "mathjax-full": "^3.0.1",
     "moo": "^0.5.1",
     "nearley": "^2.20.1",
+    "recursive-diff": "^1.0.8",
     "rfdc": "^1.2.0",
     "seedrandom": "^3.0.5",
     "true-myth": "^4.1.0"

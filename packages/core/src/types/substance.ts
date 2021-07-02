@@ -15,7 +15,7 @@ export interface SubstanceEnv {
 }
 
 //#region Substance AST
-export interface SubProg {
+export interface SubProg extends ASTNode {
   tag: "SubProg";
   statements: SubStmt[];
 }

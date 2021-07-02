@@ -1,6 +1,17 @@
-import { pullAt } from "lodash";
-import { Identifier } from "types/ast";
+import { prettyStmt } from "compiler/Substance";
 import { Map } from "immutable";
+import {
+  cloneDeep,
+  cloneDeepWith,
+  intersectionWith,
+  isEqual,
+  isEqualWith,
+  omit,
+  pullAt,
+  sortBy,
+} from "lodash";
+import { SwapExprArgs, SwapStmtArgs } from "synthesis/Mutation";
+import { ASTNode, Identifier, metaProps } from "types/ast";
 import {
   ConstructorDecl,
   DomainStmt,
@@ -23,6 +34,7 @@ import {
   SubStmt,
   TypeConsApp,
 } from "types/substance";
+import { exprToNumber } from "utils/OtherUtils";
 
 export interface Signature {
   args: string[];
@@ -30,6 +42,10 @@ export interface Signature {
 }
 
 export type ArgStmtDecl = PredicateDecl | FunctionDecl | ConstructorDecl;
+
+export type ArgStmt = ApplyFunction | ApplyPredicate | ApplyConstructor;
+
+export type ArgExpr = ApplyFunction | ApplyConstructor | Func;
 
 /**
  * Append a statement to a Substance program
@@ -42,23 +58,6 @@ export const appendStmt = (prog: SubProg, stmt: SubStmt): SubProg => ({
   ...prog,
   statements: [...prog.statements, stmt],
 });
-
-/**
- * Swap two arguments of a Substance statement
- *
- * @param stmt a Substance statement with the `args` property
- * @param param1 a tuple of indices to swap
- * @returns a new Substance statement
- */
-export const swapArgs = (
-  stmt: ApplyConstructor | ApplyPredicate | ApplyFunction,
-  [index1, index2]: [number, number]
-): ApplyConstructor | ApplyPredicate | ApplyFunction => {
-  return {
-    ...stmt,
-    args: swap(stmt.args, index1, index2),
-  };
-};
 
 /**
  * Find all declarations that take the same number and type of args as
@@ -122,19 +121,17 @@ export const replaceStmt = (
   statements: prog.statements.map((s) => (s === originalStmt ? newStmt : s)),
 });
 
-//#region helpers
-
-const swap = (arr: any[], a: number, b: number) =>
-  arr.map((current, idx) => {
-    if (idx === a) return arr[b];
-    if (idx === b) return arr[a];
-    return current;
-  });
-
-//#endregion
+/**
+ * Get a Substance statement by index
+ *
+ * @param prog a Substance program
+ * @param index the index of a Substance statement in the program
+ * @returns
+ */
+export const getStmt = (prog: SubProg, index: number): SubStmt =>
+  prog.statements[index];
 
 //#region Helpers
-
 /**
  * Find all signatures that match a reference statement. NOTE: returns an empty list if
  * no matches are found; does not include the reference statement in list of matches.
@@ -323,6 +320,13 @@ export const applyPredicate = (
   };
 };
 
+export const subProg = (statements: SubStmt[]): SubProg => ({
+  tag: "SubProg",
+  statements,
+  children: statements,
+  nodeType: "SyntheticSubstance",
+});
+
 // TODO: generate arguments as well
 export const applyTypeDecl = (decl: TypeDecl): TypeConsApp => {
   const { name } = decl;
@@ -352,6 +356,67 @@ export const autoLabelStmt: AutoLabel = {
   },
   nodeType: "SyntheticSubstance",
   children: [],
+};
+
+/**
+ * Compare two AST nodes by their contents, ignoring structural properties such as `children` and positional properties like `start` and `end`.
+ *
+ * @param node1 the first AST node
+ * @param node2 the second AST node
+ * @returns a boolean value
+ */
+export const nodesEqual = (node1: ASTNode, node2: ASTNode): boolean =>
+  isEqualWith(node1, node2, (node1: ASTNode, node2: ASTNode) => {
+    return isEqual(cleanNode(node1), cleanNode(node2));
+  });
+
+export const intersection = (left: SubProg, right: SubProg): SubStmt[] =>
+  intersectionWith(left.statements, right.statements, (s1, s2) =>
+    nodesEqual(s1, s2)
+  );
+
+/**
+ * Sort the statements in a Substance AST by statement type and then by lexicographic ordering of source text.
+ * @param prog A Substance AST
+ * @returns A sorted Substance AST
+ */
+export const sortStmts = (prog: SubProg): SubProg => {
+  const { statements } = prog;
+  // first sort by statement type, and then by lexicographic ordering of source text
+  const newStmts: SubStmt[] = sortBy(statements, [
+    "tag",
+    (s: SubStmt) => prettyStmt(s),
+  ]);
+  return {
+    ...prog,
+    statements: newStmts,
+  };
+};
+
+export const cleanNode = (prog: ASTNode): ASTNode => omitDeep(prog, metaProps);
+
+/**
+ * Finds the type of a Substance identifer.
+ *
+ * @param id an identifer
+ * @param env the environment
+ * @returns
+ */
+export const typeOf = (id: string, env: Env): string | undefined =>
+  env.vars.get(id)?.name.value;
+
+// helper function for omitting properties in an object
+const omitDeep = (originalCollection: any, excludeKeys: string[]): any => {
+  // TODO: `omitFn` mutates the collection
+  const collection = cloneDeep(originalCollection);
+  const omitFn = (value: any) => {
+    if (value && typeof value === "object") {
+      excludeKeys.forEach((key) => {
+        delete value[key];
+      });
+    }
+  };
+  return cloneDeepWith(collection, omitFn);
 };
 
 //#endregion
