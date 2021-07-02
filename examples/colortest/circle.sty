@@ -1,0 +1,12 @@
+forall Set x {
+  x.icon = Circle{}
+}
+
+forall Set x; Set y
+where IsSubset(x, y) {
+    ensure smallerThan(x.icon, y.icon)
+    ensure minSize(y.icon)
+    ensure maxSize(y.icon)
+    ensure contains(x.icon, y.icon, 5.0)
+    x.icon above y.icon
+}

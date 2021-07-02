@@ -8,8 +8,13 @@ forall Set x {
         strokeWidth : 0.0
     }
 
+    -- x.foo = Square {
+    --    color : rgba(0,0,0,1)
+    -- }
+
     x.text = Text {
         string : x.label
+        -- color: rgba(1, 1, 1, 1)
     }
 
     ensure contains(x.icon, x.text)
@@ -17,6 +22,7 @@ forall Set x {
     ensure maxSize(x.icon, canvas.height / 3.)
     encourage sameCenter(x.text, x.icon)
     x.textLayering = x.text above x.icon
+    
 }
 
 forall Set x; Set y
