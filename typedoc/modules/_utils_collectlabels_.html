@@ -100,7 +100,7 @@
 					<div class="tsd-signature tsd-kind-icon">EX_<wbr>CONSTANT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">10</span><span class="tsd-signature-symbol"> = 10</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L31">packages/core/src/utils/CollectLabels.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L31">packages/core/src/utils/CollectLabels.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -110,7 +110,7 @@
 					<div class="tsd-signature tsd-kind-icon">adaptor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLAdaptor</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Text</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = browserAdaptor()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L17">packages/core/src/utils/CollectLabels.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L17">packages/core/src/utils/CollectLabels.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -120,7 +120,7 @@
 					<div class="tsd-signature tsd-kind-icon">html<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">MathDocument</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = mathjax.document(&quot;&quot;, { InputJax: tex, OutputJax: svg })</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L28">packages/core/src/utils/CollectLabels.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L28">packages/core/src/utils/CollectLabels.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -130,7 +130,7 @@
 					<div class="tsd-signature tsd-kind-icon">svg<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SVG</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new SVG({ fontCache: &quot;none&quot; })</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L27">packages/core/src/utils/CollectLabels.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L27">packages/core/src/utils/CollectLabels.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -140,7 +140,7 @@
 					<div class="tsd-signature tsd-kind-icon">tex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">TeX</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new TeX({packages: AllPackages,inlineMath: [[&quot;$&quot;, &quot;$&quot;],[&quot;\\(&quot;, &quot;\\)&quot;],],processEscapes: true,})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L19">packages/core/src/utils/CollectLabels.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L19">packages/core/src/utils/CollectLabels.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -150,7 +150,7 @@
 					<div class="tsd-signature tsd-kind-icon">tex2svg<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> = memoize(async (contents: string, name: string, fontSize: string): Promise&lt;any&gt; &#x3D;&gt;new Promise((resolve) &#x3D;&gt; {const output &#x3D; convert(contents, fontSize);if (!output) {console.error(&#x60;MathJax could not render ${contents}&#x60;);resolve({ output: undefined, width: 0, height: 0 });return;}// console.log(output);// console.log(output.viewBox.baseVal);const viewBox &#x3D; output.getAttribute(&quot;viewBox&quot;)!.split(&quot; &quot;);const width &#x3D; parseFloat(viewBox[2]);const height &#x3D; parseFloat(viewBox[3]);// rescaling according to// https://github.com/mathjax/MathJax-src/blob/32213009962a887e262d9930adcfb468da4967ce/ts/output/svg.ts#L248const vAlignFloat &#x3D; parseFloat(output.style.verticalAlign) * EX_CONSTANT;const constHeight &#x3D; parseFloat(fontSize) - vAlignFloat;const scaledWidth &#x3D; (constHeight / height) * width;resolve({ body: output, width: scaledWidth, height: constHeight });}))</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L49">packages/core/src/utils/CollectLabels.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L49">packages/core/src/utils/CollectLabels.ts:49</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -173,7 +173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L88">packages/core/src/utils/CollectLabels.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L88">packages/core/src/utils/CollectLabels.ts:88</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -196,7 +196,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L33">packages/core/src/utils/CollectLabels.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L33">packages/core/src/utils/CollectLabels.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -222,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/penrose/penrose/blob/4f3e48f/packages/core/src/utils/CollectLabels.ts#L73">packages/core/src/utils/CollectLabels.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/penrose/penrose/blob/6cb39da/packages/core/src/utils/CollectLabels.ts#L73">packages/core/src/utils/CollectLabels.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
