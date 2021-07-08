@@ -30,6 +30,10 @@ import { Canvas } from "renderer/ShapeDef";
 
 const log = consola.create({ level: LogLevel.Warn }).withScope("Top Level");
 
+//
+import { getListOfStagedStates } from "renderer/Comic";
+//
+
 /**
  * Resample all shapes in the state by generating a number of samples (`numSamples`) and picking the sample with the lowest initial energy value.
  * @param state current state
