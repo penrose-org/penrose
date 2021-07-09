@@ -1,0 +1,16 @@
+-- Switching example (Fig 2b in Dellaert21ar)
+
+Variable x1,x2,x3
+Variable q1,q2
+
+Factor p1 := Unary(x1)
+Factor p2 := Unary(q1)
+
+Factor m1 := Unary(x1)
+Factor m2 := Unary(x2)
+Factor m3 := Unary(x3)
+
+Factor b12 := Ternary(x1,q1,x2)
+Factor b23 := Ternary(x2,q2,x3)
+
+AutoLabel All

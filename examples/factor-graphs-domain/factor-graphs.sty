@@ -1,0 +1,157 @@
+-- Some globals that can be optimized over:
+globals {
+    scalar radius = 40
+    string fontSize = "32pt"
+    -- We might at one point want to optimize over radius:
+    -- scalar radius = ?
+    -- ensure nonNegative(radius)
+    -- ensure lessThan(radius, 50)
+}
+
+colors {
+    color black = rgba(0.,0.,0.,1.)
+    color white = rgba(1., 1., 1., 1.)
+    color red = rgba(1., 0., 0., 1.)
+}
+
+-- style the variables:
+forall Variable variable {
+    vec2 variable.position = (?, ?)
+    shape variable.shape = Circle {
+        center: variable.position
+        r: globals.radius
+        color : colors.white
+        strokeColor : colors.black
+        strokeWidth : 1.0 -- svg units, whatever that is :-)
+    }
+    text variable.text = Text {
+        string: variable.label
+        center: variable.shape.center
+        fontSize: globals.fontSize
+    }
+
+    variable.text above variable.shape
+
+    -- might be needed if radius a variable:
+    -- ensure minSize(variable.shape)
+}
+
+-- style a Markov chain
+forall Variable x1; Variable x2; Variable x3
+where IsMarkovChain3(x1,x2,x3)
+{
+    -- ensure variables are spaced equally
+    r = globals.radius * 8
+    ensure equal(x2.position[0] - x1.position[0], r)
+    ensure equal(x3.position[0] - x2.position[0], r)
+    -- ensure variables are on a horizontal line
+    ensure equal(x1.position[1], x2.position[1]) -- use == ??
+    ensure equal(x2.position[1], x3.position[1])
+}
+
+-- style the factors:
+forall Factor factor {
+    vec2 factor.position = (?, ?)
+    shape factor.shape = Circle {
+        center: factor.position
+        r: 10.0 -- rumored to be pixels
+        color : colors.black
+        strokeColor : colors.black
+        strokeWidth : 0.0
+    }
+}
+
+-- style the factor label bubbles:
+forall Factor factor 
+where HasBubble(factor)
+{
+    shape factor.callout = Callout{
+        anchor: factor.shape.center
+        -- center: (?,?)
+        w: factor.text.w
+        h: factor.text.h
+    }
+
+    dist = norm(factor.callout.center - factor.callout.anchor)
+    ensure lessThan(dist, 300.)
+
+    text factor.text = Text {
+        string: factor.label
+        center: factor.callout.center
+        fontSize: globals.fontSize
+    }
+
+    factor.text above factor.shape
+}
+
+-- extra styling for unary factors:
+Factor factor
+where factor := Unary(x)
+with Variable x {
+    r = globals.radius * 3
+    factor.positionConstraint = ensure equal(factor.position[0], x.position[0])
+    factor.heightConstraint = ensure equal(factor.position[1],x.position[1] - r)
+
+    -- draw a line to the variable x
+    factor.line = Line {
+        start : factor.shape.center
+        end : x.shape.center
+        color : colors.black
+        thickness : 1.0
+        stroke : "none"
+        style : "solid"
+    }
+
+    factor.shape above factor.line
+    x.shape above factor.line
+
+    --  encourage repel(factor.line, x.text, const.repelWeight)
+    --  encourage repel(factor.line, q.text, const.repelWeight)
+}
+
+-- extra styling for prior factors:
+Factor factor
+where factor := Unary(x); MarkovChainPrior(factor, x)
+with Variable x {
+    r = globals.radius * 4
+    delete factor.positionConstraint
+    delete factor.heightConstraint
+    ensure equal(factor.position[0], x.position[0] - r)
+    override factor.position[1] = x.position[1]
+}
+
+-- extra styling for binary factors:
+Factor factor
+where factor := Binary(x1, x2)
+with Variable x1; Variable x2 {
+    -- ensure factor.position == (x1.position + x2.position)/2.0
+    override factor.position = (x1.position + x2.position)/2.0
+
+    -- draw a line to x1
+    factor.line1 = Line {
+        start : factor.shape.center
+        end : x1.shape.center
+	    color : colors.black
+	    thickness : 1.0
+	    stroke : "none"
+	    style : "solid"
+    }
+
+    -- draw a line to x2
+    factor.line2 = Line {
+        start : factor.shape.center
+        end : x2.shape.center
+        color : colors.black
+        thickness : 1.0
+        stroke : "none"
+        style : "solid"
+    }
+
+    factor.shape above factor.line1
+    factor.shape above factor.line2
+    x1.shape above factor.line1
+    x2.shape above factor.line2
+
+    --  encourage repel(factor.line, x1.text, const.repelWeight)
+    --  encourage repel(factor.line, x2.text, const.repelWeight)
+}
