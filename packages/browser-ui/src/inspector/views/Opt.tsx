@@ -14,6 +14,7 @@ const Opt: React.FC<IViewProps> = ({ frame, history }: IViewProps) => {
       </div>
     );
   }
+
   const constrInfos = zipWith(
     frame.constrFns.map(prettyPrintFn),
     evalFns(frame.constrFns, frame),

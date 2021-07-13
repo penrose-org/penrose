@@ -11,6 +11,8 @@
     "@reach/tabs": "^0.9.0",
     "consola": "^2.15.0",
     "console-feed": "^2.8.11",
+    "cytoscape": "^3.18.2",
+    "cytoscape-dagre": "^2.3.2",
     "debug": "^4.1.1",
     "fast-memoize": "^2.5.2",
     "graphlib": "^2.1.8",
@@ -50,6 +52,7 @@
     "prepack": "yarn build"
   },
   "devDependencies": {
+    "@types/cytoscape": "^3.14.12",
     "@types/debug": "0.0.31",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",

@@ -1,18 +1,18 @@
 import { checkDomain, compileDomain, parseDomain } from "compiler/Domain";
 import { compileStyle } from "compiler/Style";
 import {
-  checkSubstance,
-  compileSubstance,
-  parseSubstance,
-  prettySubstance,
+    checkSubstance,
+    compileSubstance,
+    parseSubstance,
+    prettySubstance,
 } from "compiler/Substance";
 import consola, { LogLevel } from "consola";
 import { evalShapes } from "engine/Evaluator";
 import { genFns, genOptProblem, initializeMat, step } from "engine/Optimizer";
 import { insertPending } from "engine/PropagateUpdate";
 import RenderStatic, {
-  RenderInteractive,
-  RenderShape,
+    RenderInteractive,
+    RenderShape,
 } from "renderer/Renderer";
 import { resampleBest } from "renderer/Resample";
 import { Synthesizer, SynthesizerSetting } from "synthesis/Synthesizer";
@@ -20,11 +20,16 @@ import { Env } from "types/domain";
 import { PenroseError } from "types/errors";
 import { Registry, Trio } from "types/io";
 import * as ShapeTypes from "types/shape";
+import { FieldDict, Translation } from "types/value";
 import { Fn, LabelCache, State } from "types/state";
 import { SubstanceEnv } from "types/substance";
 import { collectLabels } from "utils/CollectLabels";
 import { andThen, Result, showError } from "utils/Error";
-import { prettyPrintFn } from "utils/OtherUtils";
+import {
+    prettyPrintFn,
+    prettyPrintPath,
+    prettyPrintExpr,
+} from "utils/OtherUtils";
 import { bBoxDims, toHex, ops } from "utils/Util";
 import { Canvas } from "renderer/ShapeDef";
 
@@ -36,7 +41,7 @@ const log = consola.create({ level: LogLevel.Warn }).withScope("Top Level");
  * @param numSamples number of samples to choose from
  */
 export const resample = (state: State, numSamples: number): State => {
-  return resampleBest(state, numSamples);
+    return resampleBest(state, numSamples);
 };
 
 /**
@@ -45,7 +50,7 @@ export const resample = (state: State, numSamples: number): State => {
  * @param numSteps number of steps to take (default: 1)
  */
 export const stepState = (state: State, numSteps = 10000): State => {
-  return step(state, numSteps);
+    return step(state, numSteps);
 };
 
 /**
@@ -53,11 +58,11 @@ export const stepState = (state: State, numSteps = 10000): State => {
  * @param state current state
  */
 export const stepUntilConvergence = (state: State, numSteps = 10000): State => {
-  let currentState = state;
-  while (!stateConverged(currentState)) {
-    currentState = step(currentState, numSteps, true);
-  }
-  return currentState;
+    let currentState = state;
+    while (!stateConverged(currentState)) {
+        currentState = step(currentState, numSteps, true);
+    }
+    return currentState;
 };
 
 /**
@@ -69,21 +74,21 @@ export const stepUntilConvergence = (state: State, numSteps = 10000): State => {
  * @param node a node in the DOM tree
  */
 export const diagram = async (
-  domainProg: string,
-  subProg: string,
-  styProg: string,
-  node: HTMLElement
+    domainProg: string,
+    subProg: string,
+    styProg: string,
+    node: HTMLElement
 ): Promise<void> => {
-  const res = compileTrio(domainProg, subProg, styProg);
-  if (res.isOk()) {
-    const state: State = await prepareState(res.value);
-    const optimized = stepUntilConvergence(state);
-    node.appendChild(RenderStatic(optimized));
-  } else {
-    throw Error(
-      `Error when generating Penrose diagram: ${showError(res.error)}`
-    );
-  }
+    const res = compileTrio(domainProg, subProg, styProg);
+    if (res.isOk()) {
+        const state: State = await prepareState(res.value);
+        const optimized = stepUntilConvergence(state);
+        node.appendChild(RenderStatic(optimized));
+    } else {
+        throw Error(
+            `Error when generating Penrose diagram: ${showError(res.error)}`
+        );
+    }
 };
 
 /**
@@ -95,28 +100,28 @@ export const diagram = async (
  * @param node a node in the DOM tree
  */
 export const interactiveDiagram = async (
-  domainProg: string,
-  subProg: string,
-  styProg: string,
-  node: HTMLElement
+    domainProg: string,
+    subProg: string,
+    styProg: string,
+    node: HTMLElement
 ): Promise<void> => {
-  const updateData = (state: State) => {
-    const stepped = stepUntilConvergence(state);
-    node.replaceChild(
-      RenderInteractive(stepped, updateData),
-      node.firstChild as Node
-    );
-  };
-  const res = compileTrio(domainProg, subProg, styProg);
-  if (res.isOk()) {
-    const state: State = await prepareState(res.value);
-    const optimized = stepUntilConvergence(state);
-    node.appendChild(RenderInteractive(optimized, updateData));
-  } else {
-    throw Error(
-      `Error when generating Penrose diagram: ${showError(res.error)}`
-    );
-  }
+    const updateData = (state: State) => {
+        const stepped = stepUntilConvergence(state);
+        node.replaceChild(
+            RenderInteractive(stepped, updateData),
+            node.firstChild as Node
+        );
+    };
+    const res = compileTrio(domainProg, subProg, styProg);
+    if (res.isOk()) {
+        const state: State = await prepareState(res.value);
+        const optimized = stepUntilConvergence(state);
+        node.appendChild(RenderInteractive(optimized, updateData));
+    } else {
+        throw Error(
+            `Error when generating Penrose diagram: ${showError(res.error)}`
+        );
+    }
 };
 
 /**
@@ -126,23 +131,23 @@ export const interactiveDiagram = async (
  * @param styProg a Style program string
  */
 export const compileTrio = (
-  domainProg: string,
-  subProg: string,
-  styProg: string
+    domainProg: string,
+    subProg: string,
+    styProg: string
 ): Result<State, PenroseError> => {
-  const domainRes: Result<Env, PenroseError> = compileDomain(domainProg);
+    const domainRes: Result<Env, PenroseError> = compileDomain(domainProg);
 
-  const subRes: Result<[SubstanceEnv, Env], PenroseError> = andThen(
-    (env) => compileSubstance(subProg, env),
-    domainRes
-  );
+    const subRes: Result<[SubstanceEnv, Env], PenroseError> = andThen(
+        (env) => compileSubstance(subProg, env),
+        domainRes
+    );
 
-  const styRes: Result<State, PenroseError> = andThen(
-    (res) => compileStyle(styProg, ...res),
-    subRes
-  );
+    const styRes: Result<State, PenroseError> = andThen(
+        (res) => compileStyle(styProg, ...res),
+        subRes
+    );
 
-  return styRes;
+    return styRes;
 };
 
 /**
@@ -150,28 +155,28 @@ export const compileTrio = (
  * @param state an initial diagram state
  */
 export const prepareState = async (state: State): Promise<State> => {
-  await initializeMat();
-  // TODO: errors
-  const stateAD = {
-    ...state,
-    originalTranslation: state.originalTranslation,
-  };
+    await initializeMat();
+    // TODO: errors
+    const stateAD = {
+        ...state,
+        originalTranslation: state.originalTranslation,
+    };
 
-  // After the pending values load, they only use the evaluated shapes (all in terms of numbers)
-  // The results of the pending values are then stored back in the translation as autodiff types
-  const stateEvaled: State = evalShapes(stateAD);
+    // After the pending values load, they only use the evaluated shapes (all in terms of numbers)
+    // The results of the pending values are then stored back in the translation as autodiff types
+    const stateEvaled: State = evalShapes(stateAD);
 
-  const labelCache: LabelCache = await collectLabels(stateEvaled.shapes);
+    const labelCache: LabelCache = await collectLabels(stateEvaled.shapes);
 
-  const stateWithPendingProperties = insertPending({
-    ...stateEvaled,
-    labelCache,
-  });
+    const stateWithPendingProperties = insertPending({
+        ...stateEvaled,
+        labelCache,
+    });
 
-  const withOptProblem: State = genOptProblem(stateWithPendingProperties);
-  const withOptProblemAndCachedFns: State = genFns(withOptProblem);
+    const withOptProblem: State = genOptProblem(stateWithPendingProperties);
+    const withOptProblemAndCachedFns: State = genFns(withOptProblem);
 
-  return withOptProblemAndCachedFns;
+    return withOptProblemAndCachedFns;
 };
 
 /**
@@ -179,14 +184,14 @@ export const prepareState = async (state: State): Promise<State> => {
  * @param state current state
  */
 export const stateConverged = (state: State): boolean =>
-  state.params.optStatus === "EPConverged";
+    state.params.optStatus === "EPConverged";
 
 /**
  * Returns true if state is the initial frame
  * @param state current state
  */
 export const stateInitial = (state: State): boolean =>
-  state.params.optStatus === "NewIter";
+    state.params.optStatus === "NewIter";
 
 /**
  * Read and flatten the registry file for Penrose examples into a list of program trios.
@@ -194,24 +199,24 @@ export const stateInitial = (state: State): boolean =>
  * @param registry JSON file of the registry
  */
 export const readRegistry = (registry: Registry): Trio[] => {
-  const { substances, styles, domains, trios } = registry;
-  const res = [];
-  for (const { domain: dslID, style: styID, substance: subID } of trios) {
-    const domain = domains[dslID];
-    const substance = substances[subID];
-    const style = styles[styID];
-    const trio = {
-      substanceURI: substance.URI,
-      styleURI: style.URI,
-      domainURI: domain.URI,
-      substanceName: substance.name,
-      styleName: style.name,
-      domainName: domain.name,
-      name: `${subID}-${styID}`,
-    };
-    res.push(trio);
-  }
-  return res;
+    const { substances, styles, domains, trios } = registry;
+    const res = [];
+    for (const { domain: dslID, style: styID, substance: subID } of trios) {
+        const domain = domains[dslID];
+        const substance = substances[subID];
+        const style = styles[styID];
+        const trio = {
+            substanceURI: substance.URI,
+            styleURI: style.URI,
+            domainURI: domain.URI,
+            substanceName: substance.name,
+            styleName: style.name,
+            domainName: domain.name,
+            name: `${subID}-${styID}`,
+        };
+        res.push(trio);
+    }
+    return res;
 };
 
 /**
@@ -220,24 +225,24 @@ export const readRegistry = (registry: Registry): Trio[] => {
  * @returns a scalar value of the current energy
  */
 export const evalEnergy = (s: State): number => {
-  const { objective, weight } = s.params;
-  // NOTE: if `prepareState` hasn't been called before, log a warning message and generate a fresh optimization problem
-  if (!objective) {
-    log.warn(
-      "State is not prepared for energy evaluation. Call `prepareState` to initialize the optimization problem first."
-    );
-    const newState = genOptProblem(s);
-    // TODO: caching
-    return evalEnergy(newState);
-  }
-  return objective(weight)(s.varyingValues);
+    const { objective, weight } = s.params;
+    // NOTE: if `prepareState` hasn't been called before, log a warning message and generate a fresh optimization problem
+    if (!objective) {
+        log.warn(
+            "State is not prepared for energy evaluation. Call `prepareState` to initialize the optimization problem first."
+        );
+        const newState = genOptProblem(s);
+        // TODO: caching
+        return evalEnergy(newState);
+    }
+    return objective(weight)(s.varyingValues);
 };
 
 export type FnEvaled = IFnEvaled;
 
 export interface IFnEvaled {
-  f: number;
-  gradf: number[];
+    f: number;
+    gradf: number[];
 }
 
 /**
@@ -247,60 +252,63 @@ export interface IFnEvaled {
  * @returns a list of the energies and gradients of the requested functions, evaluated at the `varyingValues` in the `State`
  */
 export const evalFns = (fns: Fn[], s: State): FnEvaled[] => {
-  const { objFnCache, constrFnCache } = s.params;
+    const { objFnCache, constrFnCache } = s.params;
 
-  // NOTE: if `prepareState` hasn't been called before, log a warning message and generate a fresh optimization problem
-  if (!objFnCache || !constrFnCache) {
-    log.warn(
-      "State is not prepared for energy evaluation. Call `prepareState` to initialize the cached objective/constraint functions first."
-    );
-    const newState = genFns(s);
-    // TODO: caching
-    return evalFns(fns, newState);
-  }
-
-  // Evaluate the energy of each requested function (of the given type) on the varying values in the state
-  const xs = s.varyingValues;
-  return fns.map((fn: Fn) => {
-    const fnsCached = fn.optType === "ObjFn" ? objFnCache : constrFnCache;
-    const fnStr = prettyPrintFn(fn);
-
-    if (!(fnStr in fnsCached)) {
-      console.log("fns", fnsCached);
-      throw Error(
-        `Internal error: could not find ${fn.optType} ${fnStr} in cached functions`
-      );
+    // NOTE: if `prepareState` hasn't been called before, log a warning message and generate a fresh optimization problem
+    if (!objFnCache || !constrFnCache) {
+        log.warn(
+            "State is not prepared for energy evaluation. Call `prepareState` to initialize the cached objective/constraint functions first."
+        );
+        const newState = genFns(s);
+        // TODO: caching
+        return evalFns(fns, newState);
     }
-    const cachedFnInfo = fnsCached[fnStr];
-    return {
-      f: cachedFnInfo.f(xs),
-      gradf: cachedFnInfo.gradf(xs),
-    };
-  });
+
+    // Evaluate the energy of each requested function (of the given type) on the varying values in the state
+    const xs = s.varyingValues;
+    return fns.map((fn: Fn) => {
+        const fnsCached = fn.optType === "ObjFn" ? objFnCache : constrFnCache;
+        const fnStr = prettyPrintFn(fn);
+
+        if (!(fnStr in fnsCached)) {
+            console.log("fns", fnsCached);
+            throw Error(
+                `Internal error: could not find ${fn.optType} ${fnStr} in cached functions`
+            );
+        }
+        const cachedFnInfo = fnsCached[fnStr];
+        return {
+            f: cachedFnInfo.f(xs),
+            gradf: cachedFnInfo.gradf(xs),
+        };
+    });
 };
 
 export type PenroseState = State;
+export type PenroseFn = Fn;
 
 export {
-  compileDomain,
-  compileSubstance,
-  checkDomain,
-  checkSubstance,
-  parseSubstance,
-  parseDomain,
-  RenderStatic,
-  RenderShape,
-  Synthesizer,
-  RenderInteractive,
-  ShapeTypes,
-  bBoxDims,
-  prettySubstance,
-  toHex,
-  initializeMat,
-  showError,
-  Result,
-  prettyPrintFn,
-  ops,
+    compileDomain,
+    compileSubstance,
+    checkDomain,
+    checkSubstance,
+    parseSubstance,
+    parseDomain,
+    RenderStatic,
+    RenderShape,
+    Synthesizer,
+    RenderInteractive,
+    ShapeTypes,
+    bBoxDims,
+    prettySubstance,
+    toHex,
+    initializeMat,
+    showError,
+    Result,
+    prettyPrintFn,
+    prettyPrintPath,
+    prettyPrintExpr,
+    ops,
 };
 export type { PenroseError } from "./types/errors";
 export type { Registry, Trio };
@@ -308,3 +316,5 @@ export type { Env };
 export type { SynthesizerSetting };
 export type { SubProg } from "types/substance";
 export type { Canvas };
+export type { FieldDict };
+export type { Translation };

@@ -50,6 +50,7 @@ export interface IVarAD {
   nodeVisited: boolean;
   // Now used to track whether this node (and its children) has already been computed in the codegen
   name: string; // Name of cached value for this node in codegen (e.g. `const x3 = x1 + x2;` <-- name of node is `x3`)
+  id: number; // Initially -1, it's set by traverseGraph (the leaf or parent's id); unique id. It's only used for generating the computational graph in inspector
 }
 
 export type VarAD = IVarAD;

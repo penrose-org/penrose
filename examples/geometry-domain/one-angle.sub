@@ -1,0 +1,4 @@
+Point A, B, C
+Segment AB := MkSegment(A, B)
+Segment BC := MkSegment(B, C)
+AutoLabel All

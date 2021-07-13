@@ -38,7 +38,7 @@ constructor MkSegment : Point p * Point q -> Segment
 -- constructor MkLine : Point p * Point q -> Point
 
 -- constructor InteriorAngle : Linelike l * Linelike m -> Angle
--- constructor InteriorAngle : Point p * Point q * Point r -> Angle
+constructor InteriorAngle : Point p * Point q * Point r -> Angle
 -- constructor TriangleVertex : Point p * Point q * Point r -> Angle
 
 constructor MkTriangle : Point p * Point q * Point r -> Triangle
@@ -60,7 +60,7 @@ constructor MkRectangle : Point p * Point q * Point r * Point s -> Rectangle
 
 -- predicate Acute : Angle
 -- predicate Obtuse : Angle
--- predicate Right : Angle
+predicate Right : Angle
 -- predicate On : Point * Linelike
 predicate In : Point * Plane
 predicate Not : Prop

@@ -19,14 +19,14 @@ interface IProps {
 export interface IInspectState {
   // connectionLog: Array<ConnectionStatus | string>;
   selectedFrame: number;
-  selectedView: string;
+  selectedView: number;
 }
 
 class Inspector extends React.Component<IProps, IInspectState> {
   public readonly state = {
     // connectionLog: [],
     selectedFrame: -1,
-    selectedView: "frames",
+    selectedView: 0,
   };
   // public appendToConnectionLog = (status: ConnectionStatus | string) =>
   // this.setState({ connectionLog: [...this.state.connectionLog, status] });
@@ -44,7 +44,7 @@ class Inspector extends React.Component<IProps, IInspectState> {
     );
   };
   public render() {
-    const { selectedFrame } = this.state;
+    const { selectedFrame, selectedView } = this.state;
     const { history, modCanvas, error, settings, setSettings } = this.props;
     const currentFrame =
       history.length === 0
@@ -75,7 +75,10 @@ class Inspector extends React.Component<IProps, IInspectState> {
       >
         <Timeline {...commonProps} />
         <div style={{ overflow: "hidden", flexGrow: 1, flexShrink: 1 }}>
-          <Tabs>
+          <Tabs
+            index={selectedView}
+            onChange={(idx: number) => this.setState({ selectedView: idx })}
+          >
             <TabList>
               {Object.keys(viewMap).map((view: string) => (
                 <Tab key={`tab-${view}`}>
@@ -90,7 +93,7 @@ class Inspector extends React.Component<IProps, IInspectState> {
               ))}
             </TabList>
             <TabPanels>
-              {Object.keys(viewMap).map((view: string) => (
+              {Object.keys(viewMap).map((view: string, idx: number) => (
                 <TabPanel key={`panel-${view}`}>
                   <div
                     style={{
@@ -100,9 +103,11 @@ class Inspector extends React.Component<IProps, IInspectState> {
                       paddingBottom: "100px",
                     }}
                   >
-                    <ErrorBoundary>
-                      {React.createElement(viewMap[view], commonProps)}
-                    </ErrorBoundary>
+                    {idx === selectedView && (
+                      <ErrorBoundary>
+                        {React.createElement(viewMap[view], commonProps)}
+                      </ErrorBoundary>
+                    )}
                   </div>
                 </TabPanel>
               ))}
